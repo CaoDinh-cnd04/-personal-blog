@@ -124,77 +124,132 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-5xl mx-auto"
+            className="max-w-7xl mx-auto"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2, type: "spring", stiffness: 100 }}
-              className="mb-6"
-            >
-              <motion.span
-                className="inline-block px-4 py-2 bg-primary-light/10 dark:bg-primary-dark/10 rounded-full text-sm font-semibold text-primary-light dark:text-primary-dark mb-4"
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Text Content */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-center lg:text-left"
               >
-                👨‍💻 Sinh Viên IT | Developer
-              </motion.span>
-            </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.3, type: "spring", stiffness: 100 }}
+                  className="mb-6"
+                >
+                  <motion.span
+                    className="inline-block px-4 py-2 bg-primary-light/10 dark:bg-primary-dark/10 rounded-full text-sm font-semibold text-primary-light dark:text-primary-dark mb-4"
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    👨‍💻 Sinh Viên IT | Developer
+                  </motion.span>
+                </motion.div>
 
-            <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              Xin chào, tôi là{' '}
-              <span className="bg-gradient-to-r from-primary-light via-cyan-400 to-blue-500 dark:from-primary-dark dark:via-cyan-300 dark:to-blue-400 bg-clip-text text-transparent animate-gradient">
-                Cao Nhất Đỉnh
-              </span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-2xl md:text-3xl mb-4 font-semibold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <span className="text-primary-light dark:text-primary-dark">Software Engineer</span> & <span className="text-cyan-400">Blogger</span>
-            </motion.p>
-            
-            <motion.p 
-              className="text-lg md:text-xl mb-12 opacity-80 max-w-3xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            >
-              Sinh viên IT đam mê lập trình và chia sẻ kiến thức. Chuyên phát triển ứng dụng web full-stack với React, Node.js. 
-              Viết blog về công nghệ, kinh nghiệm học tập, và hành trình từ sinh viên đến developer.
-            </motion.p>
-            
-            <motion.div 
-              className="flex flex-wrap gap-4 justify-center items-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/blog" className="btn-primary inline-flex items-center justify-center gap-2 text-lg px-8 py-4 min-h-[56px]">
-                  Đọc Blog
-                  <FiArrowRight className="w-5 h-5" />
-                </Link>
+                <motion.h1 
+                  className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  Xin chào, tôi là{' '}
+                  <span className="bg-gradient-to-r from-primary-light via-cyan-400 to-blue-500 dark:from-primary-dark dark:via-cyan-300 dark:to-blue-400 bg-clip-text text-transparent animate-gradient">
+                    Cao Nhất Đỉnh
+                  </span>
+                </motion.h1>
+                
+                <motion.p 
+                  className="text-xl md:text-2xl mb-4 font-semibold"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                >
+                  <span className="text-primary-light dark:text-primary-dark">Software Engineer</span> & <span className="text-cyan-400">Blogger</span>
+                </motion.p>
+                
+                <motion.p 
+                  className="text-base md:text-lg mb-8 opacity-80 leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                >
+                  Sinh viên IT đam mê lập trình và chia sẻ kiến thức. Chuyên phát triển ứng dụng web full-stack với React, Node.js. 
+                  Viết blog về công nghệ, kinh nghiệm học tập, và hành trình từ sinh viên đến developer.
+                </motion.p>
+                
+                <motion.div 
+                  className="flex flex-wrap gap-4 justify-center lg:justify-start items-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.0 }}
+                >
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Link to="/blog" className="btn-primary inline-flex items-center justify-center gap-2 text-lg px-8 py-4 min-h-[56px]">
+                      Đọc Blog
+                      <FiArrowRight className="w-5 h-5" />
+                    </Link>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Link to="/projects" className="btn-secondary inline-flex items-center justify-center text-lg px-8 py-4 min-h-[56px]">
+                      Xem Dự Án
+                    </Link>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Link to="/contact" className="btn-secondary inline-flex items-center justify-center text-lg px-8 py-4 min-h-[56px]">
+                      Liên Hệ
+                    </Link>
+                  </motion.div>
+                </motion.div>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/projects" className="btn-secondary inline-flex items-center justify-center text-lg px-8 py-4 min-h-[56px]">
-                  Xem Dự Án
-                </Link>
+
+              {/* Right Side - Profile Photo */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="flex justify-center lg:justify-end"
+              >
+                <div className="relative">
+                  <motion.img
+                    src="/images/profile.png"
+                    alt="Cao Nhất Đỉnh"
+                    className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl object-cover shadow-2xl border-4 border-white dark:border-gray-800 bg-gradient-to-br from-primary-light/20 to-cyan-500/20 dark:from-primary-dark/20 dark:to-cyan-500/20"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.5, type: "spring", stiffness: 100 }}
+                    onError={(e) => {
+                      // Try .jpg if .png fails
+                      if (e.target.src.includes('.png')) {
+                        e.target.src = '/images/profile.jpg'
+                      } else {
+                        // Fallback to a placeholder avatar
+                        e.target.src = `https://ui-avatars.com/api/?name=Cao+Nhat+Dinh&size=400&background=3b82f6&color=fff&bold=true`
+                      }
+                    }}
+                    whileHover={{ scale: 1.05, rotate: 2 }}
+                  />
+                  <motion.div
+                    className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-light/20 to-cyan-500/20 dark:from-primary-dark/20 dark:to-cyan-500/20 pointer-events-none"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  />
+                  {/* Decorative elements */}
+                  <motion.div
+                    className="absolute -top-4 -right-4 w-24 h-24 bg-primary-light/20 dark:bg-primary-dark/20 rounded-full blur-2xl"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  />
+                  <motion.div
+                    className="absolute -bottom-4 -left-4 w-32 h-32 bg-cyan-500/20 dark:bg-cyan-400/20 rounded-full blur-2xl"
+                    animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.8, 0.5] }}
+                    transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+                  />
+                </div>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" className="btn-secondary inline-flex items-center justify-center text-lg px-8 py-4 min-h-[56px]">
-                  Liên Hệ
-                </Link>
-              </motion.div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>

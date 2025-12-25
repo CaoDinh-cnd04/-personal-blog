@@ -125,16 +125,31 @@ const About = () => {
             <div className="max-w-4xl mx-auto">
               <div className="card">
                 <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-                  {profile && profile.avatar_url && (
-                    <motion.img
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.5 }}
-                      src={profile.avatar_url}
-                      alt={profile.name || 'Profile'}
-                      className="w-48 h-48 rounded-full object-cover shadow-xl"
+                  {/* Professional Photo */}
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative"
+                  >
+                    <img
+                      src="/images/profile.png"
+                      alt="Cao Nhất Đỉnh"
+                      className="w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover shadow-2xl border-4 border-white dark:border-gray-800"
+                      onError={(e) => {
+                        // Try .jpg if .png fails
+                        if (e.target.src.includes('.png')) {
+                          e.target.src = '/images/profile.jpg'
+                        } else if (profile && profile.avatar_url) {
+                          // Fallback to GitHub avatar
+                          e.target.src = profile.avatar_url
+                        } else {
+                          e.target.style.display = 'none'
+                        }
+                      }}
                     />
-                  )}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-light/20 to-cyan-500/20 dark:from-primary-dark/20 dark:to-cyan-500/20 pointer-events-none" />
+                  </motion.div>
                   
                   <div className="flex-1 text-center md:text-left">
                     <h1 className="text-4xl font-bold mb-2">

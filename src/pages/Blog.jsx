@@ -12,7 +12,8 @@ const blogPosts = [
     date: '2024-01-15',
     readTime: '5 phút đọc',
     tags: ['React', 'JavaScript', 'Tutorial'],
-    image: '/blog/react-tutorial.jpg',
+    gradient: 'from-blue-500 to-cyan-500',
+    icon: '⚛️',
   },
   {
     slug: 'xay-dung-blog-ca-nhan-voi-react',
@@ -21,7 +22,8 @@ const blogPosts = [
     date: '2024-01-20',
     readTime: '10 phút đọc',
     tags: ['React', 'Tailwind CSS', 'Blog', 'Tutorial'],
-    image: '/blog/blog-tutorial.jpg',
+    gradient: 'from-purple-500 to-pink-500',
+    icon: '✍️',
   },
   {
     slug: 'ai-va-web-development',
@@ -30,7 +32,8 @@ const blogPosts = [
     date: '2024-01-18',
     readTime: '8 phút đọc',
     tags: ['AI', 'Machine Learning', 'Web Development'],
-    image: '/blog/ai-web-dev.jpg',
+    gradient: 'from-green-500 to-teal-500',
+    icon: '🤖',
   },
   {
     slug: 'mastering-tailwind-css',
@@ -39,7 +42,8 @@ const blogPosts = [
     date: '2024-01-10',
     readTime: '7 phút đọc',
     tags: ['CSS', 'Tailwind', 'Design'],
-    image: '/blog/tailwind-tips.jpg',
+    gradient: 'from-cyan-500 to-blue-500',
+    icon: '🎨',
   },
   {
     slug: 'nodejs-best-practices-2024',
@@ -48,7 +52,8 @@ const blogPosts = [
     date: '2024-01-12',
     readTime: '9 phút đọc',
     tags: ['Node.js', 'Backend', 'Best Practices'],
-    image: '/blog/nodejs-practices.jpg',
+    gradient: 'from-green-600 to-green-400',
+    icon: '🟢',
   },
   {
     slug: 'deploying-react-apps',
@@ -57,7 +62,8 @@ const blogPosts = [
     date: '2024-01-05',
     readTime: '6 phút đọc',
     tags: ['Deployment', 'DevOps', 'React'],
-    image: '/blog/deployment-guide.jpg',
+    gradient: 'from-orange-500 to-red-500',
+    icon: '🚀',
   },
   {
     slug: 'docker-cho-developer',
@@ -66,7 +72,8 @@ const blogPosts = [
     date: '2024-01-08',
     readTime: '12 phút đọc',
     tags: ['Docker', 'DevOps', 'Tutorial'],
-    image: '/blog/docker-guide.jpg',
+    gradient: 'from-blue-600 to-indigo-600',
+    icon: '🐳',
   },
   {
     slug: 'state-management-in-react',
@@ -75,7 +82,8 @@ const blogPosts = [
     date: '2023-12-28',
     readTime: '8 phút đọc',
     tags: ['React', 'State Management', 'Architecture'],
-    image: '/blog/state-management.jpg',
+    gradient: 'from-violet-500 to-purple-500',
+    icon: '📦',
   },
   {
     slug: 'typescript-cho-javascript-developer',
@@ -84,7 +92,8 @@ const blogPosts = [
     date: '2023-12-25',
     readTime: '7 phút đọc',
     tags: ['TypeScript', 'JavaScript', 'Tutorial'],
-    image: '/blog/typescript-guide.jpg',
+    gradient: 'from-blue-500 to-blue-700',
+    icon: '📘',
   },
   {
     slug: 'mongodb-tips-and-tricks',
@@ -93,7 +102,8 @@ const blogPosts = [
     date: '2023-12-20',
     readTime: '10 phút đọc',
     tags: ['MongoDB', 'Database', 'Performance'],
-    image: '/blog/mongodb-tips.jpg',
+    gradient: 'from-green-700 to-emerald-500',
+    icon: '🍃',
   },
   {
     slug: 'git-workflow-cho-team',
@@ -102,7 +112,8 @@ const blogPosts = [
     date: '2023-12-15',
     readTime: '8 phút đọc',
     tags: ['Git', 'Team Work', 'DevOps'],
-    image: '/blog/git-workflow.jpg',
+    gradient: 'from-orange-600 to-red-600',
+    icon: '🔀',
   },
   {
     slug: 'nextjs-vs-react',
@@ -111,7 +122,8 @@ const blogPosts = [
     date: '2023-12-10',
     readTime: '6 phút đọc',
     tags: ['Next.js', 'React', 'Comparison'],
-    image: '/blog/nextjs-vs-react.jpg',
+    gradient: 'from-gray-700 to-gray-900',
+    icon: '⚡',
   },
 ]
 
@@ -140,8 +152,8 @@ const Blog = () => {
               <Link to={`/blog/${blogPosts[0].slug}`} className="block mb-12">
                 <div className="card overflow-hidden hover:shadow-2xl transition-shadow">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="h-64 md:h-auto bg-gradient-to-br from-primary-light to-blue-600 dark:from-primary-dark dark:to-blue-400 rounded-lg">
-                      {/* Placeholder for blog image */}
+                    <div className={`h-64 md:h-auto bg-gradient-to-br ${blogPosts[0].gradient} rounded-lg flex items-center justify-center`}>
+                      <span className="text-9xl">{blogPosts[0].icon}</span>
                     </div>
                     <div className="flex flex-col justify-center">
                       <div className="flex items-center gap-2 text-sm opacity-70 mb-3">
@@ -193,8 +205,8 @@ const Blog = () => {
               <AnimatedSection key={post.slug} delay={0.1 * (index + 1)}>
                 <Link to={`/blog/${post.slug}`} className="block h-full">
                   <div className="card h-full flex flex-col hover:shadow-xl transition-shadow">
-                    <div className="h-48 bg-gradient-to-br from-primary-light to-blue-600 dark:from-primary-dark dark:to-blue-400 rounded-lg mb-4">
-                      {/* Placeholder for blog image */}
+                    <div className={`h-48 bg-gradient-to-br ${post.gradient} rounded-lg mb-4 flex items-center justify-center`}>
+                      <span className="text-6xl">{post.icon}</span>
                     </div>
                     
                     <div className="flex-1 flex flex-col">

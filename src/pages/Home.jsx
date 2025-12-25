@@ -39,17 +39,18 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Full-Stack Developer | AI Enthusiast | Lifelong Learner
+              Software Engineer
             </motion.p>
             
             <motion.p 
-              className="text-lg mb-12 opacity-70 max-w-2xl mx-auto"
+              className="text-lg mb-12 opacity-70 max-w-2xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Xây dựng ứng dụng web hiện đại và chia sẻ kiến thức lập trình qua blog.
-              Đam mê công nghệ AI, clean code và học hỏi không ngừng.
+              Software Engineer chuyên phát triển ứng dụng web full-stack với React, Node.js và các công nghệ hiện đại. 
+              Đam mê khám phá và ứng dụng AI/Machine Learning vào các dự án thực tế, đặc biệt là LLM và ứng dụng AI trong web development. 
+              Tin vào clean code, best practices và việc chia sẻ kiến thức qua blog để cùng phát triển với cộng đồng developer.
             </motion.p>
             
             <motion.div 

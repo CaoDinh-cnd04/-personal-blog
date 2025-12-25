@@ -11,7 +11,7 @@ const Footer = () => {
     },
     {
       icon: FiLinkedin,
-      href: 'https://linkedin.com/in/cao-nhat-dinh',
+      href: 'https://www.linkedin.com/in/cao-nh%E1%BA%A5t-%C4%91%E1%BB%89nh-cao-5778a8342/',
       label: 'LinkedIn',
     },
     {

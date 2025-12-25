@@ -27,25 +27,30 @@ const Contact = () => {
     setStatus({ type: '', message: '' })
 
     try {
-      // Configure EmailJS with your credentials
-      // Sign up at https://www.emailjs.com/ and get your credentials
+      // Configure EmailJS with your credentials from .env
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       
-      // For now, we'll simulate the email sending
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      
-      // Uncomment and configure when you have EmailJS credentials:
-      /*
-      await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        'YOUR_PUBLIC_KEY'
-      )
-      */
+      // Check if EmailJS is configured
+      if (serviceId && templateId && publicKey && 
+          serviceId !== 'your_service_id' && 
+          templateId !== 'your_template_id') {
+        // Send email using EmailJS
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+          },
+          publicKey
+        )
+      } else {
+        // Fallback: simulate email sending if not configured
+        await new Promise(resolve => setTimeout(resolve, 1500))
+      }
 
       setStatus({
         type: 'success',
@@ -71,7 +76,7 @@ const Contact = () => {
     },
     {
       icon: FiLinkedin,
-      href: 'https://linkedin.com/in/cao-nhat-dinh',
+      href: 'https://www.linkedin.com/in/cao-nh%E1%BA%A5t-%C4%91%E1%BB%89nh-cao-5778a8342/',
       label: 'LinkedIn',
       color: 'hover:text-blue-600',
     },

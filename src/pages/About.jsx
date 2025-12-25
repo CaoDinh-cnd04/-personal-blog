@@ -79,6 +79,30 @@ const About = () => {
     }
   ]
 
+  const certificates = [
+    {
+      name: 'Networking Basics',
+      platform: 'Cisco Networking Academy',
+      issued: 'Nov 25, 2025',
+      badge: '🌐',
+      skills: ['Network Communication', 'IP Addressing', 'IPv4/IPv6', 'Routers', 'Wireless Networks']
+    },
+    {
+      name: 'JavaScript Essentials 1',
+      platform: 'Cisco Networking Academy & OpenEDG JS Institute',
+      issued: 'Dec 08, 2025',
+      badge: '💻',
+      skills: ['JavaScript', 'Variables', 'Data Types', 'Flow Control', 'Functions', 'Algorithms']
+    },
+    {
+      name: 'JavaScript Essentials 2',
+      platform: 'Cisco Networking Academy & OpenEDG JS Institute',
+      issued: 'Dec 09, 2025',
+      badge: '⚡',
+      skills: ['OOP', 'Prototypes', 'Classes', 'JSON', 'Async Programming', 'Callbacks']
+    }
+  ]
+
   if (loading) return <Loading />
 
   return (
@@ -219,10 +243,47 @@ const About = () => {
             </div>
           </AnimatedSection>
 
-          {/* Online Courses */}
+          {/* Certificates */}
           <AnimatedSection delay={0.6}>
             <div className="max-w-4xl mx-auto mt-12">
-              <h2 className="section-title">Khóa Học & Chứng Chỉ</h2>
+              <h2 className="section-title">Chứng Chỉ Chuyên Môn</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {certificates.map((cert, index) => (
+                  <AnimatedSection key={cert.name} delay={0.1 * index}>
+                    <div className="card h-full hover:scale-105 transition-transform duration-300">
+                      <div className="text-center mb-4">
+                        <div className="text-5xl mb-3">{cert.badge}</div>
+                        <h3 className="text-lg font-bold text-primary-light dark:text-primary-dark mb-2">
+                          {cert.name}
+                        </h3>
+                      </div>
+                      <p className="text-sm opacity-80 mb-3 text-center">
+                        📜 {cert.platform}
+                      </p>
+                      <p className="text-xs opacity-70 mb-4 text-center">
+                        🗓️ Issued: {cert.issued}
+                      </p>
+                      <div className="flex flex-wrap gap-1 justify-center">
+                        {cert.skills.map((skill) => (
+                          <span
+                            key={skill}
+                            className="text-xs px-2 py-1 bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark rounded"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Online Courses */}
+          <AnimatedSection delay={0.8}>
+            <div className="max-w-4xl mx-auto mt-12">
+              <h2 className="section-title">Khóa Học Trực Tuyến</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {courses.map((course, index) => (
                   <AnimatedSection key={course.name} delay={0.1 * index}>

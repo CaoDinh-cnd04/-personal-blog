@@ -47,10 +47,10 @@ const Projects = () => {
         <div className="container-custom">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">Dự Án Nổi Bật</h1>
               <p className="text-xl opacity-80 max-w-2xl mx-auto">
-                A collection of my open source projects and contributions. 
-                All data is fetched in real-time from GitHub.
+                Tổng hợp các dự án lớn và quan trọng của tôi. 
+                Dữ liệu được cập nhật tự động từ GitHub.
               </p>
             </div>
           </AnimatedSection>
@@ -85,6 +85,25 @@ const Projects = () => {
                     <p className="text-sm">{error}</p>
                   </div>
                 </div>
+              </div>
+            </AnimatedSection>
+          )}
+
+          {/* Info Message */}
+          {repos.length > 0 && (
+            <AnimatedSection delay={0.3}>
+              <div className="text-center mb-8">
+                <p className="text-sm opacity-70">
+                  Hiển thị {filteredRepos.length} dự án nổi bật • 
+                  <a 
+                    href="https://github.com/CaoDinh-cnd04?tab=repositories" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="ml-1 text-primary-light dark:text-primary-dark hover:underline"
+                  >
+                    Xem tất cả trên GitHub →
+                  </a>
+                </p>
               </div>
             </AnimatedSection>
           )}

@@ -19,6 +19,7 @@ export const fetchUserProfile = async () => {
 
 /**
  * Fetch all public repositories for the user
+ * Only returns significant/featured projects (not all repos)
  */
 export const fetchRepositories = async () => {
   try {
@@ -30,10 +31,49 @@ export const fetchRepositories = async () => {
     }
     const repos = await response.json()
     
-    // Filter out forks if desired and sort by stars
+    // Filter criteria for featured projects:
+    // 1. Not a fork
+    // 2. Has description
+    // 3. Has at least 1 star OR has topics OR updated in last year
+    // 4. Not a config/dotfiles repo
+    const oneYearAgo = new Date()
+    oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1)
+    
+    const excludedNames = ['dotfiles', 'config', '.github', 'profile']
+    
     return repos
-      .filter(repo => !repo.fork)
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      .filter(repo => {
+        // Exclude forks
+        if (repo.fork) return false
+        
+        // Exclude repos with excluded names
+        if (excludedNames.some(name => repo.name.toLowerCase().includes(name))) {
+          return false
+        }
+        
+        // Include if has description
+        if (!repo.description || repo.description.trim() === '') return false
+        
+        // Include if has stars
+        if (repo.stargazers_count > 0) return true
+        
+        // Include if has topics (indicates it's tagged/featured)
+        if (repo.topics && repo.topics.length > 0) return true
+        
+        // Include if updated recently (within last year)
+        const updatedDate = new Date(repo.updated_at)
+        if (updatedDate > oneYearAgo) return true
+        
+        return false
+      })
+      .sort((a, b) => {
+        // Sort by stars first, then by update date
+        if (b.stargazers_count !== a.stargazers_count) {
+          return b.stargazers_count - a.stargazers_count
+        }
+        return new Date(b.updated_at) - new Date(a.updated_at)
+      })
+      .slice(0, 12) // Limit to 12 featured projects
   } catch (error) {
     console.error('Error fetching repositories:', error)
     throw error

@@ -3388,6 +3388,930 @@ npm create vite@latest my-app -- --template react
 - [Vite Guide](https://vitejs.dev/guide/)
     `,
   },
+  'trip-hotel-fullstack-flutter': {
+    title: 'Xây Dựng Trip Hotel Full-Stack với Flutter: Hành Trình Từ Ý Tưởng Đến Sản Phẩm',
+    date: '2024-01-25',
+    readTime: '15 phút đọc',
+    tags: ['Flutter', 'Dart', 'Mobile', 'Full-Stack', 'Project'],
+    source: 'Dựa trên dự án thực tế: https://github.com/CaoDinh-cnd04/trip-hotel-fullstack',
+    content: `
+# Xây Dựng Trip Hotel Full-Stack với Flutter
+
+## Giới Thiệu
+
+Trip Hotel Full-Stack là dự án ứng dụng đặt phòng khách sạn được xây dựng với Flutter (Dart). Đây là một trong những dự án lớn nhất của tôi, kết hợp nhiều công nghệ và kỹ thuật.
+
+## Tech Stack
+
+- **Frontend Mobile:** Flutter, Dart
+- **State Management:** Provider/Bloc
+- **Backend:** RESTful API
+- **Database:** Firebase Firestore hoặc MongoDB
+- **Authentication:** Firebase Auth
+
+## Kiến Trúc Ứng Dụng
+
+### 1. Cấu Trúc Thư Mục
+
+\`\`\`
+lib/
+├── models/          # Data models
+├── screens/         # UI screens
+├── widgets/         # Reusable widgets
+├── services/        # API services
+├── providers/       # State management
+└── utils/           # Helper functions
+\`\`\`
+
+### 2. State Management
+
+Sử dụng Provider hoặc Bloc pattern để quản lý state:
+
+\`\`\`dart
+class HotelProvider extends ChangeNotifier {
+  List<Hotel> _hotels = [];
+  
+  List<Hotel> get hotels => _hotels;
+  
+  Future<void> fetchHotels() async {
+    // Fetch from API
+    notifyListeners();
+  }
+}
+\`\`\`
+
+## Tính Năng Chính
+
+1. **Đăng nhập/Đăng ký:** Firebase Authentication
+2. **Tìm kiếm khách sạn:** Filter và search
+3. **Đặt phòng:** Booking system với validation
+4. **Quản lý đặt phòng:** View và cancel bookings
+5. **Payment Integration:** Tích hợp thanh toán
+
+## Kinh Nghiệm Rút Ra
+
+- Flutter cho phép build cross-platform nhanh chóng
+- State management là key cho ứng dụng phức tạp
+- API design quan trọng cho performance
+- UI/UX tốt tạo trải nghiệm người dùng tuyệt vời
+
+## Kết Luận
+
+Dự án này giúp tôi học được nhiều về mobile development, API integration và full-stack architecture. Flutter là một framework mạnh mẽ cho việc phát triển ứng dụng di động.
+
+**Nguồn:** Dựa trên dự án thực tế tại https://github.com/CaoDinh-cnd04/trip-hotel-fullstack
+    `,
+  },
+  'firebase-authentication-firestore': {
+    title: 'Firebase Authentication & Firestore: Hướng Dẫn Tích Hợp Vào Ứng Dụng',
+    date: '2024-01-23',
+    readTime: '12 phút đọc',
+    tags: ['Firebase', 'Authentication', 'Firestore', 'Backend'],
+    source: 'Tham khảo: Firebase Official Documentation - https://firebase.google.com/docs',
+    content: `
+# Firebase Authentication & Firestore
+
+## Giới Thiệu Firebase
+
+Firebase là một Backend-as-a-Service (BaaS) platform của Google, cung cấp nhiều dịch vụ như Authentication, Firestore, Storage, và nhiều hơn nữa.
+
+## Firebase Authentication
+
+### Setup
+
+\`\`\`bash
+npm install firebase
+\`\`\`
+
+\`\`\`javascript
+import { initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth'
+
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project-id"
+}
+
+const app = initializeApp(firebaseConfig)
+export const auth = getAuth(app)
+\`\`\`
+
+### Email/Password Authentication
+
+\`\`\`javascript
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+
+// Đăng ký
+const signUp = async (email, password) => {
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+    console.log('User created:', userCredential.user)
+  } catch (error) {
+    console.error('Error:', error.message)
+  }
+}
+\`\`\`
+
+## Firestore Database
+
+### CRUD Operations
+
+\`\`\`javascript
+import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore'
+
+const db = getFirestore(app)
+
+// Create
+const addHotel = async (hotelData) => {
+  const docRef = await addDoc(collection(db, 'hotels'), hotelData)
+  return docRef.id
+}
+
+// Read
+const getHotels = async () => {
+  const querySnapshot = await getDocs(collection(db, 'hotels'))
+  return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+}
+\`\`\`
+
+## Best Practices
+
+1. **Security Rules:** Luôn setup Firestore security rules
+2. **Error Handling:** Xử lý lỗi đầy đủ
+3. **Offline Support:** Firestore hỗ trợ offline mode
+4. **Real-time Updates:** Sử dụng onSnapshot cho real-time data
+
+**Nguồn:** Tham khảo Firebase Official Documentation - https://firebase.google.com/docs
+    `,
+  },
+  'nodejs-express-rest-api': {
+    title: 'Node.js & Express.js: Xây Dựng RESTful API Chuyên Nghiệp',
+    date: '2024-01-20',
+    readTime: '11 phút đọc',
+    tags: ['Node.js', 'Express', 'REST API', 'Backend', 'JWT'],
+    source: 'Tham khảo: Express.js Documentation - https://expressjs.com/',
+    content: `
+# Node.js & Express.js: Xây Dựng RESTful API
+
+## Giới Thiệu
+
+Node.js và Express.js là bộ đôi mạnh mẽ để xây dựng backend API. Trong bài viết này, chúng ta sẽ học cách xây dựng RESTful API chuyên nghiệp.
+
+## Setup Project
+
+\`\`\`bash
+npm init -y
+npm install express
+npm install -D nodemon
+\`\`\`
+
+## Cấu Trúc Cơ Bản
+
+\`\`\`javascript
+const express = require('express')
+const app = express()
+
+app.use(express.json())
+
+app.get('/', (req, res) => {
+  res.json({ message: 'Hello World' })
+})
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000')
+})
+\`\`\`
+
+## RESTful Routes
+
+\`\`\`javascript
+// GET /api/hotels
+app.get('/api/hotels', async (req, res) => {
+  try {
+    const hotels = await Hotel.find()
+    res.json(hotels)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+})
+
+// POST /api/hotels
+app.post('/api/hotels', async (req, res) => {
+  try {
+    const hotel = new Hotel(req.body)
+    await hotel.save()
+    res.status(201).json(hotel)
+  } catch (error) {
+    res.status(400).json({ error: error.message })
+  }
+})
+\`\`\`
+
+## Middleware & JWT Authentication
+
+\`\`\`javascript
+const jwt = require('jsonwebtoken')
+
+const authenticateToken = (req, res, next) => {
+  const token = req.headers['authorization']?.split(' ')[1]
+  if (!token) return res.sendStatus(401)
+  
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403)
+    req.user = user
+    next()
+  })
+}
+\`\`\`
+
+## Best Practices
+
+1. **Environment Variables:** Sử dụng .env cho config
+2. **Validation:** Validate input với express-validator
+3. **Security:** Helmet.js cho security headers
+4. **Error Handling:** Centralized error handling
+
+**Nguồn:** Tham khảo Express.js Documentation - https://expressjs.com/
+    `,
+  },
+  'hoc-it-nhu-the-nao': {
+    title: 'Học IT Như Thế Nào? Kinh Nghiệm Từ Sinh Viên IT',
+    date: '2024-01-28',
+    readTime: '12 phút đọc',
+    tags: ['Học Tập', 'IT', 'Kinh Nghiệm', 'Sinh Viên'],
+    source: 'Kinh nghiệm cá nhân từ hành trình học IT',
+    content: `
+# Học IT Như Thế Nào? Kinh Nghiệm Từ Sinh Viên IT
+
+## Giới Thiệu
+
+Là một sinh viên IT, tôi đã trải qua nhiều thăng trầm trong quá trình học lập trình. Bài viết này chia sẻ những kinh nghiệm thực tế, những sai lầm thường gặp, và cách học hiệu quả.
+
+## Bắt Đầu Từ Đâu?
+
+### 1. Chọn Ngôn Ngữ Phù Hợp
+
+Khi mới bắt đầu, việc chọn ngôn ngữ lập trình đầu tiên rất quan trọng:
+
+- **JavaScript/HTML/CSS**: Dễ học, có thể thấy kết quả ngay, phù hợp cho web development
+- **Python**: Syntax đơn giản, phù hợp cho người mới
+- **Java/C#**: Cấu trúc rõ ràng, tốt cho việc học OOP
+
+**Lời khuyên:** Bắt đầu với một ngôn ngữ và học sâu, đừng nhảy từ ngôn ngữ này sang ngôn ngữ khác.
+
+### 2. Học Lý Thuyết Kết Hợp Thực Hành
+
+**Sai lầm thường gặp:**
+- Chỉ đọc sách, xem video mà không code
+- Code theo tutorial mà không hiểu tại sao
+
+**Cách học đúng:**
+- Học lý thuyết → Làm bài tập → Xây dựng dự án nhỏ
+- Tự đặt câu hỏi "Tại sao?" khi code
+- Thử nghiệm, thay đổi code để hiểu rõ hơn
+
+## Xây Dựng Dự Án Thực Tế
+
+### Tại Sao Dự Án Quan Trọng?
+
+1. **Áp dụng kiến thức:** Tổng hợp tất cả những gì đã học
+2. **Portfolio:** Có sản phẩm để show cho nhà tuyển dụng
+3. **Học từ sai lầm:** Gặp bug, giải quyết vấn đề thực tế
+
+### Dự Án Đầu Tiên Nên Làm Gì?
+
+- **Todo App:** Học CRUD, state management
+- **Weather App:** Học API integration
+- **Blog cá nhân:** Học full-stack development
+- **Clone một website:** Học từ những gì đã có
+
+## Tài Nguyên Học Tập
+
+### 1. Khóa Học Online
+
+- **Udemy:** Nhiều khóa học chất lượng
+- **FreeCodeCamp:** Miễn phí, có chứng chỉ
+- **Coursera:** Khóa học từ các trường đại học
+
+### 2. Tài Liệu Chính Thức
+
+- **MDN Web Docs:** Tài liệu tốt nhất cho web development
+- **Official Documentation:** Luôn đọc docs chính thức
+- **Stack Overflow:** Giải đáp thắc mắc
+
+### 3. Cộng Đồng
+
+- **GitHub:** Học từ code của người khác
+- **Dev.to, Medium:** Đọc bài viết kỹ thuật
+- **Discord/Slack:** Tham gia cộng đồng developer
+
+## Những Sai Lầm Thường Gặp
+
+### 1. Học Quá Nhiều Công Nghệ Cùng Lúc
+
+**Vấn đề:** Học React, Vue, Angular cùng lúc → Không thành thạo cái nào
+
+**Giải pháp:** Chọn một framework, học sâu, sau đó mới học cái khác
+
+### 2. So Sánh Bản Thân Với Người Khác
+
+**Vấn đề:** Thấy người khác code giỏi → Nản chí
+
+**Giải pháp:** Mỗi người có tốc độ học khác nhau. Tập trung vào bản thân, so sánh với chính mình ngày hôm qua
+
+### 3. Không Code Thường Xuyên
+
+**Vấn đề:** Học dồn vào cuối tuần, giữa tuần không đụng đến code
+
+**Giải pháp:** Code mỗi ngày, dù chỉ 30 phút. Consistency quan trọng hơn intensity
+
+## Lời Khuyên Cuối Cùng
+
+1. **Kiên nhẫn:** Học lập trình cần thời gian, đừng vội vàng
+2. **Thực hành:** Code nhiều hơn đọc
+3. **Xây dựng dự án:** Đừng chỉ làm tutorial
+4. **Tham gia cộng đồng:** Học từ người khác, giúp đỡ người khác
+5. **Đừng sợ sai:** Bug là bạn, không phải kẻ thù
+
+## Kết Luận
+
+Học IT là một hành trình dài, đầy thử thách nhưng cũng rất thú vị. Quan trọng nhất là kiên trì, thực hành thường xuyên, và không ngừng học hỏi. Chúc các bạn thành công trên con đường trở thành developer!
+
+**Nguồn:** Kinh nghiệm cá nhân từ hành trình học IT
+    `,
+  },
+  'kinh-nghiem-thuc-tap-it': {
+    title: 'Kinh Nghiệm Thực Tập IT: Từ Sinh Viên Đến Developer',
+    date: '2024-01-26',
+    readTime: '10 phút đọc',
+    tags: ['Thực Tập', 'Công Việc', 'IT', 'Career'],
+    source: 'Kinh nghiệm thực tế từ quá trình tìm việc và thực tập',
+    content: `
+# Kinh Nghiệm Thực Tập IT: Từ Sinh Viên Đến Developer
+
+## Giới Thiệu
+
+Thực tập là bước quan trọng trong hành trình từ sinh viên đến developer. Bài viết này chia sẻ kinh nghiệm thực tế về cách tìm công ty, chuẩn bị CV, phỏng vấn, và những kỹ năng cần thiết.
+
+## Chuẩn Bị Trước Khi Ứng Tuyển
+
+### 1. Xây Dựng Portfolio
+
+**Portfolio nên có:**
+- 2-3 dự án hoàn chỉnh (không phải tutorial)
+- Code trên GitHub với README rõ ràng
+- Demo live (deploy lên Netlify/Vercel)
+- Mô tả công nghệ sử dụng, vấn đề đã giải quyết
+
+**Tips:**
+- Chất lượng quan trọng hơn số lượng
+- Chọn dự án thể hiện được kỹ năng của bạn
+- Code clean, có comment, có documentation
+
+### 2. Chuẩn Bị CV
+
+**CV nên có:**
+- Thông tin cá nhân rõ ràng
+- Kỹ năng kỹ thuật (programming languages, frameworks, tools)
+- Dự án nổi bật với link GitHub và demo
+- Kinh nghiệm (nếu có)
+- Học vấn
+
+**Lưu ý:**
+- CV ngắn gọn, 1-2 trang
+- Format đẹp, dễ đọc
+- Không nói dối, nhưng highlight điểm mạnh
+- Có thể dùng template từ Canva, Overleaf
+
+### 3. Kỹ Năng Cần Có
+
+**Bắt buộc:**
+- Ít nhất 1 ngôn ngữ lập trình thành thạo
+- Hiểu về Git/GitHub
+- Biết sử dụng một framework (React, Vue, Angular...)
+
+**Nên có:**
+- Kiến thức về database
+- Hiểu về REST API
+- Biết về testing
+- Có kinh nghiệm với một công cụ (Postman, VS Code...)
+
+## Tìm Công Ty Thực Tập
+
+### 1. Nơi Tìm Việc
+
+- **TopDev, ITviec:** Website tuyển dụng IT phổ biến ở Việt Nam
+- **LinkedIn:** Tìm công ty, kết nối với HR
+- **Facebook Groups:** Các group IT, startup
+- **Website công ty:** Nhiều công ty có trang tuyển dụng riêng
+- **Career Fair:** Hội chợ việc làm tại trường
+
+### 2. Chọn Công Ty Phù Hợp
+
+**Cân nhắc:**
+- **Quy mô:** Startup nhỏ hay công ty lớn?
+- **Công nghệ:** Công ty dùng công nghệ bạn muốn học?
+- **Mentor:** Có người hướng dẫn không?
+- **Văn hóa:** Môi trường làm việc như thế nào?
+
+**Lời khuyên:** Với sinh viên, nên chọn công ty có mentor tốt, dù lương không cao
+
+## Phỏng Vấn
+
+### 1. Chuẩn Bị Trước Phỏng Vấn
+
+**Nghiên cứu công ty:**
+- Tìm hiểu về sản phẩm/dịch vụ
+- Xem công nghệ họ đang dùng
+- Đọc về văn hóa công ty
+
+**Chuẩn bị câu hỏi:**
+- Hỏi về dự án sẽ làm
+- Hỏi về quy trình làm việc
+- Hỏi về cơ hội học hỏi
+
+### 2. Câu Hỏi Thường Gặp
+
+**Về kỹ thuật:**
+- "Bạn đã làm dự án gì?"
+- "Bạn giải thích cách hoạt động của [công nghệ]?"
+- "Bạn xử lý bug như thế nào?"
+
+**Về bản thân:**
+- "Tại sao bạn muốn thực tập ở đây?"
+- "Điểm mạnh/yếu của bạn là gì?"
+- "Bạn muốn học gì từ kỳ thực tập này?"
+
+### 3. Coding Challenge
+
+Nhiều công ty sẽ có coding challenge:
+- **LeetCode:** Luyện giải bài toán
+- **HackerRank:** Practice coding
+- **Build a small project:** Xây dựng một tính năng nhỏ
+
+**Tips:**
+- Đọc kỹ yêu cầu
+- Hỏi nếu không hiểu
+- Code clean, có comment
+- Test kỹ trước khi submit
+
+## Khi Đi Thực Tập
+
+### 1. Tuần Đầu Tiên
+
+- **Quan sát:** Xem cách team làm việc
+- **Hỏi nhiều:** Đừng ngại hỏi khi không hiểu
+- **Ghi chép:** Ghi lại những gì học được
+- **Làm quen:** Kết nối với đồng nghiệp
+
+### 2. Kỹ Năng Cần Phát Triển
+
+**Technical:**
+- Code theo best practices
+- Viết code dễ đọc, dễ maintain
+- Học cách debug hiệu quả
+- Hiểu về code review
+
+**Soft skills:**
+- Giao tiếp với team
+- Quản lý thời gian
+- Hỏi đúng câu hỏi
+- Nhận feedback và cải thiện
+
+### 3. Tận Dụng Cơ Hội
+
+- **Học từ mentor:** Hỏi về kinh nghiệm, best practices
+- **Tham gia meetings:** Học cách team làm việc
+- **Làm nhiều dự án:** Càng làm nhiều càng học nhiều
+- **Đọc code của người khác:** Học từ code tốt
+
+## Sau Kỳ Thực Tập
+
+### 1. Tổng Kết
+
+- **Review lại:** Những gì đã học, đã làm
+- **Cập nhật CV:** Thêm kinh nghiệm thực tập
+- **Cập nhật portfolio:** Thêm dự án đã làm ở công ty
+- **Xin feedback:** Hỏi mentor về điểm mạnh/yếu
+
+### 2. Bước Tiếp Theo
+
+- **Xin làm part-time:** Nếu công ty cho phép
+- **Ứng tuyển full-time:** Nếu muốn làm lâu dài
+- **Tìm cơ hội mới:** Nếu muốn thử môi trường khác
+
+## Kết Luận
+
+Thực tập là cơ hội tuyệt vời để học hỏi, tích lũy kinh nghiệm, và chuẩn bị cho sự nghiệp developer. Quan trọng nhất là thái độ học hỏi, sẵn sàng làm việc, và không ngại thử thách. Chúc các bạn tìm được kỳ thực tập phù hợp!
+
+**Nguồn:** Kinh nghiệm thực tế từ quá trình tìm việc và thực tập
+    `,
+  },
+  'cong-nghe-moi-2024': {
+    title: 'Công Nghệ Mới 2024: Xu Hướng Cho Developer',
+    date: '2024-01-24',
+    readTime: '15 phút đọc',
+    tags: ['Công Nghệ', 'Trend', '2024', 'Developer'],
+    source: 'Tổng hợp từ các nguồn công nghệ uy tín và xu hướng thị trường',
+    content: `
+# Công Nghệ Mới 2024: Xu Hướng Cho Developer
+
+## Giới Thiệu
+
+Năm 2024 mang đến nhiều xu hướng công nghệ mới thú vị. Bài viết này tổng hợp các công nghệ đang hot, xu hướng phát triển, và những gì developer nên học.
+
+## AI & Machine Learning
+
+### 1. Large Language Models (LLM)
+
+**Xu hướng:**
+- **ChatGPT, Claude, Gemini:** AI chatbots phổ biến
+- **AI Code Assistants:** GitHub Copilot, Cursor, Codeium
+- **AI trong Development:** Code generation, testing, documentation
+
+**Tác động:**
+- Developer có thể code nhanh hơn với AI assistance
+- Cần học cách prompt engineering
+- AI giúp giải quyết vấn đề phức tạp
+
+**Nên học:**
+- Cách sử dụng AI tools trong development
+- Prompt engineering
+- Tích hợp AI vào ứng dụng
+
+### 2. Machine Learning Frameworks
+
+- **TensorFlow, PyTorch:** Deep learning
+- **Scikit-learn:** Machine learning cơ bản
+- **Hugging Face:** Pre-trained models
+
+## Web Development
+
+### 1. React 19 & Next.js 15
+
+**React 19:**
+- Server Components
+- Improved performance
+- Better developer experience
+
+**Next.js 15:**
+- App Router stable
+- Server Actions
+- Improved SEO
+
+**Xu hướng:**
+- Full-stack React với Next.js
+- Server-side rendering
+- Edge computing
+
+### 2. Vue 3 & Nuxt 3
+
+- Composition API
+- Better TypeScript support
+- Performance improvements
+
+### 3. Svelte & SvelteKit
+
+- Compile-time optimization
+- Smaller bundle size
+- Growing ecosystem
+
+## Backend & API
+
+### 1. Serverless & Edge Computing
+
+**Platforms:**
+- **Vercel Edge Functions**
+- **Cloudflare Workers**
+- **AWS Lambda**
+
+**Lợi ích:**
+- Không cần quản lý server
+- Auto-scaling
+- Pay-as-you-go
+
+### 2. GraphQL
+
+- Type-safe APIs
+- Efficient data fetching
+- Growing adoption
+
+### 3. tRPC
+
+- End-to-end type safety
+- Great DX
+- Popular in TypeScript ecosystem
+
+## Mobile Development
+
+### 1. Flutter 3.x
+
+- Better performance
+- Web & Desktop support
+- Growing ecosystem
+
+### 2. React Native
+
+- Expo improvements
+- Better performance
+- Cross-platform development
+
+### 3. Native Development
+
+- SwiftUI (iOS)
+- Jetpack Compose (Android)
+
+## Database & Storage
+
+### 1. Vector Databases
+
+- **Pinecone, Weaviate:** For AI/ML applications
+- Growing với AI trend
+
+### 2. Edge Databases
+
+- **Turso, PlanetScale:** Edge-first databases
+- Low latency globally
+
+### 3. NoSQL Growth
+
+- **MongoDB:** Popular document database
+- **Redis:** Caching & real-time
+
+## DevOps & Infrastructure
+
+### 1. Docker & Kubernetes
+
+- Containerization standard
+- Microservices architecture
+- Cloud-native development
+
+### 2. CI/CD
+
+- **GitHub Actions:** Popular CI/CD
+- **GitLab CI:** Integrated solution
+- Automation everywhere
+
+### 3. Infrastructure as Code
+
+- **Terraform:** Infrastructure management
+- **Pulumi:** Code-based IaC
+
+## Developer Tools
+
+### 1. AI-Powered Tools
+
+- **GitHub Copilot:** AI pair programmer
+- **Cursor:** AI-powered editor
+- **v0.dev:** AI UI generation
+
+### 2. Better IDEs
+
+- **VS Code:** Most popular editor
+- **JetBrains:** Professional IDEs
+- **Cursor:** AI-first editor
+
+### 3. Testing Tools
+
+- **Playwright:** E2E testing
+- **Vitest:** Fast unit testing
+- **Testing Library:** Component testing
+
+## Web3 & Blockchain
+
+### 1. Smart Contracts
+
+- **Solidity:** Ethereum development
+- **Rust:** Solana development
+
+### 2. Web3 Frameworks
+
+- **Ethers.js, Web3.js:** Ethereum libraries
+- **Hardhat:** Development framework
+
+## Lời Khuyên Cho Developer
+
+### 1. Đừng Chạy Theo Mọi Trend
+
+- Chọn công nghệ phù hợp với dự án
+- Học sâu hơn học rộng
+- Focus vào fundamentals
+
+### 2. Học Công Nghệ Mới Có Chọn Lọc
+
+- **Nên học:** Công nghệ có community lớn, documentation tốt
+- **Cân nhắc:** Công nghệ mới nhưng chưa stable
+- **Tránh:** Công nghệ đang chết dần
+
+### 3. Fundamentals Quan Trọng
+
+- Algorithms & Data Structures
+- System Design
+- Clean Code
+- Best Practices
+
+## Kết Luận
+
+Năm 2024 mang đến nhiều cơ hội cho developer với AI, web development improvements, và các công nghệ mới. Quan trọng là học có chọn lọc, tập trung vào fundamentals, và áp dụng vào dự án thực tế.
+
+**Nguồn:** Tổng hợp từ các nguồn công nghệ uy tín và xu hướng thị trường
+    `,
+  },
+  'tips-sinh-vien-it': {
+    title: '10 Tips Cho Sinh Viên IT: Từ Học Tập Đến Sự Nghiệp',
+    date: '2024-01-22',
+    readTime: '8 phút đọc',
+    tags: ['Tips', 'Sinh Viên', 'Career', 'IT'],
+    source: 'Tổng hợp từ kinh nghiệm cá nhân và cộng đồng developer',
+    content: `
+# 10 Tips Cho Sinh Viên IT: Từ Học Tập Đến Sự Nghiệp
+
+## Giới Thiệu
+
+Là sinh viên IT, có rất nhiều điều cần học và chuẩn bị. Bài viết này tổng hợp 10 tips quan trọng nhất từ học tập đến xây dựng sự nghiệp developer.
+
+## 1. Code Mỗi Ngày
+
+### Tại Sao?
+
+- **Consistency > Intensity:** Code 30 phút mỗi ngày tốt hơn code 5 giờ một lần
+- **Xây dựng thói quen:** Làm quen với code, không bị quên
+- **Tích lũy kinh nghiệm:** Mỗi ngày học một chút, lâu dài sẽ giỏi
+
+### Làm Thế Nào?
+
+- **Set goal nhỏ:** Code 30 phút mỗi ngày
+- **Track progress:** Dùng GitHub contribution graph
+- **Join challenges:** 100 Days of Code, Advent of Code
+
+## 2. Xây Dựng Portfolio
+
+### Portfolio Nên Có Gì?
+
+- **2-3 dự án hoàn chỉnh:** Không phải tutorial, mà là dự án tự làm
+- **Code trên GitHub:** Public repos với README rõ ràng
+- **Live demos:** Deploy lên Netlify, Vercel, hoặc GitHub Pages
+- **Documentation:** Giải thích công nghệ, vấn đề đã giải quyết
+
+### Tips
+
+- Chất lượng > Số lượng
+- Chọn dự án thể hiện được kỹ năng
+- Update thường xuyên
+
+## 3. Học Từ Nhiều Nguồn
+
+### Đa Dạng Nguồn Học
+
+- **Video tutorials:** YouTube, Udemy
+- **Documentation:** Official docs
+- **Blog posts:** Dev.to, Medium
+- **Books:** Technical books
+- **Practice:** LeetCode, HackerRank
+
+### Cách Học Hiệu Quả
+
+- Không chỉ xem, mà phải code theo
+- Tự làm lại không xem tutorial
+- Giải thích lại cho người khác
+
+## 4. Tham Gia Cộng Đồng
+
+### Lợi Ích
+
+- **Học từ người khác:** Code review, best practices
+- **Network:** Kết nối với developer khác
+- **Cơ hội:** Job opportunities, collaboration
+- **Motivation:** Động lực học tập
+
+### Nơi Tham Gia
+
+- **GitHub:** Contribute to open source
+- **Discord/Slack:** Developer communities
+- **Meetups:** Local tech events
+- **Forums:** Stack Overflow, Reddit
+
+## 5. Đọc Code Của Người Khác
+
+### Tại Sao?
+
+- **Học best practices:** Xem cách người giỏi code
+- **Học patterns:** Design patterns, architecture
+- **Mở rộng kiến thức:** Công nghệ mới, cách giải quyết vấn đề
+
+### Làm Thế Nào?
+
+- **GitHub Explore:** Tìm repos phổ biến
+- **Open source:** Contribute to projects
+- **Code review:** Review code của người khác
+
+## 6. Viết Blog & Chia Sẻ
+
+### Lợi Ích
+
+- **Củng cố kiến thức:** Viết giúp hiểu sâu hơn
+- **Portfolio:** Showcase kiến thức
+- **Network:** Kết nối với cộng đồng
+- **Career:** Cải thiện cơ hội việc làm
+
+### Viết Về Gì?
+
+- Những gì đã học
+- Dự án đã làm
+- Vấn đề đã giải quyết
+- Tutorial, guides
+
+## 7. Học Git & GitHub
+
+### Tại Sao Quan Trọng?
+
+- **Industry standard:** Mọi công ty đều dùng
+- **Collaboration:** Làm việc nhóm
+- **Portfolio:** Showcase projects
+- **Version control:** Quản lý code
+
+### Nên Học Gì?
+
+- Basic Git commands
+- GitHub workflow
+- Pull requests
+- Branching strategy
+- Git best practices
+
+## 8. Tập Trung Vào Fundamentals
+
+### Đừng Chạy Theo Framework
+
+- **Fundamentals trước:** JavaScript, HTML, CSS
+- **Sau đó mới học framework:** React, Vue, Angular
+- **Hiểu cách hoạt động:** Không chỉ biết dùng
+
+### Fundamentals Quan Trọng
+
+- **Algorithms & Data Structures**
+- **System Design basics**
+- **Database concepts**
+- **Networking basics**
+- **Security basics**
+
+## 9. Làm Dự Án Thực Tế
+
+### Tại Sao?
+
+- **Áp dụng kiến thức:** Tổng hợp những gì đã học
+- **Học từ sai lầm:** Gặp bug, giải quyết vấn đề
+- **Portfolio:** Có sản phẩm để show
+
+### Dự Án Nên Làm
+
+- **Clone websites:** Facebook, Twitter, Instagram
+- **Build tools:** Todo app, calculator, weather app
+- **Full-stack apps:** Blog, e-commerce, social media
+- **Open source:** Contribute to existing projects
+
+## 10. Chuẩn Bị Cho Sự Nghiệp
+
+### Sớm Bắt Đầu
+
+- **Year 2-3:** Bắt đầu xây dựng portfolio
+- **Year 3-4:** Tìm thực tập
+- **Final year:** Chuẩn bị cho full-time job
+
+### Cần Chuẩn Bị
+
+- **Portfolio:** Dự án, GitHub profile
+- **CV:** Format đẹp, highlight skills
+- **Interview skills:** Practice coding, system design
+- **Network:** Kết nối với industry
+
+## Bonus Tips
+
+### 11. Đừng So Sánh Bản Thân
+
+- Mỗi người có tốc độ học khác nhau
+- So sánh với chính mình ngày hôm qua
+- Focus vào progress của bản thân
+
+### 12. Nghỉ Ngơi Đầy Đủ
+
+- Burnout là vấn đề thật
+- Nghỉ ngơi giúp học tốt hơn
+- Balance giữa học và chơi
+
+### 13. Đừng Sợ Sai
+
+- Bug là bạn, không phải kẻ thù
+- Mỗi lỗi là cơ hội học hỏi
+- Fail fast, learn faster
+
+## Kết Luận
+
+Hành trình từ sinh viên IT đến developer không dễ, nhưng với những tips trên, bạn có thể chuẩn bị tốt hơn. Quan trọng nhất là kiên trì, thực hành thường xuyên, và không ngừng học hỏi. Chúc các bạn thành công!
+
+**Nguồn:** Tổng hợp từ kinh nghiệm cá nhân và cộng đồng developer
+    `,
+  },
 }
 
 const BlogPost = () => {
@@ -3419,90 +4343,133 @@ const BlogPost = () => {
         type="article"
       />
       
-      <div className="pt-24 pb-20">
+      <div className="pt-24 pb-20 min-h-screen bg-gray-50 dark:bg-gray-900">
         <div className="container-custom">
           <AnimatedSection>
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               {/* Back Button */}
               <Link 
                 to="/blog" 
-                className="inline-flex items-center gap-2 mb-8 hover:text-primary-light dark:hover:text-primary-dark transition-colors"
+                className="inline-flex items-center gap-2 mb-8 text-gray-600 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark transition-colors font-medium"
               >
-                <FiArrowLeft />
-                Back to Blog
+                <FiArrowLeft className="w-5 h-5" />
+                <span>Quay lại Blog</span>
               </Link>
 
               {/* Post Header */}
-              <article className="card">
-                <header className="mb-8">
-                  <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <article className="bg-white dark:bg-surface-dark rounded-2xl shadow-2xl p-8 md:p-12 lg:p-16 border border-gray-200/50 dark:border-gray-700/50">
+                <header className="mb-12 pb-10 border-b-2 border-gray-200 dark:border-gray-700">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-gray-900 dark:text-gray-100">
                     {post.title}
                   </h1>
                   
-                  <div className="flex flex-wrap items-center gap-4 text-sm opacity-70 mb-4">
+                  <div className="flex flex-wrap items-center gap-6 text-base mb-6 text-gray-600 dark:text-gray-400">
                     <div className="flex items-center gap-2">
-                      <FiCalendar className="w-4 h-4" />
-                      <span>{new Date(post.date).toLocaleDateString('en-US', { 
+                      <FiCalendar className="w-5 h-5 text-primary-light dark:text-primary-dark" />
+                      <span className="font-medium">{new Date(post.date).toLocaleDateString('vi-VN', { 
+                        day: 'numeric',
                         month: 'long', 
-                        day: 'numeric', 
                         year: 'numeric' 
                       })}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <FiClock className="w-4 h-4" />
-                      <span>{post.readTime}</span>
+                      <FiClock className="w-5 h-5 text-primary-light dark:text-primary-dark" />
+                      <span className="font-medium">{post.readTime}</span>
                     </div>
                   </div>
                   
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3 mb-6">
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark rounded-full text-sm"
+                        className="px-4 py-2 bg-gradient-to-r from-primary-light/10 to-cyan-500/10 dark:from-primary-dark/10 dark:to-cyan-500/10 text-primary-light dark:text-primary-dark rounded-full text-sm font-semibold border border-primary-light/20 dark:border-primary-dark/20"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
+                  
+                  {post.source && (
+                    <div className="mt-6 p-5 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl border-l-4 border-primary-light dark:border-primary-dark">
+                      <p className="text-base font-medium text-gray-700 dark:text-gray-300">
+                        <span className="text-2xl mr-2">📚</span>
+                        <strong className="text-primary-light dark:text-primary-dark">Nguồn tham khảo:</strong> {post.source}
+                      </p>
+                    </div>
+                  )}
                 </header>
 
                 {/* Post Content */}
-                <div className="prose prose-lg dark:prose-invert max-w-none">
+                <div className="blog-content max-w-none mt-10">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{
                       code({node, inline, className, children, ...props}) {
                         const match = /language-(\w+)/.exec(className || '')
                         return !inline && match ? (
-                          <SyntaxHighlighter
-                            style={vscDarkPlus}
-                            language={match[1]}
-                            PreTag="div"
-                            {...props}
-                          >
-                            {String(children).replace(/\n$/, '')}
-                          </SyntaxHighlighter>
+                          <div className="my-6">
+                            <SyntaxHighlighter
+                              style={vscDarkPlus}
+                              language={match[1]}
+                              PreTag="div"
+                              className="rounded-lg"
+                              customStyle={{
+                                padding: '1.5rem',
+                                borderRadius: '0.5rem',
+                                fontSize: '0.95rem',
+                                lineHeight: '1.6',
+                              }}
+                              {...props}
+                            >
+                              {String(children).replace(/\n$/, '')}
+                            </SyntaxHighlighter>
+                          </div>
                         ) : (
-                          <code className={className} {...props}>
+                          <code className="px-2 py-1 rounded text-sm font-mono bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-orange-400" {...props}>
                             {children}
                           </code>
                         )
-                      }
+                      },
+                      h1: ({node, ...props}) => <h1 className="text-4xl md:text-5xl font-bold mt-12 mb-6 text-gray-900 dark:text-gray-100" {...props} />,
+                      h2: ({node, ...props}) => <h2 className="text-3xl md:text-4xl font-bold mt-10 mb-5 text-gray-800 dark:text-gray-200" {...props} />,
+                      h3: ({node, ...props}) => <h3 className="text-2xl md:text-3xl font-semibold mt-8 mb-4 text-gray-700 dark:text-gray-300" {...props} />,
+                      h4: ({node, ...props}) => <h4 className="text-xl md:text-2xl font-semibold mt-6 mb-3 text-gray-600 dark:text-gray-400" {...props} />,
+                      p: ({node, ...props}) => <p className="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300" {...props} />,
+                      ul: ({node, ...props}) => <ul className="mb-6 ml-6 list-disc space-y-2 text-lg leading-relaxed text-gray-700 dark:text-gray-300" {...props} />,
+                      ol: ({node, ...props}) => <ol className="mb-6 ml-6 list-decimal space-y-2 text-lg leading-relaxed text-gray-700 dark:text-gray-300" {...props} />,
+                      li: ({node, ...props}) => <li className="mb-2 text-lg leading-relaxed" {...props} />,
+                      strong: ({node, ...props}) => <strong className="font-bold text-gray-900 dark:text-gray-100" {...props} />,
+                      blockquote: ({node, ...props}) => (
+                        <blockquote className="border-l-4 border-blue-500 pl-6 py-2 my-6 italic bg-blue-50 dark:bg-blue-900/20 text-blue-900 dark:text-blue-200" {...props} />
+                      ),
+                      a: ({node, ...props}) => <a className="text-primary-light dark:text-primary-dark underline hover:no-underline transition-all" {...props} />,
                     }}
                   >
                     {post.content}
                   </ReactMarkdown>
                 </div>
+                
+                {/* Source Footer */}
+                {post.source && (
+                  <div className="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
+                    <div className="p-5 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl">
+                      <p className="text-base font-medium text-gray-700 dark:text-gray-300">
+                        <span className="text-2xl mr-2">📚</span>
+                        <strong className="text-primary-light dark:text-primary-dark">Nguồn:</strong> {post.source}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </article>
 
               {/* Share / Navigate */}
-              <div className="mt-8 flex justify-between items-center">
+              <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 flex justify-between items-center">
                 <Link 
                   to="/blog" 
-                  className="btn-secondary inline-flex items-center gap-2"
+                  className="btn-secondary inline-flex items-center gap-2 px-6 py-3"
                 >
-                  <FiArrowLeft />
-                  More Posts
+                  <FiArrowLeft className="w-5 h-5" />
+                  <span>Xem thêm bài viết</span>
                 </Link>
               </div>
             </div>

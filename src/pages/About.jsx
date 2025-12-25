@@ -26,12 +26,12 @@ const About = () => {
   }, [])
 
   const skills = {
-    'Frontend': ['React', 'Next.js', 'Vue.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5/CSS3'],
-    'Backend': ['Node.js', 'Express', 'Python', 'Django', 'REST APIs', 'GraphQL'],
-    'Database': ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase', 'Redis'],
-    'AI/ML': ['TensorFlow', 'PyTorch', 'Scikit-learn', 'OpenAI API', 'Langchain'],
-    'Tools & DevOps': ['Git', 'Docker', 'AWS', 'Vercel', 'Netlify', 'CI/CD', 'Linux'],
-    'Other': ['Agile', 'Scrum', 'Problem Solving', 'UI/UX Design', 'SEO'],
+    'Frontend': ['JavaScript', 'HTML', 'CSS', 'React'],
+    'Mobile Development': ['Dart', 'Flutter'],
+    'Backend': ['Node.js', 'Express.js', 'C#', '.NET'],
+    'Database & Services': ['Firebase Authentication', 'Firestore', 'MongoDB'],
+    'Tools': ['Git', 'GitHub', 'Postman', 'VS Code'],
+    'Projects': ['Trip Hotel Full-Stack (Flutter)', 'Hotel Web (JavaScript)', 'Web Bán Hàng (HTML/C#)', 'Windows Forms (C#)'],
   }
 
   const courses = [
@@ -40,42 +40,48 @@ const About = () => {
       platform: 'Udemy',
       instructor: 'Angela Yu',
       completed: '2023',
-      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js']
+      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'],
+      url: 'https://www.udemy.com/course/the-complete-web-development-bootcamp/'
     },
     {
       name: 'Advanced React Patterns',
       platform: 'Frontend Masters',
       instructor: 'Kent C. Dodds',
       completed: '2023',
-      skills: ['React', 'Hooks', 'Context API', 'Custom Hooks']
+      skills: ['React', 'Hooks', 'Context API', 'Custom Hooks'],
+      url: 'https://frontendmasters.com/courses/advanced-react-patterns/'
     },
     {
       name: 'Machine Learning A-Z',
       platform: 'Udemy',
       instructor: 'Kirill Eremenko',
       completed: '2024',
-      skills: ['Python', 'ML', 'Data Science', 'AI']
+      skills: ['Python', 'ML', 'Data Science', 'AI'],
+      url: 'https://www.udemy.com/course/machinelearning/'
     },
     {
       name: 'Full Stack Open',
       platform: 'University of Helsinki',
       instructor: 'Online Course',
       completed: '2023',
-      skills: ['React', 'Node.js', 'MongoDB', 'GraphQL']
+      skills: ['React', 'Node.js', 'MongoDB', 'GraphQL'],
+      url: 'https://fullstackopen.com/'
     },
     {
       name: 'CS50: Introduction to Computer Science',
       platform: 'Harvard University (edX)',
       instructor: 'David J. Malan',
       completed: '2023',
-      skills: ['C', 'Python', 'SQL', 'Algorithms', 'Data Structures']
+      skills: ['C', 'Python', 'SQL', 'Algorithms', 'Data Structures'],
+      url: 'https://www.edx.org/course/introduction-computer-science-harvardx-cs50x'
     },
     {
       name: 'Docker & Kubernetes',
       platform: 'Udemy',
       instructor: 'Stephen Grider',
       completed: '2024',
-      skills: ['Docker', 'Kubernetes', 'DevOps', 'CI/CD']
+      skills: ['Docker', 'Kubernetes', 'DevOps', 'CI/CD'],
+      url: 'https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/'
     }
   ]
 
@@ -220,23 +226,28 @@ const About = () => {
                 <h2 className="text-2xl font-bold mb-4">Về Tôi</h2>
                 <div className="space-y-4 opacity-90">
                   <p>
-                    Xin chào! Tôi là Cao Nhất Đỉnh, một full-stack developer đam mê công nghệ và luôn học hỏi.
-                    Tôi yêu thích việc xây dựng các ứng dụng web hiện đại, tối ưu hiệu suất và trải nghiệm người dùng.
+                    Xin chào! Tôi là Cao Nhất Đỉnh, một Software Engineer với kinh nghiệm phát triển ứng dụng web và mobile. 
+                    Tôi đam mê xây dựng các ứng dụng thực tế, từ web applications đến mobile apps.
                   </p>
                   <p>
-                    Chuyên môn của tôi tập trung vào React, Node.js và các công nghệ JavaScript hiện đại. 
-                    Tôi cũng đang nghiên cứu và áp dụng AI/Machine Learning vào các dự án thực tế, đặc biệt 
-                    quan tâm đến các mô hình ngôn ngữ lớn (LLM) và ứng dụng AI trong phát triển web.
+                    Chuyên môn của tôi bao gồm:
                   </p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Frontend Web:</strong> JavaScript, HTML, CSS, React - phát triển giao diện web responsive và hiện đại</li>
+                    <li><strong>Mobile Development:</strong> Dart, Flutter - xây dựng ứng dụng mobile đa nền tảng</li>
+                    <li><strong>Backend:</strong> C# - phát triển ứng dụng desktop và backend services</li>
+                  </ul>
                   <p>
-                    Ngoài coding, tôi thích chia sẻ kiến thức qua các bài viết blog, tham gia các dự án 
-                    open source và luôn tìm kiếm cơ hội học hỏi công nghệ mới. Tôi tin rằng học tập suốt 
-                    đời và chia sẻ kiến thức là chìa khóa để phát triển bản thân và cộng đồng developer.
+                    Các dự án nổi bật tôi đã phát triển:
                   </p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Trip Hotel Full-Stack</strong> - Ứng dụng đặt phòng khách sạn được xây dựng với Flutter (Dart)</li>
+                    <li><strong>Hotel Web</strong> - Website quản lý khách sạn với JavaScript, HTML, CSS</li>
+                    <li><strong>Web Bán Hàng</strong> - Hệ thống bán hàng online với HTML, C#, CSS</li>
+                    <li><strong>Windows Forms</strong> - Ứng dụng desktop với C#</li>
+                  </ul>
                   <p>
-                    Tôi đã hoàn thành nhiều khóa học chuyên sâu từ các nền tảng hàng đầu như Udemy, 
-                    Frontend Masters, Harvard CS50 và nhiều hơn nữa. Luôn sẵn sàng hợp tác trong các 
-                    dự án thú vị và chia sẻ kinh nghiệm!
+                    Tôi luôn học hỏi và cập nhật công nghệ mới, chia sẻ kiến thức qua blog và tham gia các dự án open source.
                   </p>
                 </div>
               </div>
@@ -287,9 +298,14 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {courses.map((course, index) => (
                   <AnimatedSection key={course.name} delay={0.1 * index}>
-                    <div className="card">
+                    <a
+                      href={course.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="card block hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+                    >
                       <div className="flex items-start justify-between mb-3">
-                        <h3 className="text-lg font-bold text-primary-light dark:text-primary-dark">
+                        <h3 className="text-lg font-bold text-primary-light dark:text-primary-dark hover:underline">
                           {course.name}
                         </h3>
                         <span className="text-xs px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full">
@@ -302,7 +318,7 @@ const About = () => {
                       <p className="text-sm opacity-70 mb-3">
                         👨‍🏫 {course.instructor}
                       </p>
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-1 mb-3">
                         {course.skills.map((skill) => (
                           <span
                             key={skill}
@@ -312,7 +328,10 @@ const About = () => {
                           </span>
                         ))}
                       </div>
-                    </div>
+                      <div className="text-xs text-primary-light dark:text-primary-dark font-medium mt-2">
+                        Xem khóa học → 
+                      </div>
+                    </a>
                   </AnimatedSection>
                 ))}
               </div>

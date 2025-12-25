@@ -33,9 +33,9 @@ const Footer = () => {
           {/* About Section */}
           <div>
             <h3 className="text-lg font-bold mb-4">Về Tôi</h3>
-            <p className="text-sm opacity-80">
-              Blog cá nhân và portfolio của Cao Nhất Đỉnh - Full-Stack Developer đam mê công nghệ, 
-              chia sẻ kiến thức lập trình và hành trình phát triển bản thân.
+            <p className="text-sm opacity-80 leading-relaxed">
+              Software Engineer chuyên phát triển ứng dụng web full-stack với React, Node.js và các công nghệ hiện đại. 
+              Đam mê AI/Machine Learning và chia sẻ kiến thức lập trình qua blog để cùng phát triển với cộng đồng developer.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-text-light/10 dark:border-text-dark/10 text-center text-sm opacity-80">
           <p>&copy; {currentYear} Cao Nhất Đỉnh. Built with ❤️ using React, Tailwind CSS & Vite.</p>
-          <p className="mt-2">All rights reserved.</p>
+          <p className="mt-2 opacity-70">All rights reserved.</p>
         </div>
       </div>
     </footer>

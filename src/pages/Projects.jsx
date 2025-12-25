@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import SEO from '../components/SEO'
 import AnimatedSection from '../components/AnimatedSection'
 import Loading from '../components/Loading'
-import { fetchRepositories, getRepositoryThumbnail } from '../api/github'
+import { fetchRepositories, getRepositoryThumbnail, fetchRepositoryDetails } from '../api/github'
 
 const Projects = () => {
   const [repos, setRepos] = useState([])
@@ -15,9 +15,84 @@ const Projects = () => {
   useEffect(() => {
     const loadRepositories = async () => {
       try {
-        const data = await fetchRepositories()
-        setRepos(data)
+        const GITHUB_USERNAME = 'CaoDinh-cnd04'
+        const GITHUB_API_BASE = 'https://api.github.com'
+        
+        // Define the exact names of the 3 featured projects
+        const featuredRepoNames = [
+          'trip-hotel-fullstack',  // 1. Trip Hotel Full-Stack
+          'WebBanHang',            // 2. Website bán hàng
+          '-personal-blog'         // 3. Personal Blog (with dash prefix)
+        ]
+        
+        // Fetch the 3 specific repos directly from GitHub API
+        const featuredRepos = []
+        
+        for (const repoName of featuredRepoNames) {
+          try {
+            const response = await fetch(`${GITHUB_API_BASE}/repos/${GITHUB_USERNAME}/${repoName}`)
+            if (response.ok) {
+              const repo = await response.json()
+              featuredRepos.push(repo)
+            } else {
+              console.warn(`Repo ${repoName} not found or not accessible`)
+            }
+          } catch (err) {
+            console.warn(`Failed to fetch repo ${repoName}:`, err)
+          }
+        }
+        
+        // If we still don't have 3 repos, try fetching all repos and filtering
+        if (featuredRepos.length < 3) {
+          try {
+            const allReposResponse = await fetch(`${GITHUB_API_BASE}/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`)
+            if (allReposResponse.ok) {
+              const allRepos = await allReposResponse.json()
+              
+              // Try to find missing repos with pattern matching
+              const patterns = [
+                { pattern: (name) => name.toLowerCase().includes('trip') && name.toLowerCase().includes('hotel'), priority: 1 },
+                { pattern: (name) => name.toLowerCase().includes('web') && name.toLowerCase().includes('ban'), priority: 2 },
+                { pattern: (name) => name.toLowerCase().includes('personal') && name.toLowerCase().includes('blog'), priority: 3 }
+              ]
+              
+              for (const { pattern, priority } of patterns) {
+                if (featuredRepos.length >= 3) break
+                
+                const found = allRepos.find(repo => {
+                  const name = repo.name.toLowerCase()
+                  return pattern(name) && !featuredRepos.some(fr => fr.id === repo.id)
+                })
+                
+                if (found) {
+                  featuredRepos.push(found)
+                }
+              }
+            }
+          } catch (err) {
+            console.warn('Failed to fetch all repos:', err)
+          }
+        }
+        
+        // Sort to ensure order: trip-hotel-fullstack, WebBanHang, personal-blog
+        featuredRepos.sort((a, b) => {
+          const aName = a.name.toLowerCase()
+          const bName = b.name.toLowerCase()
+          
+          const getPriority = (name) => {
+            if (name.includes('trip') && name.includes('hotel')) return 1
+            if (name.includes('web') && name.includes('ban')) return 2
+            if (name.includes('personal') && name.includes('blog')) return 3
+            return 4
+          }
+          
+          return getPriority(aName) - getPriority(bName)
+        })
+        
+        console.log('Featured repos found:', featuredRepos.map(r => r.name))
+        setRepos(featuredRepos.slice(0, 3)) // Only show 3 projects
       } catch (err) {
+        console.error('Error loading repositories:', err)
         setError(err.message)
       } finally {
         setLoading(false)

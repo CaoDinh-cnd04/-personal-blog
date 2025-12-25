@@ -44,7 +44,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="text-xl font-bold">
-            <span className="text-primary-light dark:text-primary-dark">Portfolio</span>
+            <span className="text-primary-light dark:text-primary-dark">Cao Nhất Đỉnh</span>
           </Link>
 
           {/* Desktop Navigation */}

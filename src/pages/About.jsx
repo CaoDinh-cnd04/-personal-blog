@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { FiGithub, FiMapPin, FiUsers, FiStar } from 'react-icons/fi'
-import { motion } from 'framer-motion'
+import { FiGithub, FiMapPin, FiUsers, FiStar, FiX, FiExternalLink } from 'react-icons/fi'
+import { motion, AnimatePresence } from 'framer-motion'
 import SEO from '../components/SEO'
 import AnimatedSection from '../components/AnimatedSection'
 import Loading from '../components/Loading'
@@ -10,6 +10,7 @@ const About = () => {
   const [profile, setProfile] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [selectedCertificate, setSelectedCertificate] = useState(null)
 
   useEffect(() => {
     const loadProfile = async () => {
@@ -91,21 +92,27 @@ const About = () => {
       platform: 'Cisco Networking Academy',
       issued: 'Nov 25, 2025',
       badge: '🌐',
-      skills: ['Network Communication', 'IP Addressing', 'IPv4/IPv6', 'Routers', 'Wireless Networks']
+      skills: ['Network Communication', 'IP Addressing', 'IPv4/IPv6', 'Routers', 'Wireless Networks'],
+      image: '/images/certificates/networking-basics.png',
+      verifyLink: 'https://www.credly.com/badges/your-badge-id' // Thay bằng link verify thực tế từ QR code
     },
     {
       name: 'JavaScript Essentials 1',
       platform: 'Cisco Networking Academy & OpenEDG JS Institute',
       issued: 'Dec 08, 2025',
       badge: '💻',
-      skills: ['JavaScript', 'Variables', 'Data Types', 'Flow Control', 'Functions', 'Algorithms']
+      skills: ['JavaScript', 'Variables', 'Data Types', 'Flow Control', 'Functions', 'Algorithms'],
+      image: '/images/certificates/javascript-essentials-1.png',
+      verifyLink: 'https://www.credly.com/badges/your-badge-id' // Thay bằng link verify thực tế từ QR code
     },
     {
       name: 'JavaScript Essentials 2',
       platform: 'Cisco Networking Academy & OpenEDG JS Institute',
       issued: 'Dec 09, 2025',
       badge: '⚡',
-      skills: ['OOP', 'Prototypes', 'Classes', 'JSON', 'Async Programming', 'Callbacks']
+      skills: ['OOP', 'Prototypes', 'Classes', 'JSON', 'Async Programming', 'Callbacks'],
+      image: '/images/certificates/javascript-essentials-2.png',
+      verifyLink: 'https://www.credly.com/badges/your-badge-id' // Thay bằng link verify thực tế từ QR code
     }
   ]
 
@@ -276,7 +283,12 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {certificates.map((cert, index) => (
                   <AnimatedSection key={cert.name} delay={0.1 * index}>
-                    <div className="card h-full hover:scale-105 transition-transform duration-300">
+                    <motion.div 
+                      className="card h-full hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      onClick={() => setSelectedCertificate(cert)}
+                      whileHover={{ y: -5 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
                       <div className="text-center mb-4">
                         <div className="text-5xl mb-3">{cert.badge}</div>
                         <h3 className="text-lg font-bold text-primary-light dark:text-primary-dark mb-2">
@@ -299,12 +311,90 @@ const About = () => {
                           </span>
                         ))}
                       </div>
-                    </div>
+                      <div className="mt-4 text-center">
+                        <span className="text-xs text-primary-light dark:text-primary-dark opacity-70">
+                          👆 Click để xem chứng chỉ
+                        </span>
+                      </div>
+                    </motion.div>
                   </AnimatedSection>
                 ))}
               </div>
             </div>
           </AnimatedSection>
+
+          {/* Certificate Modal */}
+          <AnimatePresence>
+            {selectedCertificate && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+                onClick={() => setSelectedCertificate(null)}
+              >
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  className="relative max-w-4xl w-full max-h-[90vh] bg-surface-light dark:bg-background-dark rounded-2xl shadow-2xl overflow-hidden"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setSelectedCertificate(null)}
+                    className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
+                    aria-label="Close"
+                  >
+                    <FiX className="w-6 h-6" />
+                  </button>
+
+                  {/* Certificate Image */}
+                  <div className="relative w-full h-full overflow-auto">
+                    <img
+                      src={selectedCertificate.image}
+                      alt={selectedCertificate.name}
+                      className="w-full h-auto object-contain"
+                      onError={(e) => {
+                        e.target.src = 'https://via.placeholder.com/800x600?text=Certificate+Image+Not+Found'
+                        e.target.alt = 'Certificate image not found'
+                      }}
+                    />
+                  </div>
+
+                  {/* Certificate Info & Actions */}
+                  <div className="p-6 bg-surface-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-700">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-primary-light dark:text-primary-dark mb-2">
+                          {selectedCertificate.name}
+                        </h3>
+                        <p className="text-sm opacity-80 mb-1">
+                          📜 {selectedCertificate.platform}
+                        </p>
+                        <p className="text-xs opacity-70">
+                          🗓️ Issued: {selectedCertificate.issued}
+                        </p>
+                      </div>
+                      {selectedCertificate.verifyLink && (
+                        <a
+                          href={selectedCertificate.verifyLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary inline-flex items-center gap-2 whitespace-nowrap"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FiExternalLink className="w-4 h-4" />
+                          Verify Certificate
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Online Courses */}
           <AnimatedSection delay={0.8}>

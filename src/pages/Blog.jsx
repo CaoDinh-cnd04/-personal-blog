@@ -15,81 +15,9 @@ const blogPosts = [
     readTime: '12 phút đọc',
     tags: ['Học Tập', 'IT', 'Kinh Nghiệm', 'Sinh Viên'],
     gradient: 'from-purple-500 to-pink-500',
-    icon: '📚',
+    icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/freecodecamp.svg',
     featured: true,
     source: 'Kinh nghiệm cá nhân từ hành trình học IT',
-  },
-  {
-    slug: 'kinh-nghiem-thuc-tap-it',
-    title: 'Kinh Nghiệm Thực Tập IT: Từ Sinh Viên Đến Developer',
-    excerpt: 'Những điều cần biết khi đi thực tập IT: cách tìm công ty phù hợp, chuẩn bị CV, phỏng vấn, và những kỹ năng cần thiết. Kinh nghiệm thực tế từ góc nhìn sinh viên.',
-    date: '2024-01-26',
-    readTime: '10 phút đọc',
-    tags: ['Thực Tập', 'Công Việc', 'IT', 'Career'],
-    gradient: 'from-blue-500 to-cyan-500',
-    icon: '💼',
-    featured: false,
-    source: 'Kinh nghiệm thực tế từ quá trình tìm việc và thực tập',
-  },
-  {
-    slug: 'cong-nghe-moi-2024',
-    title: 'Công Nghệ Mới 2024: Xu Hướng Cho Developer',
-    excerpt: 'Tổng hợp các công nghệ mới nổi bật trong năm 2024: AI/ML, Web3, Serverless, và những framework mới. Cập nhật xu hướng công nghệ cho developer trẻ.',
-    date: '2024-01-24',
-    readTime: '15 phút đọc',
-    tags: ['Công Nghệ', 'Trend', '2024', 'Developer'],
-    gradient: 'from-green-500 to-emerald-500',
-    icon: '🚀',
-    featured: false,
-    source: 'Tổng hợp từ các nguồn công nghệ uy tín và xu hướng thị trường',
-  },
-  {
-    slug: 'tips-sinh-vien-it',
-    title: '10 Tips Cho Sinh Viên IT: Từ Học Tập Đến Sự Nghiệp',
-    excerpt: '10 lời khuyên hữu ích cho sinh viên IT: cách học code hiệu quả, xây dựng portfolio, tham gia cộng đồng, và chuẩn bị cho sự nghiệp developer.',
-    date: '2024-01-22',
-    readTime: '8 phút đọc',
-    tags: ['Tips', 'Sinh Viên', 'Career', 'IT'],
-    gradient: 'from-orange-500 to-red-500',
-    icon: '💡',
-    featured: false,
-    source: 'Tổng hợp từ kinh nghiệm cá nhân và cộng đồng developer',
-  },
-  {
-    slug: 'trip-hotel-fullstack-flutter',
-    title: 'Xây Dựng Trip Hotel Full-Stack với Flutter: Hành Trình Từ Ý Tưởng Đến Sản Phẩm',
-    excerpt: 'Chia sẻ kinh nghiệm xây dựng ứng dụng đặt phòng khách sạn full-stack với Flutter (Dart). Từ thiết kế UI/UX, tích hợp API, quản lý state đến deploy ứng dụng mobile.',
-    date: '2024-01-25',
-    readTime: '15 phút đọc',
-    tags: ['Flutter', 'Dart', 'Mobile', 'Full-Stack', 'Project'],
-    gradient: 'from-blue-500 to-cyan-500',
-    icon: '🏨',
-    featured: true,
-    source: 'Dựa trên dự án thực tế: https://github.com/CaoDinh-cnd04/trip-hotel-fullstack',
-  },
-  {
-    slug: 'firebase-authentication-firestore',
-    title: 'Firebase Authentication & Firestore: Hướng Dẫn Tích Hợp Vào Ứng Dụng',
-    excerpt: 'Hướng dẫn chi tiết cách tích hợp Firebase Authentication và Firestore vào ứng dụng web/mobile. Từ setup project, authentication flows đến real-time database operations.',
-    date: '2024-01-23',
-    readTime: '12 phút đọc',
-    tags: ['Firebase', 'Authentication', 'Firestore', 'Backend'],
-    gradient: 'from-orange-500 to-yellow-500',
-    icon: '🔥',
-    featured: false,
-    source: 'Tham khảo: Firebase Official Documentation - https://firebase.google.com/docs',
-  },
-  {
-    slug: 'nodejs-express-rest-api',
-    title: 'Node.js & Express.js: Xây Dựng RESTful API Chuyên Nghiệp',
-    excerpt: 'Hướng dẫn xây dựng RESTful API với Node.js và Express.js. Bao gồm routing, middleware, error handling, JWT authentication và best practices từ thực tế.',
-    date: '2024-01-20',
-    readTime: '11 phút đọc',
-    tags: ['Node.js', 'Express', 'REST API', 'Backend', 'JWT'],
-    gradient: 'from-green-600 to-green-400',
-    icon: '🟢',
-    featured: false,
-    source: 'Tham khảo: Express.js Documentation - https://expressjs.com/',
   },
   {
     slug: 'react-fundamentals-2024',
@@ -99,105 +27,33 @@ const blogPosts = [
     readTime: '10 phút đọc',
     tags: ['React', 'JavaScript', 'Frontend', 'Tutorial'],
     gradient: 'from-cyan-500 to-blue-500',
-    icon: '⚛️',
+    icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg',
     featured: false,
     source: 'Dựa trên dự án: https://github.com/CaoDinh-cnd04/hotel_web',
   },
   {
-    slug: 'mongodb-schema-design',
-    title: 'MongoDB Schema Design: Best Practices và Kinh Nghiệm Thực Tế',
-    excerpt: 'Kinh nghiệm thiết kế schema MongoDB cho dự án thực tế. Từ data modeling, indexing, aggregation pipeline đến tối ưu performance cho ứng dụng booking system.',
-    date: '2024-01-15',
-    readTime: '12 phút đọc',
-    tags: ['MongoDB', 'Database', 'Best Practices', 'Backend'],
-    gradient: 'from-green-700 to-emerald-500',
-    icon: '🍃',
+    slug: 'trip-hotel-fullstack-flutter',
+    title: 'Xây Dựng Trip Hotel Full-Stack với Flutter: Hành Trình Từ Ý Tưởng Đến Sản Phẩm',
+    excerpt: 'Chia sẻ kinh nghiệm xây dựng ứng dụng đặt phòng khách sạn full-stack với Flutter (Dart). Từ thiết kế UI/UX, tích hợp API, quản lý state đến deploy ứng dụng mobile.',
+    date: '2024-01-25',
+    readTime: '15 phút đọc',
+    tags: ['Flutter', 'Dart', 'Mobile', 'Full-Stack', 'Project'],
+    gradient: 'from-blue-500 to-cyan-500',
+    icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/flutter.svg',
     featured: false,
-    source: 'Tham khảo: MongoDB Documentation - https://www.mongodb.com/docs/',
+    source: 'Dựa trên dự án thực tế: https://github.com/CaoDinh-cnd04/trip-hotel-fullstack',
   },
   {
-    slug: 'flutter-dart-basics',
-    title: 'Flutter & Dart: Bắt Đầu Với Mobile Development',
-    excerpt: 'Hướng dẫn Flutter và Dart cho người mới bắt đầu. Từ cài đặt, widgets, state management đến build ứng dụng đầu tiên. Kinh nghiệm từ dự án Trip Hotel Full-Stack.',
-    date: '2024-01-12',
+    slug: '10-cong-cu-developer-nen-biet-2024',
+    title: '10 Công Cụ Developer Nên Biết Năm 2024: Tăng Năng Suất Làm Việc',
+    excerpt: 'Tổng hợp 10 công cụ developer hàng đầu năm 2024 giúp tăng năng suất làm việc: từ code editor, version control, API testing đến deployment tools. Công cụ nào đáng học nhất?',
+    date: '2024-01-30',
     readTime: '14 phút đọc',
-    tags: ['Flutter', 'Dart', 'Mobile', 'Tutorial'],
-    gradient: 'from-blue-600 to-indigo-600',
-    icon: '📱',
+    tags: ['Tools', 'Developer', 'Productivity', '2024', 'Tips'],
+    gradient: 'from-orange-500 to-red-500',
+    icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/visualstudiocode.svg',
     featured: false,
-    source: 'Dựa trên dự án: https://github.com/CaoDinh-cnd04/trip-hotel-fullstack',
-  },
-  {
-    slug: 'git-github-workflow',
-    title: 'Git & GitHub: Workflow và Best Practices Cho Developer',
-    excerpt: 'Hướng dẫn sử dụng Git và GitHub hiệu quả. Từ basic commands, branching strategies, pull requests đến collaboration workflows cho team projects.',
-    date: '2024-01-10',
-    readTime: '9 phút đọc',
-    tags: ['Git', 'GitHub', 'DevOps', 'Tools'],
-    gradient: 'from-gray-700 to-gray-900',
-    icon: '🔀',
-    featured: false,
-    source: 'Tham khảo: Git Documentation - https://git-scm.com/doc',
-  },
-  {
-    slug: 'postman-api-testing',
-    title: 'Postman: Testing và Debugging API Hiệu Quả',
-    excerpt: 'Hướng dẫn sử dụng Postman để test API, tạo collections, environment variables, và automation testing. Công cụ không thể thiếu cho backend developer.',
-    date: '2024-01-08',
-    readTime: '8 phút đọc',
-    tags: ['Postman', 'API', 'Testing', 'Tools'],
-    gradient: 'from-orange-600 to-red-600',
-    icon: '📬',
-    featured: false,
-    source: 'Tham khảo: Postman Documentation - https://learning.postman.com/',
-  },
-  {
-    slug: 'javascript-fundamentals',
-    title: 'JavaScript Fundamentals: Những Khái Niệm Quan Trọng',
-    excerpt: 'Tổng hợp các khái niệm JavaScript quan trọng: variables, functions, objects, arrays, async/await, promises. Nền tảng cho React, Node.js và web development.',
-    date: '2024-01-05',
-    readTime: '10 phút đọc',
-    tags: ['JavaScript', 'Fundamentals', 'Frontend', 'Backend'],
-    gradient: 'from-yellow-500 to-orange-500',
-    icon: '📘',
-    featured: false,
-    source: 'Tham khảo: MDN Web Docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-  },
-  {
-    slug: 'html-css-responsive-design',
-    title: 'HTML & CSS: Xây Dựng Responsive Web Design',
-    excerpt: 'Hướng dẫn HTML/CSS cơ bản và responsive design. Từ layout, flexbox, grid đến media queries. Áp dụng vào các dự án WebBanHang và Hotel Web.',
-    date: '2024-01-03',
-    readTime: '9 phút đọc',
-    tags: ['HTML', 'CSS', 'Frontend', 'Responsive Design'],
-    gradient: 'from-pink-500 to-purple-500',
-    icon: '🎨',
-    featured: false,
-    source: 'Dựa trên dự án: https://github.com/CaoDinh-cnd04/WebBanHang',
-  },
-  {
-    slug: 'csharp-dotnet-basics',
-    title: 'C# & .NET: Lập Trình Desktop và Backend',
-    excerpt: 'Giới thiệu C# và .NET framework. Từ Windows Forms applications đến backend development. Kinh nghiệm từ các dự án Windows Forms và Web Bán Hàng.',
-    date: '2023-12-28',
-    readTime: '11 phút đọc',
-    tags: ['C#', '.NET', 'Backend', 'Desktop'],
-    gradient: 'from-purple-600 to-indigo-600',
-    icon: '💻',
-    featured: false,
-    source: 'Dựa trên dự án: https://github.com/CaoDinh-cnd04/windows_form',
-  },
-  {
-    slug: 'deploy-react-netlify-vercel',
-    title: 'Deploy React Apps: Netlify vs Vercel - So Sánh Chi Tiết',
-    excerpt: 'So sánh Netlify và Vercel cho việc deploy React applications. Ưu nhược điểm, pricing, features và hướng dẫn deploy step-by-step từ kinh nghiệm thực tế.',
-    date: '2023-12-25',
-    readTime: '8 phút đọc',
-    tags: ['Deployment', 'React', 'Netlify', 'Vercel', 'DevOps'],
-    gradient: 'from-cyan-600 to-blue-600',
-    icon: '🚀',
-    featured: false,
-    source: 'Dựa trên kinh nghiệm deploy dự án Personal Blog',
+    source: 'Tổng hợp từ các nguồn công nghệ uy tín và kinh nghiệm cộng đồng developer',
   },
 ]
 
@@ -296,7 +152,7 @@ const Blog = () => {
               ease: "easeInOut"
             }}
           />
-        </div>
+            </div>
 
         <div className="container-custom relative z-10">
           {/* Hero Section with Enhanced Animation */}
@@ -498,7 +354,7 @@ const Blog = () => {
                             ease: "linear"
                           }}
                         />
-                      </div>
+                    </div>
                       
                       <motion.div
                         className="absolute inset-0 flex items-center justify-center"
@@ -512,7 +368,19 @@ const Blog = () => {
                           ease: "easeInOut"
                         }}
                       >
-                        <span className="text-9xl z-10 drop-shadow-2xl">{featuredPost.icon}</span>
+                        {featuredPost.icon.startsWith('http') || featuredPost.icon.startsWith('/') ? (
+                          <img 
+                            src={featuredPost.icon} 
+                            alt="Technology logo" 
+                            className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-2xl z-10"
+                            style={{ filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3))' }}
+                            onError={(e) => {
+                              e.target.style.display = 'none'
+                            }}
+                          />
+                        ) : (
+                          <span className="text-9xl z-10 drop-shadow-2xl">{featuredPost.icon}</span>
+                        )}
                       </motion.div>
                       
                       {/* Gradient Overlay */}
@@ -552,14 +420,14 @@ const Blog = () => {
                           <FiCalendar className="w-4 h-4" />
                           <span>{new Date(featuredPost.date).toLocaleDateString('vi-VN', { 
                             day: 'numeric',
-                            month: 'long', 
-                            year: 'numeric' 
-                          })}</span>
+                          month: 'long', 
+                          year: 'numeric' 
+                        })}</span>
                         </div>
                         <div className="flex items-center gap-2 text-sm opacity-70">
                           <FiClock className="w-4 h-4" />
                           <span>{featuredPost.readTime}</span>
-                        </div>
+                      </div>
                       </motion.div>
                       
                       <motion.h2
@@ -690,20 +558,41 @@ const Blog = () => {
                             whileHover={{ scale: 1.15, rotate: 5 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <motion.span
-                              className="text-7xl z-10 drop-shadow-lg"
-                              animate={{
-                                y: [0, -10, 0],
-                                rotate: [0, 5, -5, 0]
-                              }}
-                              transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                              }}
-                            >
-                              {post.icon}
-                            </motion.span>
+                            {post.icon.startsWith('http') || post.icon.startsWith('/') ? (
+                              <motion.img
+                                src={post.icon}
+                                alt="Technology logo"
+                                className="w-24 h-24 md:w-32 md:h-32 object-contain drop-shadow-lg z-10"
+                                style={{ filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))' }}
+                                animate={{
+                                  y: [0, -10, 0],
+                                  rotate: [0, 5, -5, 0]
+                                }}
+                                transition={{
+                                  duration: 4,
+                                  repeat: Infinity,
+                                  ease: "easeInOut"
+                                }}
+                                onError={(e) => {
+                                  e.target.style.display = 'none'
+                                }}
+                              />
+                            ) : (
+                              <motion.span
+                                className="text-7xl z-10 drop-shadow-lg"
+                                animate={{
+                                  y: [0, -10, 0],
+                                  rotate: [0, 5, -5, 0]
+                                }}
+                                transition={{
+                                  duration: 4,
+                                  repeat: Infinity,
+                                  ease: "easeInOut"
+                                }}
+                              >
+                                {post.icon}
+                              </motion.span>
+                            )}
                           </motion.div>
                           
                           {/* Gradient Overlay */}
@@ -716,8 +605,8 @@ const Blog = () => {
                             whileHover={{ x: '200%' }}
                             transition={{ duration: 0.6 }}
                           />
-                        </div>
-                        
+                    </div>
+                    
                         {/* Enhanced Content */}
                         <div className="flex-1 flex flex-col p-6 space-y-4">
                           <motion.div
@@ -730,15 +619,15 @@ const Blog = () => {
                               <FiCalendar className="w-3 h-3" />
                               <span>{new Date(post.date).toLocaleDateString('vi-VN', { 
                                 day: 'numeric',
-                                month: 'short', 
-                                year: 'numeric' 
-                              })}</span>
+                          month: 'short', 
+                          year: 'numeric' 
+                        })}</span>
                             </div>
-                            <span>•</span>
+                        <span>•</span>
                             <div className="flex items-center gap-1">
                               <FiClock className="w-3 h-3" />
                               <span>{post.readTime}</span>
-                            </div>
+                      </div>
                           </motion.div>
                           
                           <motion.h3
@@ -747,7 +636,7 @@ const Blog = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 + 0.3 }}
                           >
-                            {post.title}
+                        {post.title}
                           </motion.h3>
                           
                           <motion.p
@@ -756,7 +645,7 @@ const Blog = () => {
                             animate={{ opacity: 1 }}
                             transition={{ delay: index * 0.1 + 0.4 }}
                           >
-                            {post.excerpt}
+                        {post.excerpt}
                           </motion.p>
                           
                           <motion.div
@@ -772,7 +661,7 @@ const Blog = () => {
                                 whileHover={{ scale: 1.1 }}
                               >
                                 <FiTag className="w-3 h-3 opacity-60" />
-                                {tag}
+                            {tag}
                               </motion.span>
                             ))}
                           </motion.div>
@@ -803,9 +692,9 @@ const Blog = () => {
                               <FiArrowRight className="w-4 h-4" />
                             </motion.span>
                           </motion.div>
-                        </div>
+                      </div>
                       </motion.div>
-                    </Link>
+                </Link>
                   </motion.div>
                 ))}
               </AnimatePresence>

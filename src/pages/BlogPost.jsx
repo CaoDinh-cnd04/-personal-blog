@@ -7,47 +7,282 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import SEO from '../components/SEO'
 import AnimatedSection from '../components/AnimatedSection'
 
-// Sample blog post content - in a real app, this would be fetched from files or CMS
+// Blog post content
 const blogPostsContent = {
-  'getting-started-with-react': {
-    title: 'Getting Started with React in 2024',
-    date: '2024-01-15',
-    readTime: '5 phút đọc',
-    tags: ['React', 'JavaScript', 'Tutorial'],
+  'hoc-it-nhu-the-nao': {
+    title: 'Học IT Như Thế Nào? Kinh Nghiệm Từ Sinh Viên IT',
+    date: '2024-01-28',
+    readTime: '12 phút đọc',
+    tags: ['Học Tập', 'IT', 'Kinh Nghiệm', 'Sinh Viên'],
+    source: 'Kinh nghiệm cá nhân từ hành trình học IT',
     content: `
-# Getting Started with React in 2024
+# Học IT Như Thế Nào? Kinh Nghiệm Từ Sinh Viên IT
 
-React đã trở thành một trong những thư viện JavaScript phổ biến nhất để xây dựng giao diện người dùng. Trong bài viết này, chúng ta sẽ cùng tìm hiểu cơ bản về React và xây dựng ứng dụng đầu tiên.
+Là một sinh viên IT đang trên hành trình học tập và phát triển, tôi muốn chia sẻ những kinh nghiệm thực tế về cách học IT hiệu quả. Đây là những điều tôi đã học được từ chính hành trình của mình.
 
-## React là gì?
+## Bắt Đầu Từ Đâu?
 
-React là thư viện JavaScript để xây dựng giao diện người dùng, được phát triển và duy trì bởi Facebook (Meta). React cho phép bạn tạo các UI components có thể tái sử dụng và quản lý state một cách hiệu quả.
+Khi mới bắt đầu học IT, nhiều bạn sẽ cảm thấy choáng ngợp với vô số công nghệ, ngôn ngữ lập trình, và framework. Câu hỏi "Bắt đầu từ đâu?" là điều hoàn toàn bình thường.
 
-## Yêu cầu trước khi bắt đầu
+### 1. Xây Dựng Nền Tảng Vững Chắc
 
-Trước khi học React, bạn nên có:
+Trước khi nhảy vào các framework hay công nghệ mới, hãy đảm bảo bạn có nền tảng tốt:
 
-- Kiến thức cơ bản về HTML, CSS và JavaScript
-- Node.js và npm đã được cài đặt
-- Code editor (khuyến nghị VS Code)
-- Hiểu về ES6+ (arrow functions, destructuring, modules)
+- **HTML & CSS**: Hiểu cách web hoạt động
+- **JavaScript**: Ngôn ngữ cơ bản cho web development
+- **Git & GitHub**: Quản lý code và làm việc nhóm
+- **Cấu trúc dữ liệu & Giải thuật**: Nền tảng cho tư duy lập trình
 
-## Tạo React App đầu tiên
+\`\`\`javascript
+// Ví dụ: Hiểu JavaScript cơ bản trước khi học React
+function greet(name) {
+  return \`Xin chào, \${name}!\`
+}
 
-Cách dễ nhất để bắt đầu dự án React là sử dụng Vite:
+console.log(greet('Sinh viên IT'))
+\`\`\`
+
+### 2. Học Bằng Cách Làm (Learning by Doing)
+
+Đừng chỉ đọc lý thuyết. Hãy code ngay:
+
+- **Build projects nhỏ**: Todo app, Calculator, Weather app
+- **Clone các website**: Facebook, Instagram (chỉ UI)
+- **Tham gia hackathon**: Áp lực giúp bạn học nhanh hơn
+- **Contribute open source**: Học từ code của người khác
+
+### 3. Sai Lầm Thường Gặp
+
+#### ❌ Học quá nhiều thứ cùng lúc
+- Đừng cố học React, Node.js, Python, Flutter cùng một lúc
+- Tập trung vào một công nghệ, master nó trước
+
+#### ❌ Chỉ xem tutorial, không code
+- Tutorial chỉ giúp bạn hiểu, không giúp bạn làm được
+- Code ngay sau khi xem
+
+#### ❌ So sánh bản thân với người khác
+- Mỗi người có tốc độ học khác nhau
+- Tập trung vào hành trình của chính mình
+
+## Lộ Trình Học IT Cho Sinh Viên
+
+### Năm 1-2: Nền Tảng
+
+**Mục tiêu**: Hiểu cơ bản về lập trình
+
+- Ngôn ngữ lập trình cơ bản (C/C++, Java, hoặc Python)
+- Cấu trúc dữ liệu và giải thuật
+- Database cơ bản (SQL)
+- Git & GitHub
+
+**Dự án đề xuất**:
+- Console applications
+- Simple CRUD apps
+- Basic web pages
+
+### Năm 2-3: Chuyên Sâu
+
+**Mục tiêu**: Chọn một hướng và đi sâu
+
+**Frontend Developer**:
+- HTML, CSS, JavaScript nâng cao
+- React hoặc Vue.js
+- Responsive Design
+- State Management
+
+**Backend Developer**:
+- Node.js hoặc Python (Django/Flask)
+- RESTful API
+- Database (MongoDB, PostgreSQL)
+- Authentication & Authorization
+
+**Mobile Developer**:
+- Flutter hoặc React Native
+- State Management
+- API Integration
+- App Deployment
+
+**Dự án đề xuất**:
+- Full-stack applications
+- Mobile apps
+- E-commerce websites
+
+### Năm 3-4: Thực Tế
+
+**Mục tiêu**: Áp dụng vào dự án thực tế
+
+- Thực tập tại công ty
+- Freelance projects
+- Open source contributions
+- Build portfolio
+
+## Cách Học Hiệu Quả
+
+### 1. Pomodoro Technique
+
+Chia thời gian học thành các khoảng 25 phút:
+
+\`\`\`
+25 phút học → 5 phút nghỉ → Lặp lại
+\`\`\`
+
+### 2. Feynman Technique
+
+Giải thích lại những gì bạn học cho người khác:
+- Viết blog
+- Dạy bạn bè
+- Record video giải thích
+
+### 3. Active Recall
+
+Thay vì đọc lại, hãy tự test bản thân:
+- Làm coding challenges
+- Build projects từ đầu
+- Giải thích code cho chính mình
+
+### 4. Spaced Repetition
+
+Ôn lại kiến thức định kỳ:
+- Review code cũ mỗi tuần
+- Refactor projects cũ
+- Viết lại từ đầu
+
+## Tài Nguyên Học Tập
+
+### Khóa Học Online
+
+- **FreeCodeCamp**: Miễn phí, chất lượng cao
+- **The Odin Project**: Full-stack curriculum
+- **Coursera**: Khóa học từ đại học
+- **Udemy**: Nhiều khóa học thực tế
+
+### Thực Hành
+
+- **LeetCode**: Coding challenges
+- **HackerRank**: Practice problems
+- **Codewars**: Gamified learning
+- **Frontend Mentor**: Real-world projects
+
+### Cộng Đồng
+
+- **GitHub**: Xem code của người khác
+- **Stack Overflow**: Hỏi đáp
+- **Reddit (r/learnprogramming)**: Cộng đồng học tập
+- **Discord communities**: Chat với developers
+
+## Kinh Nghiệm Cá Nhân
+
+### Những Điều Đã Giúp Tôi
+
+1. **Build Projects Thực Tế**
+   - Trip Hotel Full-Stack với Flutter
+   - Hotel Web với React
+   - Personal Blog với React
+
+2. **Tham Gia Cộng Đồng**
+   - Share code trên GitHub
+   - Viết blog về những gì học được
+   - Giúp đỡ người khác
+
+3. **Không Ngừng Học Hỏi**
+   - Đọc documentation
+   - Xem code của senior developers
+   - Thử các công nghệ mới
+
+### Những Sai Lầm Đã Mắc
+
+1. **Học quá nhiều cùng lúc**: Dẫn đến không nắm vững gì cả
+2. **Chỉ xem, không code**: Lãng phí thời gian
+3. **So sánh với người khác**: Tạo áp lực không cần thiết
+
+## Lời Khuyên Cuối Cùng
+
+### Đừng Bỏ Cuộc
+
+Học IT không dễ, nhưng cũng không quá khó. Quan trọng là kiên trì:
+
+- Mỗi ngày code một chút
+- Build projects nhỏ
+- Celebrate small wins
+
+### Tập Trung Vào Process, Không Phải Kết Quả
+
+- Đừng lo lắng về việc chưa tìm được việc
+- Tập trung vào việc học và cải thiện mỗi ngày
+- Kết quả sẽ đến tự nhiên
+
+### Học Từ Sai Lầm
+
+- Bug là bạn, không phải kẻ thù
+- Mỗi lỗi là cơ hội học hỏi
+- Fail fast, learn faster
+
+## Kết Luận
+
+Hành trình học IT là một marathon, không phải sprint. Đừng vội vàng, hãy tận hưởng quá trình học tập. Mỗi dòng code bạn viết, mỗi bug bạn fix, mỗi project bạn build đều là một bước tiến.
+
+**Nhớ rằng**: Mọi developer giỏi đều từng là beginner. Quan trọng là bạn bắt đầu và không bỏ cuộc.
+
+Chúc các bạn thành công trên hành trình học IT! 🚀
+
+---
+
+**Nguồn**: Kinh nghiệm cá nhân từ hành trình học IT
+    `,
+  },
+  'react-fundamentals-2024': {
+    title: 'React Fundamentals: Từ Cơ Bản Đến Thực Hành',
+    date: '2024-01-18',
+    readTime: '10 phút đọc',
+    tags: ['React', 'JavaScript', 'Frontend', 'Tutorial'],
+    source: 'Dựa trên dự án: https://github.com/CaoDinh-cnd04/hotel_web',
+    content: `
+# React Fundamentals: Từ Cơ Bản Đến Thực Hành
+
+React đã trở thành thư viện JavaScript phổ biến nhất để xây dựng giao diện người dùng. Trong bài viết này, chúng ta sẽ cùng tìm hiểu React từ cơ bản đến thực hành, áp dụng vào các dự án thực tế.
+
+## React Là Gì?
+
+React là một thư viện JavaScript mã nguồn mở được phát triển bởi Facebook (Meta) để xây dựng giao diện người dùng, đặc biệt là các ứng dụng web. React cho phép bạn tạo các UI components có thể tái sử dụng và quản lý state một cách hiệu quả.
+
+### Tại Sao Nên Học React?
+
+- **Phổ biến**: Được sử dụng bởi Facebook, Netflix, Airbnb, và nhiều công ty lớn
+- **Cộng đồng lớn**: Nhiều tài nguyên, thư viện, và hỗ trợ
+- **Cơ hội việc làm**: Nhu cầu cao trên thị trường
+- **Học một lần, viết mọi nơi**: React Native cho mobile
+
+## Setup React Project
+
+### Sử Dụng Vite (Khuyến Nghị 2024)
+
+Vite nhanh hơn Create React App rất nhiều:
 
 \`\`\`bash
-npm create vite@latest my-app -- --template react
-cd my-app
+npm create vite@latest my-react-app -- --template react
+cd my-react-app
 npm install
 npm run dev
 \`\`\`
 
-Vite nhanh hơn Create React App rất nhiều và là lựa chọn được khuyên dùng trong 2024.
+### Cấu Trúc Project
 
-## Hiểu về Components
+\`\`\`
+src/
+├── components/     # Reusable components
+├── pages/          # Page components
+├── hooks/          # Custom hooks
+├── utils/          # Utility functions
+├── App.jsx         # Main app component
+└── main.jsx        # Entry point
+\`\`\`
 
-React applications được xây dựng từ các components. Đây là một component đơn giản:
+## Components - Khối Xây Dựng Của React
+
+### Function Component
+
+Components là các function trả về JSX:
 
 \`\`\`jsx
 function Welcome({ name }) {
@@ -57,11 +292,47 @@ function Welcome({ name }) {
 export default Welcome
 \`\`\`
 
-Components có thể là function hoặc class, nhưng function components với hooks là cách tiếp cận hiện đại nhất.
+### Sử Dụng Component
 
-## State và Props
+\`\`\`jsx
+import Welcome from './Welcome'
 
-React components có **state** (dữ liệu nội bộ) và **props** (dữ liệu từ parent truyền xuống):
+function App() {
+  return (
+    <div>
+      <Welcome name="Sinh viên IT" />
+      <Welcome name="Developer" />
+    </div>
+  )
+}
+\`\`\`
+
+## Props - Truyền Dữ Liệu
+
+Props (properties) là cách truyền dữ liệu từ component cha xuống component con:
+
+\`\`\`jsx
+function UserCard({ name, email, avatar }) {
+  return (
+    <div className="user-card">
+      <img src={avatar} alt={name} />
+      <h3>{name}</h3>
+      <p>{email}</p>
+    </div>
+  )
+}
+
+// Sử dụng
+<UserCard 
+  name="Cao Nhất Đỉnh"
+  email="caodinh@example.com"
+  avatar="/avatar.jpg"
+/>
+\`\`\`
+
+## State - Quản Lý Dữ Liệu Nội Bộ
+
+### useState Hook
 
 \`\`\`jsx
 import { useState } from 'react'
@@ -75,3317 +346,271 @@ function Counter() {
       <button onClick={() => setCount(count + 1)}>
         Tăng
       </button>
+      <button onClick={() => setCount(count - 1)}>
+        Giảm
+      </button>
     </div>
   )
 }
 \`\`\`
 
-## React Hooks quan trọng
-
-### useState
-Quản lý state trong functional components:
+### State với Object
 
 \`\`\`jsx
-const [value, setValue] = useState(initialValue)
-\`\`\`
+function UserForm() {
+  const [user, setUser] = useState({
+    name: '',
+    email: ''
+  })
 
-### useEffect
-Xử lý side effects (API calls, subscriptions):
-
-\`\`\`jsx
-useEffect(() => {
-  // Code chạy sau khi component render
-  return () => {
-    // Cleanup function
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value
+    })
   }
-}, [dependencies])
-\`\`\`
 
-## Bước tiếp theo
-
-Sau khi hiểu cơ bản, bạn có thể:
-
-- Học sâu về React Hooks (useState, useEffect, useContext, useReducer)
-- Tìm hiểu React Router cho navigation
-- Học về state management với Context API hoặc Zustand
-- Xây dựng một dự án thực tế!
-
-## Kết luận
-
-React là công cụ mạnh mẽ để xây dựng ứng dụng web hiện đại. Với thời gian và thực hành, bạn sẽ tạo ra những ứng dụng tuyệt vời!
-
-**Tips:** Đừng cố học tất cả một lúc. Hãy build projects nhỏ và dần dần nâng cao kỹ năng của bạn. Happy coding! 🚀
-    `,
-  },
-  'xay-dung-blog-ca-nhan-voi-react': {
-    title: 'Xây Dựng Blog Cá Nhân Với React và Tailwind CSS',
-    date: '2024-01-20',
-    readTime: '10 phút đọc',
-    tags: ['React', 'Tailwind CSS', 'Blog', 'Tutorial'],
-    content: `
-# Xây Dựng Blog Cá Nhân Với React và Tailwind CSS
-
-Trong bài viết này, tôi sẽ hướng dẫn các bạn xây dựng một blog cá nhân hoàn chỉnh với React và Tailwind CSS.
-
-## Tại sao nên có blog cá nhân?
-
-- **Personal Branding**: Xây dựng thương hiệu cá nhân
-- **Portfolio**: Showcase các dự án và kỹ năng
-- **Chia sẻ kiến thức**: Học được nhiều hơn khi dạy người khác
-- **Networking**: Kết nối với cộng đồng developer
-
-## Tech Stack
-
-Chúng ta sẽ sử dụng:
-
-- **React 18+**: UI library
-- **Vite**: Build tool cực nhanh
-- **Tailwind CSS**: Utility-first CSS framework
-- **React Router**: Client-side routing
-- **Framer Motion**: Smooth animations
-- **React Markdown**: Render Markdown content
-
-## Setup Project
-
-\`\`\`bash
-npm create vite@latest my-blog -- --template react
-cd my-blog
-npm install
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-\`\`\`
-
-## Cấu trúc thư mục
-
-\`\`\`
-src/
-├── components/
-│   ├── Header.jsx
-│   ├── Footer.jsx
-│   └── BlogCard.jsx
-├── pages/
-│   ├── Home.jsx
-│   ├── Blog.jsx
-│   └── BlogPost.jsx
-├── App.jsx
-└── main.jsx
-\`\`\`
-
-## Tạo Layout Component
-
-\`\`\`jsx
-function Layout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-grow">
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <form>
+      <input
+        name="name"
+        value={user.name}
+        onChange={handleChange}
+        placeholder="Tên"
+      />
+      <input
+        name="email"
+        value={user.email}
+        onChange={handleChange}
+        placeholder="Email"
+      />
+    </form>
   )
 }
 \`\`\`
 
-## Styling với Tailwind CSS
+## useEffect - Side Effects
 
-Tailwind CSS giúp bạn style nhanh chóng với utility classes:
-
-\`\`\`jsx
-<div className="max-w-4xl mx-auto px-4 py-8">
-  <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-    Blog của tôi
-  </h1>
-</div>
-\`\`\`
-
-## Dark Mode
-
-Implement dark mode với Tailwind:
+useEffect cho phép bạn thực hiện side effects (API calls, subscriptions, DOM manipulation):
 
 \`\`\`jsx
 import { useState, useEffect } from 'react'
 
-function ThemeToggle() {
-  const [theme, setTheme] = useState('light')
+function UserProfile({ userId }) {
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [theme])
+    // Fetch user data
+    fetch(\`/api/users/\${userId}\`)
+      .then(res => res.json())
+      .then(data => {
+        setUser(data)
+        setLoading(false)
+      })
+  }, [userId]) // Chạy lại khi userId thay đổi
 
+  if (loading) return <div>Đang tải...</div>
+  if (!user) return <div>Không tìm thấy user</div>
+
+  return <div>{user.name}</div>
+}
+\`\`\`
+
+### Cleanup Function
+
+\`\`\`jsx
+useEffect(() => {
+  const timer = setInterval(() => {
+    console.log('Tick')
+  }, 1000)
+
+  // Cleanup: chạy khi component unmount
+  return () => {
+    clearInterval(timer)
+  }
+}, [])
+\`\`\`
+
+## Conditional Rendering
+
+### If/Else
+
+\`\`\`jsx
+function Greeting({ isLoggedIn }) {
+  if (isLoggedIn) {
+    return <h1>Chào mừng trở lại!</h1>
+  }
+  return <h1>Vui lòng đăng nhập</h1>
+}
+\`\`\`
+
+### Ternary Operator
+
+\`\`\`jsx
+function Button({ isDisabled }) {
   return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      Toggle Theme
+    <button disabled={isDisabled}>
+      {isDisabled ? 'Đang xử lý...' : 'Gửi'}
     </button>
   )
 }
 \`\`\`
 
-## Markdown Support
-
-Sử dụng React Markdown để render nội dung:
-
-\`\`\`bash
-npm install react-markdown remark-gfm
-\`\`\`
+### Logical &&
 
 \`\`\`jsx
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-
-function BlogPost({ content }) {
-  return (
-    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-      {content}
-    </ReactMarkdown>
-  )
-}
-\`\`\`
-
-## SEO Optimization
-
-Sử dụng React Helmet cho SEO:
-
-\`\`\`jsx
-import { Helmet } from 'react-helmet-async'
-
-function BlogPost({ title, description }) {
+function Notification({ message }) {
   return (
     <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Helmet>
-      {/* Content */}
+      {message && (
+        <div className="notification">
+          {message}
+        </div>
+      )}
     </>
   )
 }
 \`\`\`
 
-## Deploy lên Netlify/Vercel
-
-Build và deploy:
-
-\`\`\`bash
-npm run build
-\`\`\`
-
-Drag & drop thư mục \`dist\` vào Netlify hoặc connect GitHub repo với Vercel.
-
-## Kết luận
-
-Bạn đã có một blog cá nhân hoàn chỉnh! Tiếp tục cải thiện bằng cách thêm:
-
-- Comments system (Disqus, Utterances)
-- Analytics (Google Analytics)
-- Newsletter subscription
-- Search functionality
-- RSS feed
-
-Chúc bạn thành công! 🎉
-    `,
-  },
-  'ai-va-web-development': {
-    title: 'AI và Web Development: Tương Lai Đã Đến',
-    date: '2024-01-18',
-    readTime: '8 phút đọc',
-    tags: ['AI', 'Machine Learning', 'Web Development'],
-    content: `
-# AI và Web Development: Tương Lai Đã Đến
-
-AI không còn là khái niệm xa vời. Hôm nay, chúng ta có thể tích hợp AI vào web applications một cách dễ dàng.
-
-## AI trong Web Development
-
-### 1. Chatbots & Virtual Assistants
-
-Sử dụng OpenAI API hoặc các LLM khác:
-
-\`\`\`javascript
-import OpenAI from 'openai'
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-})
-
-async function chat(message) {
-  const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: message }]
-  })
-  
-  return response.choices[0].message.content
-}
-\`\`\`
-
-### 2. Image Generation
-
-Tạo hình ảnh với DALL-E hoặc Stable Diffusion:
-
-\`\`\`javascript
-const image = await openai.images.generate({
-  prompt: "A beautiful landscape",
-  n: 1,
-  size: "1024x1024"
-})
-\`\`\`
-
-### 3. Recommendation Systems
-
-Build recommendation engine đơn giản:
-
-\`\`\`python
-from sklearn.neighbors import NearestNeighbors
-import numpy as np
-
-# Training data
-user_preferences = np.array([...])
-
-# Model
-model = NearestNeighbors(n_neighbors=5)
-model.fit(user_preferences)
-
-# Get recommendations
-distances, indices = model.kneighbors([user_input])
-\`\`\`
-
-## Langchain cho Web Apps
-
-Langchain giúp xây dựng AI applications dễ dàng:
-
-\`\`\`javascript
-import { ChatOpenAI } from "langchain/chat_models/openai"
-import { PromptTemplate } from "langchain/prompts"
-
-const model = new ChatOpenAI()
-const prompt = PromptTemplate.fromTemplate(
-  "Explain {topic} in simple terms"
-)
-
-const chain = prompt.pipe(model)
-const result = await chain.invoke({ topic: "React Hooks" })
-\`\`\`
-
-## Vector Databases
-
-Sử dụng Pinecone hoặc ChromaDB cho semantic search:
-
-\`\`\`javascript
-import { PineconeClient } from "@pinecone-database/pinecone"
-
-const pinecone = new PineconeClient()
-await pinecone.init({
-  apiKey: process.env.PINECONE_API_KEY,
-  environment: "us-west1-gcp"
-})
-
-// Query similar documents
-const results = await index.query({
-  vector: embedding,
-  topK: 5
-})
-\`\`\`
-
-## AI Code Assistants
-
-### GitHub Copilot
-- Autocomplete code
-- Generate functions
-- Write tests
-
-### ChatGPT/Claude
-- Debug code
-- Explain concepts
-- Refactor code
-
-## Thực hành tốt nhất
-
-1. **API Keys Security**: Không hardcode API keys
-2. **Rate Limiting**: Implement rate limits
-3. **Error Handling**: Handle API failures gracefully
-4. **Caching**: Cache AI responses để tiết kiệm chi phí
-5. **User Privacy**: Respect user data
-
-## Kết luận
-
-AI đang thay đổi cách chúng ta develop web applications. Hãy học và áp dụng để không bị tụt hậu!
-
-**Resources:**
-- OpenAI Documentation
-- Langchain Docs
-- HuggingFace Models
-- Google AI Platform
-    `,
-  },
-  'mastering-tailwind-css': {
-    title: 'Mastering Tailwind CSS: Tips và Tricks',
-    date: '2024-01-10',
-    readTime: '7 phút đọc',
-    tags: ['CSS', 'Tailwind', 'Design'],
-    content: `
-# Mastering Tailwind CSS: Tips và Tricks
-
-Tailwind CSS đã trở thành một trong những CSS framework được yêu thích nhất. Hãy cùng khám phá các tips và tricks để sử dụng Tailwind hiệu quả!
-
-## Tại Sao Chọn Tailwind CSS?
-
-### Ưu điểm
-- ⚡ **Faster Development**: Không cần đặt tên class
-- 🎨 **Consistent Design**: Design system built-in
-- 📦 **Smaller CSS**: PurgeCSS loại bỏ unused styles
-- 🔧 **Highly Customizable**: Config dễ dàng
-
-## Setup Tailwind với Vite
-
-\`\`\`bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-\`\`\`
-
-**tailwind.config.js:**
-\`\`\`javascript
-export default {
-  content: ['./index.html', './src/**/*.{js,jsx}'],
-  theme: {
-    extend: {
-      colors: {
-        primary: '#3b82f6',
-        secondary: '#8b5cf6',
-      }
-    },
-  },
-  plugins: [],
-}
-\`\`\`
-
-## Tips & Tricks
-
-### 1. Arbitrary Values
-
-Sử dụng giá trị tùy ý khi cần:
+## Lists và Keys
 
 \`\`\`jsx
-<div className="w-[137px] h-[50px] bg-[#1da1f2]">
-  Custom sizes!
-</div>
-\`\`\`
-
-### 2. Group Hover & Focus
-
-\`\`\`jsx
-<div className="group">
-  <img className="group-hover:scale-110 transition" />
-  <h3 className="group-hover:text-blue-500">Title</h3>
-</div>
-\`\`\`
-
-### 3. Responsive Design
-
-\`\`\`jsx
-<div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
-  Responsive!
-</div>
-\`\`\`
-
-### 4. Dark Mode
-
-\`\`\`jsx
-<div className="bg-white dark:bg-gray-900 text-black dark:text-white">
-  Dark mode ready!
-</div>
-\`\`\`
-
-### 5. Custom Components
-
-Tạo component classes trong CSS:
-
-\`\`\`css
-@layer components {
-  .btn-primary {
-    @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600;
-  }
-}
-\`\`\`
-
-### 6. Container Query
-
-\`\`\`jsx
-<div className="@container">
-  <div className="@lg:text-xl @2xl:text-2xl">
-    Responsive to container!
-  </div>
-</div>
-\`\`\`
-
-## Best Practices
-
-### 1. Sử Dụng @apply Có Chọn Lọc
-
-❌ **Tránh:**
-\`\`\`css
-.card {
-  @apply p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all;
-}
-\`\`\`
-
-✅ **Nên:**
-\`\`\`jsx
-<div className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all">
-\`\`\`
-
-### 2. Organize Classes
-
-Sử dụng clsx hoặc classnames:
-
-\`\`\`javascript
-import clsx from 'clsx'
-
-function Button({ variant, size }) {
+function BlogList({ posts }) {
   return (
-    <button className={clsx(
-      'px-4 py-2 rounded font-medium',
-      variant === 'primary' && 'bg-blue-500 text-white',
-      variant === 'secondary' && 'bg-gray-200 text-gray-900',
-      size === 'sm' && 'text-sm',
-      size === 'lg' && 'text-lg'
-    )}>
+    <ul>
+      {posts.map(post => (
+        <li key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.excerpt}</p>
+        </li>
+      ))}
+    </ul>
+  )
+}
+\`\`\`
+
+**Lưu ý**: Luôn sử dụng \`key\` khi render lists. Key phải unique và stable.
+
+## Event Handling
+
+\`\`\`jsx
+function Button() {
+  const handleClick = (e) => {
+    e.preventDefault()
+    console.log('Button clicked!')
+  }
+
+  return (
+    <button onClick={handleClick}>
       Click me
     </button>
   )
 }
 \`\`\`
 
-### 3. Purge Unused CSS
-
-Đảm bảo content paths đúng trong config để PurgeCSS hoạt động.
-
-## Plugins Hữu Ích
-
-### 1. Typography
-\`\`\`bash
-npm install @tailwindcss/typography
-\`\`\`
+### Passing Arguments
 
 \`\`\`jsx
-<article className="prose lg:prose-xl">
-  {/* Beautiful typography */}
-</article>
-\`\`\`
-
-### 2. Forms
-\`\`\`bash
-npm install @tailwindcss/forms
-\`\`\`
-
-### 3. Aspect Ratio
-\`\`\`bash
-npm install @tailwindcss/aspect-ratio
-\`\`\`
-
-## Performance Tips
-
-1. **JIT Mode**: Enabled by default in v3
-2. **PurgeCSS**: Automatically removes unused styles
-3. **CDN**: Chỉ dùng cho development
-4. **Production Build**: Always build for production
-
-## Kết Luận
-
-Tailwind CSS là công cụ mạnh mẽ khi biết cách sử dụng đúng. Practice makes perfect!
-
-**Resources:**
-- [Tailwind Docs](https://tailwindcss.com/docs)
-- [Tailwind UI](https://tailwindui.com)
-- [Headless UI](https://headlessui.com)
-    `,
-  },
-  'nodejs-best-practices-2024': {
-    title: 'Node.js Best Practices 2024',
-    date: '2024-01-12',
-    readTime: '9 phút đọc',
-    tags: ['Node.js', 'Backend', 'Best Practices'],
-    content: `
-# Node.js Best Practices 2024
-
-Node.js là nền tảng backend phổ biến nhất. Hãy cùng tìm hiểu các best practices để viết Node.js code chất lượng cao!
-
-## 1. Project Structure
-
-### Folder Structure Chuẩn
-
-\`\`\`
-project/
-├── src/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   ├── utils/
-│   └── app.js
-├── tests/
-├── .env.example
-└── server.js
-\`\`\`
-
-### Tách Concerns
-
-\`\`\`javascript
-// ❌ Bad: Everything in one file
-app.post('/users', async (req, res) => {
-  // validation, business logic, database...
-})
-
-// ✅ Good: Separated concerns
-// routes/users.js
-router.post('/', validateUser, createUser)
-
-// controllers/users.js
-export const createUser = async (req, res) => {
-  await userService.create(req.body)
-}
-
-// services/users.js
-export const create = async (data) => {
-  return await User.create(data)
+function TodoList({ todos, onDelete }) {
+  return (
+    <ul>
+      {todos.map(todo => (
+        <li key={todo.id}>
+          {todo.text}
+          <button onClick={() => onDelete(todo.id)}>
+            Xóa
+          </button>
+        </li>
+      ))}
+    </ul>
+  )
 }
 \`\`\`
 
-## 2. Environment Variables
+## Custom Hooks
 
-### Sử Dụng dotenv
-
-\`\`\`javascript
-import 'dotenv/config'
-
-const config = {
-  port: process.env.PORT || 3000,
-  dbUrl: process.env.DATABASE_URL,
-  jwtSecret: process.env.JWT_SECRET
-}
-\`\`\`
-
-### Validate Environment
-
-\`\`\`javascript
-const requiredEnvVars = ['DATABASE_URL', 'JWT_SECRET']
-
-requiredEnvVars.forEach(envVar => {
-  if (!process.env[envVar]) {
-    throw new Error(\`Missing \${envVar} environment variable\`)
-  }
-})
-\`\`\`
-
-## 3. Error Handling
-
-### Global Error Handler
-
-\`\`\`javascript
-// middleware/errorHandler.js
-export const errorHandler = (err, req, res, next) => {
-  console.error(err.stack)
-
-  if (err.name === 'ValidationError') {
-    return res.status(400).json({ error: err.message })
-  }
-
-  if (err.name === 'UnauthorizedError') {
-    return res.status(401).json({ error: 'Unauthorized' })
-  }
-
-  res.status(500).json({ error: 'Internal Server Error' })
-}
-
-// app.js
-app.use(errorHandler)
-\`\`\`
-
-### Try-Catch với Async/Await
-
-\`\`\`javascript
-// utils/catchAsync.js
-export const catchAsync = (fn) => {
-  return (req, res, next) => {
-    Promise.resolve(fn(req, res, next)).catch(next)
-  }
-}
-
-// Usage
-export const getUser = catchAsync(async (req, res) => {
-  const user = await User.findById(req.params.id)
-  res.json(user)
-})
-\`\`\`
-
-## 4. Security
-
-### Helmet.js
-
-\`\`\`javascript
-import helmet from 'helmet'
-
-app.use(helmet())
-\`\`\`
-
-### Rate Limiting
-
-\`\`\`javascript
-import rateLimit from 'express-rate-limit'
-
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
-})
-
-app.use('/api/', limiter)
-\`\`\`
-
-### Input Validation
-
-\`\`\`javascript
-import Joi from 'joi'
-
-const userSchema = Joi.object({
-  email: Joi.string().email().required(),
-  password: Joi.string().min(8).required()
-})
-
-export const validateUser = (req, res, next) => {
-  const { error } = userSchema.validate(req.body)
-  if (error) {
-    return res.status(400).json({ error: error.details[0].message })
-  }
-  next()
-}
-\`\`\`
-
-## 5. Database
-
-### Connection Pooling
-
-\`\`\`javascript
-import mongoose from 'mongoose'
-
-mongoose.connect(process.env.DATABASE_URL, {
-  maxPoolSize: 10,
-  serverSelectionTimeoutMS: 5000,
-  socketTimeoutMS: 45000,
-})
-\`\`\`
-
-### Indexes
-
-\`\`\`javascript
-const userSchema = new Schema({
-  email: {
-    type: String,
-    unique: true,
-    index: true // Add index for faster queries
-  }
-})
-\`\`\`
-
-## 6. Performance
-
-### Clustering
-
-\`\`\`javascript
-import cluster from 'cluster'
-import os from 'os'
-
-if (cluster.isPrimary) {
-  const numCPUs = os.cpus().length
-  for (let i = 0; i < numCPUs; i++) {
-    cluster.fork()
-  }
-} else {
-  startServer()
-}
-\`\`\`
-
-### Caching với Redis
-
-\`\`\`javascript
-import Redis from 'ioredis'
-
-const redis = new Redis()
-
-export const getUser = async (id) => {
-  // Try cache first
-  const cached = await redis.get(\`user:\${id}\`)
-  if (cached) return JSON.parse(cached)
-
-  // Fetch from DB
-  const user = await User.findById(id)
-  
-  // Cache for 1 hour
-  await redis.setex(\`user:\${id}\`, 3600, JSON.stringify(user))
-  
-  return user
-}
-\`\`\`
-
-## 7. Logging
-
-### Winston Logger
-
-\`\`\`javascript
-import winston from 'winston'
-
-export const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' })
-  ]
-})
-
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }))
-}
-\`\`\`
-
-## 8. Testing
-
-### Jest + Supertest
-
-\`\`\`javascript
-import request from 'supertest'
-import app from '../src/app'
-
-describe('POST /api/users', () => {
-  it('should create a new user', async () => {
-    const res = await request(app)
-      .post('/api/users')
-      .send({
-        email: 'test@example.com',
-        password: 'password123'
-      })
-    
-    expect(res.status).toBe(201)
-    expect(res.body).toHaveProperty('id')
-  })
-})
-\`\`\`
-
-## Kết Luận
-
-Follow các best practices này để build Node.js applications scalable và maintainable!
-
-**Resources:**
-- [Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)
-- [Express.js Guide](https://expressjs.com/en/guide/routing.html)
-    `,
-  },
-  'deploying-react-apps': {
-    title: 'Deploy React Apps: Vercel vs Netlify',
-    date: '2024-01-05',
-    readTime: '6 phút đọc',
-    tags: ['Deployment', 'DevOps', 'React'],
-    content: `
-# Deploy React Apps: Vercel vs Netlify
-
-So sánh chi tiết hai platform deploy phổ biến nhất cho React applications.
-
-## Tổng Quan
-
-### Vercel
-- Được tạo bởi team Next.js
-- Tối ưu cho Next.js và React
-- Edge Network toàn cầu
-- Serverless Functions
-
-### Netlify  
-- Platform all-in-one
-- Powerful build system
-- Edge Functions
-- Forms & Identity
-
-## So Sánh Chi Tiết
-
-### 1. Performance
-
-**Vercel:**
-- ⚡ Edge Network: 100+ locations
-- 🚀 Automatic optimization
-- 📦 Smart CDN caching
-
-**Netlify:**
-- 🌐 Global CDN
-- ⚡ Instant cache invalidation
-- 📊 Prerendering
-
-### 2. Build & Deploy
-
-**Vercel:**
-\`\`\`bash
-# Vercel auto-detects framework
-vercel --prod
-\`\`\`
-
-**Netlify:**
-\`\`\`bash
-# netlify.toml
-[build]
-  command = "npm run build"
-  publish = "dist"
-\`\`\`
-
-### 3. Pricing
-
-**Vercel Free Tier:**
-- ✅ Unlimited projects
-- ✅ 100GB bandwidth/month
-- ✅ Serverless Functions
-
-**Netlify Free Tier:**
-- ✅ Unlimited projects
-- ✅ 100GB bandwidth/month
-- ✅ 300 build minutes/month
-
-## Deploy Vite React App
-
-### Vercel
-
-**1. Via CLI:**
-\`\`\`bash
-npm i -g vercel
-vercel
-\`\`\`
-
-**2. Via GitHub:**
-- Connect repo
-- Auto-deploy on push
-- Preview deployments
-
-**vercel.json:**
-\`\`\`json
-{
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
-\`\`\`
-
-### Netlify
-
-**1. Drag & Drop:**
-- Build: \`npm run build\`
-- Drop \`dist\` folder to Netlify
-
-**2. Via Git:**
-- Connect GitHub
-- Auto-deploy
-
-**netlify.toml:**
-\`\`\`toml
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-\`\`\`
-
-## Environment Variables
-
-### Vercel
-\`\`\`bash
-vercel env add VITE_API_URL
-\`\`\`
-
-### Netlify
-- Site settings → Environment variables
-- Or use Netlify CLI
-
-## Serverless Functions
-
-### Vercel API Routes
-
-\`\`\`javascript
-// api/hello.js
-export default function handler(req, res) {
-  res.json({ message: 'Hello from Vercel!' })
-}
-\`\`\`
-
-### Netlify Functions
-
-\`\`\`javascript
-// netlify/functions/hello.js
-exports.handler = async () => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ message: 'Hello from Netlify!' })
-  }
-}
-\`\`\`
-
-## Khi Nào Chọn Cái Gì?
-
-### Chọn Vercel Khi:
-- ✅ Dùng Next.js
-- ✅ Cần performance tối đa
-- ✅ Nhiều serverless functions
-- ✅ Enterprise features
-
-### Chọn Netlify Khi:
-- ✅ Cần forms & identity
-- ✅ Static site generator
-- ✅ Split testing
-- ✅ Large builds
-
-## Tips
-
-### 1. Custom Domain
-Cả hai đều support custom domain miễn phí với SSL.
-
-### 2. Preview Deployments
-Cả hai tự động tạo preview cho pull requests.
-
-### 3. Analytics
-- Vercel: Analytics addon
-- Netlify: Built-in analytics
-
-### 4. Build Time
-Optimize build time:
-\`\`\`javascript
-// vite.config.js
-export default {
-  build: {
-    minify: 'terser',
-    sourcemap: false
-  }
-}
-\`\`\`
-
-## Kết Luận
-
-**Cả hai đều tuyệt vời!** Chọn dựa trên:
-- Framework bạn dùng
-- Features cần thiết  
-- Team size
-- Budget
-
-**Cá nhân tôi:**
-- Next.js → Vercel
-- Vite/React → Netlify
-- Static → Cả hai ok!
-
-**Resources:**
-- [Vercel Docs](https://vercel.com/docs)
-- [Netlify Docs](https://docs.netlify.com)
-    `,
-  },
-  'docker-cho-developer': {
-    title: 'Docker Cho Beginner: Từ Zero Đến Hero',
-    date: '2024-01-08',
-    readTime: '12 phút đọc',
-    tags: ['Docker', 'DevOps', 'Tutorial'],
-    content: `
-# Docker Cho Beginner: Từ Zero Đến Hero
-
-Docker đã thay đổi cách chúng ta develop và deploy applications. Hãy cùng học Docker từ cơ bản!
-
-## Docker Là Gì?
-
-Docker là platform để develop, ship và run applications trong containers. Container là lightweight, standalone packages có tất cả những gì cần để chạy app.
-
-### Tại Sao Dùng Docker?
-
-- ✅ **Consistency**: "Works on my machine" → "Works everywhere"
-- ✅ **Isolation**: Mỗi app có environment riêng
-- ✅ **Portability**: Chạy được ở mọi nơi
-- ✅ **Efficiency**: Lightweight hơn VMs
-
-## Cài Đặt Docker
-
-### Windows/Mac
-- Download Docker Desktop từ [docker.com](https://docker.com)
-- Install và restart
-
-### Linux
-\`\`\`bash
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-\`\`\`
-
-Verify:
-\`\`\`bash
-docker --version
-docker run hello-world
-\`\`\`
-
-## Docker Basics
-
-### 1. Images vs Containers
-
-**Image**: Blueprint (class trong OOP)
-**Container**: Running instance (object)
-
-### 2. Run Your First Container
-
-\`\`\`bash
-docker run -p 80:80 nginx
-\`\`\`
-
-Visit: http://localhost
-
-### 3. Common Commands
-
-\`\`\`bash
-# List containers
-docker ps
-docker ps -a
-
-# Stop container
-docker stop <container-id>
-
-# Remove container
-docker rm <container-id>
-
-# List images
-docker images
-
-# Remove image
-docker rmi <image-id>
-\`\`\`
-
-## Dockerfile
-
-### Tạo Dockerfile Cho Node.js App
-
-\`\`\`dockerfile
-# Base image
-FROM node:18-alpine
-
-# Set working directory
-WORKDIR /app
-
-# Copy package files
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci --only=production
-
-# Copy app files
-COPY . .
-
-# Expose port
-EXPOSE 3000
-
-# Start command
-CMD ["node", "server.js"]
-\`\`\`
-
-### Build và Run
-
-\`\`\`bash
-# Build image
-docker build -t my-app .
-
-# Run container
-docker run -p 3000:3000 my-app
-\`\`\`
-
-## Docker Compose
-
-### docker-compose.yml
-
-\`\`\`yaml
-version: '3.8'
-
-services:
-  app:
-    build: .
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
-      - DATABASE_URL=mongodb://db:27017/myapp
-    depends_on:
-      - db
-  
-  db:
-    image: mongo:6
-    volumes:
-      - mongodb_data:/data/db
-    ports:
-      - "27017:27017"
-
-volumes:
-  mongodb_data:
-\`\`\`
-
-### Run với Docker Compose
-
-\`\`\`bash
-# Start all services
-docker-compose up
-
-# Start in background
-docker-compose up -d
-
-# Stop all services
-docker-compose down
-
-# View logs
-docker-compose logs -f
-\`\`\`
-
-## Best Practices
-
-### 1. Multi-Stage Builds
-
-\`\`\`dockerfile
-# Build stage
-FROM node:18 AS builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-# Production stage
-FROM node:18-alpine
-WORKDIR /app
-COPY --from=builder /app/dist ./dist
-COPY package*.json ./
-RUN npm ci --only=production
-CMD ["node", "dist/server.js"]
-\`\`\`
-
-### 2. .dockerignore
-
-\`\`\`
-node_modules
-npm-debug.log
-.git
-.env
-dist
-coverage
-\`\`\`
-
-### 3. Small Images
-
-- Dùng Alpine variants
-- Multi-stage builds
-- Minimize layers
-
-### 4. Security
-
-\`\`\`dockerfile
-# Don't run as root
-FROM node:18-alpine
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nodejs -u 1001
-USER nodejs
-\`\`\`
-
-## Development Workflow
-
-### Hot Reload với Volumes
-
-\`\`\`yaml
-services:
-  app:
-    build: .
-    volumes:
-      - ./src:/app/src
-      - /app/node_modules
-    environment:
-      - NODE_ENV=development
-\`\`\`
-
-### Debug trong Container
-
-\`\`\`bash
-# Execute bash in running container
-docker exec -it <container-id> sh
-
-# View logs
-docker logs -f <container-id>
-\`\`\`
-
-## React App với Docker
-
-### Dockerfile
-
-\`\`\`dockerfile
-FROM node:18-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-\`\`\`
-
-### nginx.conf
-
-\`\`\`nginx
-server {
-    listen 80;
-    location / {
-        root /usr/share/nginx/html;
-        try_files $uri /index.html;
-    }
-}
-\`\`\`
-
-## Docker Networking
-
-### Types of Networks
-
-1. **Bridge**: Default network
-2. **Host**: Use host network
-3. **None**: No network
-
-\`\`\`bash
-# Create network
-docker network create my-network
-
-# Run container in network
-docker run --network my-network my-app
-\`\`\`
-
-## Volumes & Data Persistence
-
-### Named Volumes
-
-\`\`\`bash
-# Create volume
-docker volume create my-data
-
-# Use volume
-docker run -v my-data:/app/data my-app
-\`\`\`
-
-### Bind Mounts
-
-\`\`\`bash
-docker run -v /host/path:/container/path my-app
-\`\`\`
-
-## Production Deployment
-
-### 1. Docker Swarm
-
-\`\`\`bash
-docker swarm init
-docker stack deploy -c docker-compose.yml myapp
-\`\`\`
-
-### 2. Kubernetes
-
-\`\`\`yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: myapp
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: myapp
-  template:
-    metadata:
-      labels:
-        app: myapp
-    spec:
-      containers:
-      - name: myapp
-        image: myapp:latest
-        ports:
-        - containerPort: 3000
-\`\`\`
-
-## Troubleshooting
-
-### Container Exits Immediately
-
-\`\`\`bash
-# Check logs
-docker logs <container-id>
-
-# Run in interactive mode
-docker run -it my-app sh
-\`\`\`
-
-### Build Fails
-
-- Check Dockerfile syntax
-- Verify base image exists
-- Check file paths
-
-### Slow Build
-
-- Use .dockerignore
-- Leverage build cache
-- Multi-stage builds
-
-## Kết Luận
-
-Docker là skill thiết yếu cho developers hiện đại. Practice thường xuyên để thành thạo!
-
-**Next Steps:**
-- Learn Docker Compose
-- Explore Kubernetes
-- CI/CD với Docker
-
-**Resources:**
-- [Docker Docs](https://docs.docker.com)
-- [Docker Hub](https://hub.docker.com)
-    `,
-  },
-  'state-management-in-react': {
-    title: 'State Management trong React: Chọn Gì Cho Dự Án?',
-    date: '2023-12-28',
-    readTime: '8 phút đọc',
-    tags: ['React', 'State Management', 'Architecture'],
-    content: `
-# State Management trong React: Chọn Gì Cho Dự Án?
-
-State management là một trong những challenges lớn nhất trong React apps. Hãy cùng so sánh các solutions!
-
-## Tại Sao Cần State Management?
-
-Khi app phức tạp:
-- Props drilling hell
-- Shared state giữa nhiều components
-- Global state (user, theme, etc.)
-- Performance optimization
-
-## Các Solutions Phổ Biến
-
-### 1. React Context API
-
-**Built-in solution từ React**
+Tạo custom hooks để tái sử dụng logic:
 
 \`\`\`jsx
-import { createContext, useContext, useState } from 'react'
+// hooks/useFetch.js
+import { useState, useEffect } from 'react'
 
-const ThemeContext = createContext()
+function useFetch(url) {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
-export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light')
-  
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
-}
-
-export const useTheme = () => useContext(ThemeContext)
-
-// Usage
-function App() {
-  return (
-    <ThemeProvider>
-      <MyComponent />
-    </ThemeProvider>
-  )
-}
-
-function MyComponent() {
-  const { theme, setTheme } = useTheme()
-  return <button onClick={() => setTheme('dark')}>{theme}</button>
-}
-\`\`\`
-
-**Pros:**
-- ✅ Built-in, no extra package
-- ✅ Simple API
-- ✅ Good for theming, auth
-
-**Cons:**
-- ❌ Performance issues với large apps
-- ❌ Re-renders tất cả consumers
-- ❌ Không có DevTools
-
-**Khi nào dùng:**
-- Small to medium apps
-- Theme, auth, locale
-- Không update thường xuyên
-
-### 2. Redux Toolkit
-
-**Industry standard cho large apps**
-
-\`\`\`javascript
-// store/counterSlice.js
-import { createSlice } from '@reduxjs/toolkit'
-
-const counterSlice = createSlice({
-  name: 'counter',
-  initialState: { value: 0 },
-  reducers: {
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    }
-  }
-})
-
-export const { increment, decrement } = counterSlice.actions
-export default counterSlice.reducer
-
-// store/index.js
-import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from './counterSlice'
-
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer
-  }
-})
-
-// Usage
-import { useSelector, useDispatch } from 'react-redux'
-
-function Counter() {
-  const count = useSelector(state => state.counter.value)
-  const dispatch = useDispatch()
-  
-  return (
-    <>
-      <span>{count}</span>
-      <button onClick={() => dispatch(increment())}>+</button>
-    </>
-  )
-}
-\`\`\`
-
-**Pros:**
-- ✅ Scalable
-- ✅ Excellent DevTools
-- ✅ Middleware support
-- ✅ Time-travel debugging
-
-**Cons:**
-- ❌ Boilerplate code
-- ❌ Learning curve
-- ❌ Overkill cho small apps
-
-**Khi nào dùng:**
-- Large, complex apps
-- Team collaboration
-- Need debugging tools
-- Complex async logic
-
-### 3. Zustand
-
-**Minimal & modern**
-
-\`\`\`javascript
-import create from 'zustand'
-
-const useStore = create((set) => ({
-  count: 0,
-  increment: () => set((state) => ({ count: state.count + 1 })),
-  decrement: () => set((state) => ({ count: state.count - 1 }))
-}))
-
-// Usage
-function Counter() {
-  const { count, increment, decrement } = useStore()
-  
-  return (
-    <>
-      <span>{count}</span>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
-    </>
-  )
-}
-\`\`\`
-
-**Pros:**
-- ✅ Simple API
-- ✅ No boilerplate
-- ✅ Small bundle size
-- ✅ Good performance
-
-**Cons:**
-- ❌ Smaller ecosystem
-- ❌ Less mature
-
-**Khi nào dùng:**
-- Modern apps
-- Want simplicity
-- Good performance
-
-### 4. Recoil
-
-**Facebook's solution**
-
-\`\`\`javascript
-import { atom, useRecoilState } from 'recoil'
-
-const countState = atom({
-  key: 'count',
-  default: 0
-})
-
-function Counter() {
-  const [count, setCount] = useRecoilState(countState)
-  
-  return (
-    <>
-      <span>{count}</span>
-      <button onClick={() => setCount(c => c + 1)}>+</button>
-    </>
-  )
-}
-\`\`\`
-
-**Pros:**
-- ✅ React-like API
-- ✅ Atomic state
-- ✅ Built-in async
-
-**Cons:**
-- ❌ Experimental
-- ❌ Small community
-
-### 5. Jotai
-
-**Primitive & flexible**
-
-\`\`\`javascript
-import { atom, useAtom } from 'jotai'
-
-const countAtom = atom(0)
-
-function Counter() {
-  const [count, setCount] = useAtom(countAtom)
-  
-  return (
-    <>
-      <span>{count}</span>
-      <button onClick={() => setCount(c => c + 1)}>+</button>
-    </>
-  )
-}
-\`\`\`
-
-**Pros:**
-- ✅ Minimal API
-- ✅ No Provider hell
-- ✅ TypeScript support
-
-## So Sánh Nhanh
-
-| Solution | Bundle Size | Learning Curve | DevTools | Performance |
-|----------|-------------|----------------|----------|-------------|
-| Context API | 0kb | Easy | ❌ | Medium |
-| Redux Toolkit | ~10kb | Medium | ✅ | Good |
-| Zustand | ~1kb | Easy | ⚠️ | Excellent |
-| Recoil | ~15kb | Medium | ✅ | Good |
-| Jotai | ~3kb | Easy | ⚠️ | Good |
-
-## Decision Tree
-
-\`\`\`
-App nhỏ, simple state?
-  → Context API
-
-App lớn, complex logic?
-  → Redux Toolkit
-
-Cần performance tốt?
-  → Zustand
-
-Team quen React patterns?
-  → Recoil / Jotai
-
-Need middleware?
-  → Redux Toolkit
-\`\`\`
-
-## Tips Performance
-
-### 1. Tách Small Contexts
-
-\`\`\`jsx
-// ❌ Bad: One big context
-<AppContext.Provider value={{user, theme, settings}}>
-
-// ✅ Good: Multiple contexts
-<UserContext.Provider>
-  <ThemeContext.Provider>
-    <SettingsContext.Provider>
-\`\`\`
-
-### 2. Memoization
-
-\`\`\`jsx
-const value = useMemo(() => ({ count, increment }), [count])
-\`\`\`
-
-### 3. Selector Pattern
-
-\`\`\`javascript
-// Redux
-const count = useSelector(state => state.counter.value)
-
-// Zustand
-const count = useStore(state => state.count)
-\`\`\`
-
-## Kết Luận
-
-**Recommendations:**
-- **Small apps**: Context API
-- **Medium apps**: Zustand
-- **Large apps**: Redux Toolkit
-- **Experimental**: Recoil/Jotai
-
-Không có "best" solution - chỉ có suitable solution cho project của bạn!
-
-**Resources:**
-- [Redux Toolkit](https://redux-toolkit.js.org)
-- [Zustand](https://github.com/pmndrs/zustand)
-- [Recoil](https://recoiljs.org)
-    `,
-  },
-  'typescript-cho-javascript-developer': {
-    title: 'TypeScript Cho JavaScript Developer',
-    date: '2023-12-25',
-    readTime: '7 phút đọc',
-    tags: ['TypeScript', 'JavaScript', 'Tutorial'],
-    content: `
-# TypeScript Cho JavaScript Developer
-
-TypeScript đang ngày càng phổ biến. Hãy cùng tìm hiểu tại sao và cách chuyển đổi từ JavaScript!
-
-## Tại Sao Nên Học TypeScript?
-
-### Lợi Ích
-
-1. **Type Safety**: Catch errors at compile time
-2. **Better IDE Support**: Autocomplete, refactoring
-3. **Self-Documenting Code**: Types là documentation
-4. **Easier Refactoring**: Change with confidence
-5. **Better Team Collaboration**: Clear interfaces
-
-## Setup TypeScript
-
-### Với Vite
-
-\`\`\`bash
-npm create vite@latest my-app -- --template react-ts
-\`\`\`
-
-### Manual Setup
-
-\`\`\`bash
-npm install -D typescript @types/react @types/react-dom
-npx tsc --init
-\`\`\`
-
-## Basic Types
-
-### Primitive Types
-
-\`\`\`typescript
-// String
-let name: string = "John"
-
-// Number
-let age: number = 25
-
-// Boolean
-let isActive: boolean = true
-
-// Array
-let numbers: number[] = [1, 2, 3]
-let names: Array<string> = ["John", "Jane"]
-
-// Tuple
-let user: [string, number] = ["John", 25]
-
-// Enum
-enum Role {
-  Admin,
-  User,
-  Guest
-}
-let userRole: Role = Role.Admin
-
-// Any (avoid!)
-let something: any = "hello"
-
-// Unknown (safer than any)
-let value: unknown = "hello"
-
-// Void
-function log(): void {
-  console.log("Hello")
-}
-
-// Never
-function error(): never {
-  throw new Error("Error!")
-}
-\`\`\`
-
-### Object Types
-
-\`\`\`typescript
-// Interface
-interface User {
-  name: string
-  age: number
-  email?: string // optional
-  readonly id: number // readonly
-}
-
-const user: User = {
-  id: 1,
-  name: "John",
-  age: 25
-}
-
-// Type Alias
-type Product = {
-  name: string
-  price: number
-}
-
-// Union Types
-type Status = "pending" | "success" | "error"
-let status: Status = "pending"
-
-// Intersection Types
-type Admin = User & {
-  permissions: string[]
-}
-\`\`\`
-
-## Functions
-
-\`\`\`typescript
-// Function declaration
-function add(a: number, b: number): number {
-  return a + b
-}
-
-// Arrow function
-const multiply = (a: number, b: number): number => a * b
-
-// Optional parameters
-function greet(name: string, greeting?: string): string {
-  return \`\${greeting || "Hello"}, \${name}!\`
-}
-
-// Default parameters
-function createUser(name: string, role: string = "user") {
-  return { name, role }
-}
-
-// Rest parameters
-function sum(...numbers: number[]): number {
-  return numbers.reduce((acc, n) => acc + n, 0)
-}
-
-// Function type
-type MathOperation = (a: number, b: number) => number
-const divide: MathOperation = (a, b) => a / b
-\`\`\`
-
-## React với TypeScript
-
-### Component Props
-
-\`\`\`typescript
-// Interface for props
-interface ButtonProps {
-  text: string
-  onClick: () => void
-  disabled?: boolean
-  variant?: "primary" | "secondary"
-}
-
-function Button({ text, onClick, disabled, variant = "primary" }: ButtonProps) {
-  return (
-    <button onClick={onClick} disabled={disabled}>
-      {text}
-    </button>
-  )
-}
-
-// Usage
-<Button text="Click me" onClick={() => console.log("Clicked")} />
-\`\`\`
-
-### useState
-
-\`\`\`typescript
-// Inferred type
-const [count, setCount] = useState(0) // number
-
-// Explicit type
-const [user, setUser] = useState<User | null>(null)
-
-// Generic type
-interface FormData {
-  email: string
-  password: string
-}
-
-const [formData, setFormData] = useState<FormData>({
-  email: "",
-  password: ""
-})
-\`\`\`
-
-### useRef
-
-\`\`\`typescript
-// DOM element ref
-const inputRef = useRef<HTMLInputElement>(null)
-
-// Mutable ref
-const countRef = useRef<number>(0)
-
-// Usage
-<input ref={inputRef} />
-\`\`\`
-
-### Custom Hooks
-
-\`\`\`typescript
-function useLocalStorage<T>(key: string, initialValue: T) {
-  const [value, setValue] = useState<T>(() => {
-    const item = localStorage.getItem(key)
-    return item ? JSON.parse(item) : initialValue
-  })
-
-  const setStoredValue = (newValue: T) => {
-    setValue(newValue)
-    localStorage.setItem(key, JSON.stringify(newValue))
-  }
-
-  return [value, setStoredValue] as const
-}
-
-// Usage
-const [user, setUser] = useLocalStorage<User>("user", { name: "", age: 0 })
-\`\`\`
-
-## Generics
-
-\`\`\`typescript
-// Generic function
-function identity<T>(value: T): T {
-  return value
-}
-
-identity<string>("hello") // string
-identity<number>(123)     // number
-
-// Generic interface
-interface Response<T> {
-  data: T
-  status: number
-  message: string
-}
-
-type UserResponse = Response<User>
-type ProductsResponse = Response<Product[]>
-
-// Generic constraints
-interface HasId {
-  id: number
-}
-
-function findById<T extends HasId>(items: T[], id: number): T | undefined {
-  return items.find(item => item.id === id)
-}
-\`\`\`
-
-## Utility Types
-
-\`\`\`typescript
-interface User {
-  id: number
-  name: string
-  email: string
-  age: number
-}
-
-// Partial - makes all properties optional
-type PartialUser = Partial<User>
-
-// Required - makes all properties required
-type RequiredUser = Required<PartialUser>
-
-// Pick - picks specific properties
-type UserPreview = Pick<User, "id" | "name">
-
-// Omit - omits specific properties
-type UserWithoutEmail = Omit<User, "email">
-
-// Record
-type UserRoles = Record<string, string>
-
-// Readonly
-type ReadonlyUser = Readonly<User>
-
-// ReturnType
-function createUser() {
-  return { id: 1, name: "John" }
-}
-type User = ReturnType<typeof createUser>
-\`\`\`
-
-## Best Practices
-
-### 1. Prefer Interface over Type
-
-\`\`\`typescript
-// ✅ Good
-interface User {
-  name: string
-}
-
-// ✅ Also good (for unions, primitives)
-type Status = "active" | "inactive"
-\`\`\`
-
-### 2. Use Const Assertions
-
-\`\`\`typescript
-const colors = ["red", "blue", "green"] as const
-type Color = typeof colors[number] // "red" | "blue" | "green"
-\`\`\`
-
-### 3. Avoid Any
-
-\`\`\`typescript
-// ❌ Bad
-function process(data: any) { }
-
-// ✅ Good
-function process<T>(data: T) { }
-// Or
-function process(data: unknown) { }
-\`\`\`
-
-### 4. Use Type Guards
-
-\`\`\`typescript
-function isUser(obj: any): obj is User {
-  return obj && typeof obj.name === "string" && typeof obj.age === "number"
-}
-
-if (isUser(data)) {
-  console.log(data.name) // TypeScript knows it's User
-}
-\`\`\`
-
-## Migrating từ JavaScript
-
-### Step-by-Step
-
-1. **Rename .js to .ts/.tsx**
-2. **Add tsconfig.json**
-3. **Install types**: \`@types/react\`, \`@types/node\`
-4. **Fix type errors gradually**
-5. **Enable strict mode**
-
-### Tips
-
-- Bắt đầu với \`strict: false\`
-- Dùng \`any\` tạm thời, fix sau
-- Migrate từng module một
-- Add types cho external libraries
-
-## Common Errors
-
-### 1. Property does not exist
-
-\`\`\`typescript
-// ❌ Error
-const user = {}
-user.name = "John" // Error!
-
-// ✅ Fix
-const user: User = {
-  name: "John",
-  age: 25
-}
-\`\`\`
-
-### 2. Type 'null' is not assignable
-
-\`\`\`typescript
-// ❌ Error
-const user: User = null
-
-// ✅ Fix
-const user: User | null = null
-\`\`\`
-
-### 3. Cannot find name
-
-\`\`\`typescript
-// Install types
-npm install -D @types/node
-npm install -D @types/react
-\`\`\`
-
-## Kết Luận
-
-TypeScript ban đầu có vẻ phức tạp, nhưng:
-- Giúp code reliable hơn
-- Tăng productivity
-- Dễ maintain và scale
-
-**Start small, improve gradually!**
-
-**Resources:**
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app)
-    `,
-  },
-  'mongodb-tips-and-tricks': {
-    title: 'MongoDB Tips & Tricks: Tối Ưu Query và Schema',
-    date: '2023-12-20',
-    readTime: '10 phút đọc',
-    tags: ['MongoDB', 'Database', 'Performance'],
-    content: `
-# MongoDB Tips & Tricks: Tối Ưu Query và Schema
-
-MongoDB là NoSQL database phổ biến nhất. Hãy học cách optimize để có performance tốt nhất!
-
-## Schema Design Patterns
-
-### 1. Embedding vs Referencing
-
-**Embedding (Denormalization):**
-
-\`\`\`javascript
-// User với addresses embedded
-{
-  _id: ObjectId("..."),
-  name: "John Doe",
-  addresses: [
-    { street: "123 Main St", city: "NYC" },
-    { street: "456 Park Ave", city: "LA" }
-  ]
-}
-\`\`\`
-
-**Pros:**
-- ✅ One query to get all data
-- ✅ Better performance
-- ✅ Atomic updates
-
-**Use when:**
-- Data không thường xuyên thay đổi
-- Data size nhỏ
-- Read > Write
-
-**Referencing (Normalization):**
-
-\`\`\`javascript
-// User
-{ _id: ObjectId("..."), name: "John Doe" }
-
-// Addresses
-{ _id: ObjectId("..."), userId: ObjectId("..."), street: "..." }
-\`\`\`
-
-**Use when:**
-- Data lớn (> 16MB)
-- Data thường update
-- Need to query separately
-
-### 2. One-to-Many Relationships
-
-**Child Referencing:**
-
-\`\`\`javascript
-// Product
-{
-  _id: ObjectId("..."),
-  name: "Laptop",
-  reviews: [
-    ObjectId("review1"),
-    ObjectId("review2")
-  ]
-}
-\`\`\`
-
-**Parent Referencing:**
-
-\`\`\`javascript
-// Review
-{
-  _id: ObjectId("review1"),
-  productId: ObjectId("..."),
-  text: "Great product!"
-}
-\`\`\`
-
-### 3. Two-Way Referencing
-
-\`\`\`javascript
-// User
-{
-  _id: ObjectId("user1"),
-  name: "John",
-  orderIds: [ObjectId("order1"), ObjectId("order2")]
-}
-
-// Order
-{
-  _id: ObjectId("order1"),
-  userId: ObjectId("user1"),
-  total: 100
-}
-\`\`\`
-
-## Indexing
-
-### Types of Indexes
-
-**1. Single Field Index:**
-
-\`\`\`javascript
-db.users.createIndex({ email: 1 })
-\`\`\`
-
-**2. Compound Index:**
-
-\`\`\`javascript
-db.products.createIndex({ category: 1, price: -1 })
-\`\`\`
-
-**3. Multikey Index (Arrays):**
-
-\`\`\`javascript
-db.posts.createIndex({ tags: 1 })
-\`\`\`
-
-**4. Text Index:**
-
-\`\`\`javascript
-db.articles.createIndex({ title: "text", content: "text" })
-\`\`\`
-
-**5. Geospatial Index:**
-
-\`\`\`javascript
-db.places.createIndex({ location: "2dsphere" })
-\`\`\`
-
-### Index Best Practices
-
-\`\`\`javascript
-// ❌ Bad: Index everything
-db.users.createIndex({ name: 1 })
-db.users.createIndex({ email: 1 })
-db.users.createIndex({ age: 1 })
-db.users.createIndex({ city: 1 })
-
-// ✅ Good: Index based on queries
-db.users.createIndex({ email: 1 }) // For login
-db.users.createIndex({ age: 1, city: 1 }) // For search
-\`\`\`
-
-### Analyze Query Performance
-
-\`\`\`javascript
-// Explain query
-db.users.find({ email: "john@example.com" }).explain("executionStats")
-
-// Check if index is used
-db.users.find({ email: "john@example.com" }).explain().queryPlanner.winningPlan
-\`\`\`
-
-## Query Optimization
-
-### 1. Projection
-
-\`\`\`javascript
-// ❌ Bad: Fetch all fields
-db.users.find({ age: { $gt: 18 } })
-
-// ✅ Good: Project only needed fields
-db.users.find(
-  { age: { $gt: 18 } },
-  { name: 1, email: 1, _id: 0 }
-)
-\`\`\`
-
-### 2. Limit Results
-
-\`\`\`javascript
-// Always use limit for large collections
-db.products.find({ category: "electronics" }).limit(10)
-\`\`\`
-
-### 3. Use Covered Queries
-
-\`\`\`javascript
-// Index
-db.users.createIndex({ email: 1, name: 1 })
-
-// Query - covered by index (very fast!)
-db.users.find(
-  { email: "john@example.com" },
-  { name: 1, email: 1, _id: 0 }
-)
-\`\`\`
-
-### 4. Avoid $where and JavaScript
-
-\`\`\`javascript
-// ❌ Bad: $where operator
-db.users.find({
-  $where: function() {
-    return this.age > 18
-  }
-})
-
-// ✅ Good: Use query operators
-db.users.find({ age: { $gt: 18 } })
-\`\`\`
-
-## Aggregation Pipeline
-
-### Basic Pipeline
-
-\`\`\`javascript
-db.orders.aggregate([
-  // Stage 1: Match
-  { $match: { status: "completed" } },
-  
-  // Stage 2: Group
-  {
-    $group: {
-      _id: "$userId",
-      totalSpent: { $sum: "$total" },
-      orderCount: { $sum: 1 }
-    }
-  },
-  
-  // Stage 3: Sort
-  { $sort: { totalSpent: -1 } },
-  
-  // Stage 4: Limit
-  { $limit: 10 }
-])
-\`\`\`
-
-### Advanced Operators
-
-\`\`\`javascript
-// $lookup (JOIN)
-db.orders.aggregate([
-  {
-    $lookup: {
-      from: "users",
-      localField: "userId",
-      foreignField: "_id",
-      as: "user"
-    }
-  },
-  { $unwind: "$user" }
-])
-
-// $facet (Multiple pipelines)
-db.products.aggregate([
-  {
-    $facet: {
-      "byCategory": [
-        { $group: { _id: "$category", count: { $sum: 1 } } }
-      ],
-      "priceRanges": [
-        {
-          $bucket: {
-            groupBy: "$price",
-            boundaries: [0, 100, 500, 1000],
-            default: "Other"
-          }
-        }
-      ]
-    }
-  }
-])
-\`\`\`
-
-## Performance Tips
-
-### 1. Batch Operations
-
-\`\`\`javascript
-// ❌ Bad: Multiple single inserts
-for (let doc of documents) {
-  await db.collection.insertOne(doc)
-}
-
-// ✅ Good: Bulk insert
-await db.collection.insertMany(documents)
-\`\`\`
-
-### 2. Update Operators
-
-\`\`\`javascript
-// ✅ Use $inc instead of reading & updating
-db.products.updateOne(
-  { _id: productId },
-  { $inc: { views: 1 } }
-)
-
-// ✅ Use $push for arrays
-db.users.updateOne(
-  { _id: userId },
-  { $push: { notifications: newNotification } }
-)
-
-// ✅ Use $set for partial updates
-db.users.updateOne(
-  { _id: userId },
-  { $set: { "profile.bio": newBio } }
-)
-\`\`\`
-
-### 3. Connection Pooling
-
-\`\`\`javascript
-const { MongoClient } = require('mongodb')
-
-const client = new MongoClient(uri, {
-  maxPoolSize: 10,
-  minPoolSize: 5,
-  maxIdleTimeMS: 30000
-})
-\`\`\`
-
-### 4. Capping Collections
-
-\`\`\`javascript
-// Create capped collection (for logs, etc.)
-db.createCollection("logs", {
-  capped: true,
-  size: 10000000, // 10MB
-  max: 5000 // Max documents
-})
-\`\`\`
-
-## Mongoose Tips
-
-### Schema Optimization
-
-\`\`\`javascript
-const UserSchema = new Schema({
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    lowercase: true,
-    trim: true
-  },
-  name: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  age: {
-    type: Number,
-    min: 0,
-    max: 120
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-    index: true
-  }
-}, {
-  timestamps: true, // Auto createdAt, updatedAt
-  toJSON: { virtuals: true }, // Include virtuals in JSON
-  toObject: { virtuals: true }
-})
-
-// Indexes
-UserSchema.index({ email: 1 })
-UserSchema.index({ age: 1, city: 1 })
-\`\`\`
-
-### Virtuals & Methods
-
-\`\`\`javascript
-// Virtual
-UserSchema.virtual('fullName').get(function() {
-  return \`\${this.firstName} \${this.lastName}\`
-})
-
-// Instance method
-UserSchema.methods.comparePassword = function(password) {
-  return bcrypt.compare(password, this.password)
-}
-
-// Static method
-UserSchema.statics.findByEmail = function(email) {
-  return this.findOne({ email })
-}
-\`\`\`
-
-### Lean Queries
-
-\`\`\`javascript
-// ❌ Regular query (returns Mongoose document)
-const users = await User.find({ age: { $gt: 18 } })
-
-// ✅ Lean query (returns plain JavaScript object)
-const users = await User.find({ age: { $gt: 18 } }).lean()
-\`\`\`
-
-## Monitoring & Debugging
-
-### Database Stats
-
-\`\`\`javascript
-db.stats()
-db.collection.stats()
-\`\`\`
-
-### Current Operations
-
-\`\`\`javascript
-db.currentOp()
-\`\`\`
-
-### Profiler
-
-\`\`\`javascript
-// Enable profiler
-db.setProfilingLevel(2) // Log all operations
-
-// View slow queries
-db.system.profile.find().sort({ ts: -1 }).limit(10)
-\`\`\`
-
-## Kết Luận
-
-MongoDB performance phụ thuộc vào:
-- Schema design hợp lý
-- Indexing đúng cách
-- Query optimization
-- Proper hardware
-
-**Key takeaways:**
-- Index based on queries
-- Avoid unnecessary data
-- Use aggregation wisely
-- Monitor performance
-
-**Resources:**
-- [MongoDB Manual](https://docs.mongodb.com/manual/)
-- [MongoDB University](https://university.mongodb.com/)
-    `,
-  },
-  'git-workflow-cho-team': {
-    title: 'Git Workflow Cho Team: Từ Lý Thuyết Đến Thực Hành',
-    date: '2023-12-15',
-    readTime: '8 phút đọc',
-    tags: ['Git', 'Team Work', 'DevOps'],
-    content: `
-# Git Workflow Cho Team: Từ Lý Thuyết Đến Thực Hành
-
-Git workflows giúp team collaborate hiệu quả. Hãy tìm hiểu các workflows phổ biến!
-
-## Git Flow
-
-### Overview
-
-Workflow phù hợp cho projects có release cycles rõ ràng.
-
-### Branches
-
-1. **main/master**: Production code
-2. **develop**: Integration branch
-3. **feature/***: New features
-4. **release/***: Prepare for release
-5. **hotfix/***: Emergency fixes
-
-### Workflow
-
-\`\`\`bash
-# 1. Create feature branch from develop
-git checkout develop
-git checkout -b feature/user-auth
-
-# 2. Work on feature
-git add .
-git commit -m "feat: add user authentication"
-
-# 3. Push feature branch
-git push origin feature/user-auth
-
-# 4. Create Pull Request to develop
-
-# 5. After merge, create release branch
-git checkout develop
-git checkout -b release/1.0.0
-
-# 6. Bug fixes on release branch
-git commit -m "fix: validation error"
-
-# 7. Merge to main and develop
-git checkout main
-git merge release/1.0.0
-git tag -a v1.0.0 -m "Release version 1.0.0"
-
-git checkout develop
-git merge release/1.0.0
-
-# 8. Hotfix if needed
-git checkout main
-git checkout -b hotfix/critical-bug
-git commit -m "fix: critical security issue"
-git checkout main
-git merge hotfix/critical-bug
-git checkout develop
-git merge hotfix/critical-bug
-\`\`\`
-
-### Pros & Cons
-
-**Pros:**
-- ✅ Rõ ràng, có cấu trúc
-- ✅ Phù hợp large teams
-- ✅ Support multiple versions
-
-**Cons:**
-- ❌ Phức tạp
-- ❌ Nhiều branches
-- ❌ Overkill cho small projects
-
-## GitHub Flow
-
-### Overview
-
-Simple workflow cho continuous deployment.
-
-### Workflow
-
-\`\`\`bash
-# 1. Create feature branch from main
-git checkout main
-git pull
-git checkout -b add-payment-feature
-
-# 2. Make commits
-git add .
-git commit -m "feat: add payment integration"
-git push origin add-payment-feature
-
-# 3. Open Pull Request
-
-# 4. Code review & discussion
-
-# 5. Deploy to staging for testing
-
-# 6. Merge to main (auto-deploy to production)
-\`\`\`
-
-### Rules
-
-1. **main branch** always deployable
-2. **Branch names** descriptive
-3. **Pull Requests** for everything
-4. **Deploy** immediately after merge
-
-### Pros & Cons
-
-**Pros:**
-- ✅ Simple
-- ✅ Fast iterations
-- ✅ Good for CI/CD
-
-**Cons:**
-- ❌ Không support multiple versions
-- ❌ Khó rollback
-
-## GitLab Flow
-
-### Overview
-
-Compromise giữa Git Flow và GitHub Flow.
-
-### Environment Branches
-
-\`\`\`
-main (development)
-  ↓
-pre-production
-  ↓
-production
-\`\`\`
-
-### Workflow
-
-\`\`\`bash
-# 1. Feature branch từ main
-git checkout main
-git checkout -b feature/new-feature
-
-# 2. Merge to main via MR
-git push origin feature/new-feature
-# Create Merge Request
-
-# 3. Cherry-pick to pre-production
-git checkout pre-production
-git cherry-pick <commit-hash>
-
-# 4. After testing, merge to production
-git checkout production
-git merge pre-production
-\`\`\`
-
-## Commit Messages
-
-### Conventional Commits
-
-\`\`\`
-<type>(<scope>): <subject>
-
-<body>
-
-<footer>
-\`\`\`
-
-### Types
-
-- **feat**: New feature
-- **fix**: Bug fix
-- **docs**: Documentation
-- **style**: Formatting
-- **refactor**: Code refactoring
-- **test**: Adding tests
-- **chore**: Maintenance
-
-### Examples
-
-\`\`\`bash
-feat(auth): add OAuth2 login
-
-Implement OAuth2 authentication flow with Google and GitHub providers.
-
-Closes #123
-
-fix: resolve memory leak in useEffect
-
-The cleanup function was not being called properly,
-causing memory leaks when component unmounts.
-
-docs(readme): update installation instructions
-
-chore(deps): upgrade React to v18.2.0
-\`\`\`
-
-## Pull Request Best Practices
-
-### 1. Small PRs
-
-\`\`\`
-❌ 2000 lines changed, 50 files
-✅ 200 lines changed, 5 files
-\`\`\`
-
-### 2. Good Description
-
-\`\`\`markdown
-## What
-Add user authentication feature
-
-## Why
-Users need to login to access protected routes
-
-## How
-- Implement JWT authentication
-- Add login/register pages
-- Protect routes with auth middleware
-
-## Testing
-- [x] Unit tests
-- [x] Integration tests
-- [x] Manual testing
-
-## Screenshots
-![Login page](screenshot.png)
-\`\`\`
-
-### 3. Self Review
-
-Review your own PR trước khi request review.
-
-### 4. Request Right Reviewers
-
-Tag people familiar với code area.
-
-## Code Review Tips
-
-### For Reviewers
-
-\`\`\`markdown
-✅ Good: "Consider using async/await here for better readability"
-❌ Bad: "This code is bad"
-
-✅ Good: "What happens if user is null here?"
-❌ Bad: "This will crash"
-
-✅ Good: "Nice refactoring! One suggestion..."
-❌ Bad: "Just change this"
-\`\`\`
-
-### For Authors
-
-- Don't take feedback personally
-- Explain your decisions
-- Be open to suggestions
-- Thank reviewers
-
-## Merge Strategies
-
-### 1. Merge Commit
-
-\`\`\`bash
-git merge feature-branch
-\`\`\`
-
-**Pros:** Preserve history
-**Cons:** Cluttered history
-
-### 2. Squash and Merge
-
-\`\`\`bash
-git merge --squash feature-branch
-git commit
-\`\`\`
-
-**Pros:** Clean history
-**Cons:** Lose individual commits
-
-### 3. Rebase and Merge
-
-\`\`\`bash
-git rebase main
-git checkout main
-git merge feature-branch
-\`\`\`
-
-**Pros:** Linear history
-**Cons:** Rewrite history (don't use on shared branches)
-
-## Handling Conflicts
-
-### Prevent Conflicts
-
-\`\`\`bash
-# Keep branch updated
-git checkout feature-branch
-git pull origin main
-git rebase main
-\`\`\`
-
-### Resolve Conflicts
-
-\`\`\`bash
-# When conflict occurs
-git status
-
-# Edit conflicted files
-# Look for:
-<<<<<<< HEAD
-current changes
-=======
-incoming changes
->>>>>>> branch-name
-
-# After resolving
-git add .
-git rebase --continue
-# or
-git merge --continue
-\`\`\`
-
-## Git Hooks
-
-### Pre-commit Hook
-
-\`\`\`bash
-#!/bin/sh
-# .git/hooks/pre-commit
-
-# Run linter
-npm run lint
-
-# Run tests
-npm test
-
-# If any fail, prevent commit
-\`\`\`
-
-### Commit-msg Hook
-
-\`\`\`bash
-#!/bin/sh
-# .git/hooks/commit-msg
-
-# Check commit message format
-if ! grep -qE "^(feat|fix|docs|style|refactor|test|chore):" "$1"; then
-    echo "Invalid commit message format"
-    exit 1
-fi
-\`\`\`
-
-### Using Husky
-
-\`\`\`bash
-npm install -D husky
-
-# package.json
-{
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  }
-}
-\`\`\`
-
-## Tips & Tricks
-
-### 1. Git Aliases
-
-\`\`\`bash
-git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.st status
-git config --global alias.unstage 'reset HEAD --'
-git config --global alias.last 'log -1 HEAD'
-\`\`\`
-
-### 2. Interactive Rebase
-
-\`\`\`bash
-git rebase -i HEAD~3
-
-# Pick, squash, or edit commits
-pick abc123 feat: add feature
-squash def456 fix: typo
-squash ghi789 fix: another typo
-\`\`\`
-
-### 3. Git Bisect
-
-\`\`\`bash
-# Find bug-introducing commit
-git bisect start
-git bisect bad # Current commit is bad
-git bisect good abc123 # This commit was good
-
-# Git will checkout commits for you to test
-git bisect good/bad
-
-# When found
-git bisect reset
-\`\`\`
-
-## Kết Luận
-
-**Choose workflow based on:**
-- Team size
-- Release cycle
-- Project complexity
-- CI/CD setup
-
-**Key principles:**
-- Keep main stable
-- Small, frequent commits
-- Good commit messages
-- Code review everything
-
-**Resources:**
-- [Git Book](https://git-scm.com/book)
-- [Conventional Commits](https://www.conventionalcommits.org)
-    `,
-  },
-  'nextjs-vs-react': {
-    title: 'Next.js vs Create React App: Nên Chọn Gì?',
-    date: '2023-12-10',
-    readTime: '6 phút đọc',
-    tags: ['Next.js', 'React', 'Comparison'],
-    content: `
-# Next.js vs Create React App: Nên Chọn Gì?
-
-Phân tích chi tiết để chọn đúng tool cho project của bạn!
-
-## Create React App (CRA)
-
-### Overview
-
-Library để build single-page applications (SPA).
-
-### Pros
-
-✅ **Simple setup**: \`npx create-react-app my-app\`
-✅ **Flexible**: Không opinionated
-✅ **Client-side routing**: React Router
-✅ **Community**: Huge ecosystem
-✅ **Learning**: Good for beginners
-
-### Cons
-
-❌ **No SSR**: Client-side rendering only
-❌ **SEO**: Poor without SSR
-❌ **Performance**: Slower initial load
-❌ **Configuration**: Eject needed for custom config
-❌ **No built-in routing**
-
-### Use Cases
-
-- Internal admin panels
-- Tools & dashboards
-- Apps không cần SEO
-- Learning React
-
-## Next.js
-
-### Overview
-
-React framework với nhiều features built-in.
-
-### Pros
-
-✅ **SSR/SSG**: Server-side rendering & static generation
-✅ **SEO-friendly**: Better for search engines
-✅ **Performance**: Fast initial load
-✅ **File-based routing**: No React Router needed
-✅ **API routes**: Backend endpoints
-✅ **Image optimization**: Built-in
-✅ **TypeScript support**: Out of the box
-
-### Cons
-
-❌ **Opinionated**: Less flexible
-❌ **Learning curve**: More concepts
-❌ **Complexity**: Overkill for simple apps
-❌ **Vendor lock-in**: Harder to migrate
-
-### Use Cases
-
-- E-commerce sites
-- Blogs & content sites
-- Marketing websites
-- Apps cần SEO
-- Enterprise applications
-
-## Feature Comparison
-
-| Feature | CRA | Next.js |
-|---------|-----|---------|
-| Setup | ⭐⭐⭐ Easy | ⭐⭐ Medium |
-| Routing | Manual (React Router) | Built-in (file-based) |
-| Rendering | CSR only | CSR, SSR, SSG, ISR |
-| SEO | ⭐⭐ Fair | ⭐⭐⭐ Excellent |
-| Performance | ⭐⭐ Good | ⭐⭐⭐ Excellent |
-| API Routes | ❌ No | ✅ Yes |
-| Image Optimization | Manual | Built-in |
-| Code Splitting | Manual | Automatic |
-| TypeScript | Setup needed | Built-in |
-| Learning Curve | ⭐⭐⭐ Easy | ⭐⭐ Medium |
-
-## Rendering Methods
-
-### CRA: Client-Side Rendering (CSR)
-
-\`\`\`jsx
-// Fetches data on client
-function Users() {
-  const [users, setUsers] = useState([])
-  
   useEffect(() => {
-    fetch('/api/users')
+    fetch(url)
       .then(res => res.json())
-      .then(setUsers)
-  }, [])
-  
-  return <div>{/* Render users */}</div>
+      .then(data => {
+        setData(data)
+        setLoading(false)
+      })
+      .catch(err => {
+        setError(err)
+        setLoading(false)
+      })
+  }, [url])
+
+  return { data, loading, error }
+}
+
+// Sử dụng
+function UserProfile({ userId }) {
+  const { data, loading, error } = useFetch(\`/api/users/\${userId}\`)
+
+  if (loading) return <div>Loading...</div>
+  if (error) return <div>Error: {error.message}</div>
+
+  return <div>{data.name}</div>
 }
 \`\`\`
 
-### Next.js: Multiple Options
+## Áp Dụng Vào Dự Án Thực Tế
 
-**1. SSR (Server-Side Rendering):**
+### Hotel Web Project
 
-\`\`\`jsx
-// Fetches on every request
-export async function getServerSideProps() {
-  const res = await fetch('https://api.example.com/users')
-  const users = await res.json()
-  
-  return { props: { users } }
-}
+Trong dự án Hotel Web, tôi đã sử dụng React để:
 
-function Users({ users }) {
-  return <div>{/* Render users */}</div>
-}
-\`\`\`
+1. **Component Structure**:
+   - Header, Footer (reusable)
+   - RoomCard, BookingForm (feature components)
+   - Home, About, Contact (page components)
 
-**2. SSG (Static Site Generation):**
+2. **State Management**:
+   - useState cho form data
+   - useEffect cho API calls
+   - Context API cho global state
 
-\`\`\`jsx
-// Builds at build time
-export async function getStaticProps() {
-  const res = await fetch('https://api.example.com/users')
-  const users = await res.json()
-  
-  return {
-    props: { users },
-    revalidate: 60 // ISR: revalidate every 60s
-  }
-}
-\`\`\`
+3. **Routing**:
+   - React Router DOM cho navigation
+   - Protected routes cho admin
 
-**3. CSR (Client-Side):**
+### Best Practices
 
-\`\`\`jsx
-// Same as CRA
-function Users() {
-  const { data, error } = useSWR('/api/users', fetcher)
-  return <div>{/* Render users */}</div>
-}
-\`\`\`
-
-## Routing
-
-### CRA + React Router
-
-\`\`\`jsx
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/users/:id" element={<User />} />
-      </Routes>
-    </BrowserRouter>
-  )
-}
-\`\`\`
-
-### Next.js File-based Routing
-
-\`\`\`
-pages/
-  index.js         → /
-  about.js         → /about
-  users/
-    [id].js        → /users/:id
-\`\`\`
-
-\`\`\`jsx
-// pages/users/[id].js
-import { useRouter } from 'next/router'
-
-function User() {
-  const router = useRouter()
-  const { id } = router.query
-  
-  return <div>User {id}</div>
-}
-\`\`\`
-
-## API Routes (Next.js)
-
-\`\`\`javascript
-// pages/api/users.js
-export default function handler(req, res) {
-  const users = [
-    { id: 1, name: 'John' },
-    { id: 2, name: 'Jane' }
-  ]
-  
-  res.status(200).json(users)
-}
-\`\`\`
-
-Access: \`/api/users\`
-
-## Performance
-
-### Initial Load Time
-
-**CRA:**
-1. Download HTML (small, empty)
-2. Download JS bundle (large)
-3. Parse & execute JS
-4. Fetch data (API calls)
-5. Render content
-
-**Next.js (SSR):**
-1. Server renders HTML (with data)
-2. Download HTML (larger, with content)
-3. Download JS (hydration)
-4. Hydrate (make interactive)
-
-**Result:** Next.js shows content faster!
-
-### Code Splitting
-
-**CRA:** Manual
-
-\`\`\`jsx
-const About = lazy(() => import('./About'))
-
-<Suspense fallback={<Loading />}>
-  <About />
-</Suspense>
-\`\`\`
-
-**Next.js:** Automatic per page
-
-## SEO Comparison
-
-### CRA
-
-\`\`\`html
-<!-- Initial HTML (empty) -->
-<div id="root"></div>
-
-<!-- Google sees this briefly -->
-<!-- Then waits for JS to render -->
-\`\`\`
-
-### Next.js (SSR/SSG)
-
-\`\`\`html
-<!-- Initial HTML (with content) -->
-<div id="__next">
-  <h1>Welcome to my site</h1>
-  <p>Content here...</p>
-</div>
-
-<!-- Google sees full content immediately -->
-\`\`\`
-
-## Migration Path
-
-### CRA → Next.js
-
-1. Install Next.js
-2. Move pages to \`pages/\` folder
-3. Remove React Router
-4. Update imports
-5. Add \`getServerSideProps\` or \`getStaticProps\`
-
-### Next.js → CRA
-
-Harder! Need to:
-- Remove SSR code
-- Add React Router
-- Handle API routes differently
-- Reimplement features
-
-## Decision Tree
-
-\`\`\`
-Cần SEO tốt?
-  → Yes: Next.js
-  → No: Continue
-
-Public-facing site?
-  → Yes: Next.js
-  → No: Continue
-
-Need SSR?
-  → Yes: Next.js
-  → No: Continue
-
-Simple SPA?
-  → Yes: CRA (or Vite!)
-  → No: Next.js
-
-Learning React?
-  → Yes: Start with CRA
-  → No: Use Next.js
-\`\`\`
-
-## Modern Alternative: Vite
-
-### Why Vite?
-
-- ⚡ Faster than CRA
-- 🔥 Hot Module Replacement
-- 📦 Better build times
-- 🎯 Modern tooling
-
-\`\`\`bash
-npm create vite@latest my-app -- --template react
-\`\`\`
-
-**Use Vite instead of CRA for:**
-- New projects
-- Better DX
-- Faster development
+1. **Component Naming**: PascalCase
+2. **File Structure**: Một component một file
+3. **Props Validation**: Sử dụng PropTypes hoặc TypeScript
+4. **Code Splitting**: Lazy load components
+5. **Performance**: useMemo, useCallback khi cần
 
 ## Kết Luận
 
-**Choose Next.js if:**
-- SEO quan trọng
-- E-commerce, blog, marketing site
-- Need SSR/SSG
-- Performance critical
-- Want all-in-one solution
+React là công cụ mạnh mẽ để xây dựng ứng dụng web hiện đại. Bắt đầu với những khái niệm cơ bản, thực hành với projects nhỏ, và dần dần nâng cao kỹ năng.
 
-**Choose CRA/Vite if:**
-- Internal tools, admin panels
-- SPA là đủ
-- Maximum flexibility
-- Simpler requirements
-- Learning React
+**Tips**:
+- Build projects thực tế
+- Đọc documentation chính thức
+- Xem code của người khác trên GitHub
+- Tham gia cộng đồng React
 
-**Personal recommendation:**
-- **Learning:** Vite (CRA replacement)
-- **Production SPA:** Vite
-- **Production public site:** Next.js
+Happy coding! ⚛️
 
-**Resources:**
-- [Next.js Docs](https://nextjs.org/docs)
-- [Vite Guide](https://vitejs.dev/guide/)
+---
+
+**Nguồn**: Dựa trên dự án: https://github.com/CaoDinh-cnd04/hotel_web
     `,
   },
   'trip-hotel-fullstack-flutter': {
@@ -3395,921 +620,1060 @@ npm create vite@latest my-app -- --template react
     tags: ['Flutter', 'Dart', 'Mobile', 'Full-Stack', 'Project'],
     source: 'Dựa trên dự án thực tế: https://github.com/CaoDinh-cnd04/trip-hotel-fullstack',
     content: `
-# Xây Dựng Trip Hotel Full-Stack với Flutter
+# Xây Dựng Trip Hotel Full-Stack với Flutter: Hành Trình Từ Ý Tưởng Đến Sản Phẩm
 
-## Giới Thiệu
+Trong bài viết này, tôi sẽ chia sẻ hành trình xây dựng ứng dụng đặt phòng khách sạn full-stack với Flutter, từ ý tưởng ban đầu đến khi deploy sản phẩm hoàn chỉnh.
 
-Trip Hotel Full-Stack là dự án ứng dụng đặt phòng khách sạn được xây dựng với Flutter (Dart). Đây là một trong những dự án lớn nhất của tôi, kết hợp nhiều công nghệ và kỹ thuật.
+## Ý Tưởng Dự Án
+
+Trip Hotel là ứng dụng mobile cho phép người dùng:
+- Tìm kiếm và đặt phòng khách sạn
+- Xem chi tiết phòng, giá cả, đánh giá
+- Quản lý đặt phòng của mình
+- Đánh giá và review khách sạn
+
+### Tại Sao Chọn Flutter?
+
+- **Cross-platform**: Một codebase cho cả iOS và Android
+- **Performance**: Native performance với hot reload
+- **UI/UX**: Material Design và Cupertino widgets
+- **Growing ecosystem**: Nhiều packages và cộng đồng lớn
 
 ## Tech Stack
 
-- **Frontend Mobile:** Flutter, Dart
-- **State Management:** Provider/Bloc
-- **Backend:** RESTful API
-- **Database:** Firebase Firestore hoặc MongoDB
-- **Authentication:** Firebase Auth
+### Frontend (Mobile)
+- **Flutter**: UI framework
+- **Dart**: Programming language
+- **Provider**: State management
+- **HTTP**: API calls
+- **Shared Preferences**: Local storage
 
-## Kiến Trúc Ứng Dụng
+### Backend
+- **Node.js + Express**: RESTful API
+- **MongoDB**: Database
+- **JWT**: Authentication
+- **Firebase**: File storage (images)
 
-### 1. Cấu Trúc Thư Mục
+## Cấu Trúc Dự Án
 
 \`\`\`
 lib/
 ├── models/          # Data models
-├── screens/         # UI screens
-├── widgets/         # Reusable widgets
 ├── services/        # API services
 ├── providers/       # State management
-└── utils/           # Helper functions
+├── screens/         # UI screens
+├── widgets/          # Reusable widgets
+├── utils/           # Utilities
+└── main.dart        # Entry point
 \`\`\`
 
-### 2. State Management
+## Models - Định Nghĩa Dữ Liệu
 
-Sử dụng Provider hoặc Bloc pattern để quản lý state:
+### Hotel Model
 
 \`\`\`dart
-class HotelProvider extends ChangeNotifier {
+class Hotel {
+  final String id;
+  final String name;
+  final String location;
+  final double rating;
+  final String imageUrl;
+  final double price;
+  final List<String> amenities;
+
+  Hotel({
+    required this.id,
+    required this.name,
+    required this.location,
+    required this.rating,
+    required this.imageUrl,
+    required this.price,
+    required this.amenities,
+  });
+
+  factory Hotel.fromJson(Map<String, dynamic> json) {
+    return Hotel(
+      id: json['_id'],
+      name: json['name'],
+      location: json['location'],
+      rating: json['rating'].toDouble(),
+      imageUrl: json['imageUrl'],
+      price: json['price'].toDouble(),
+      amenities: List<String>.from(json['amenities']),
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      '_id': id,
+      'name': name,
+      'location': location,
+      'rating': rating,
+      'imageUrl': imageUrl,
+      'price': price,
+      'amenities': amenities,
+    };
+  }
+}
+\`\`\`
+
+### Booking Model
+
+\`\`\`dart
+class Booking {
+  final String id;
+  final String hotelId;
+  final String userId;
+  final DateTime checkIn;
+  final DateTime checkOut;
+  final int guests;
+  final double totalPrice;
+  final String status;
+
+  Booking({
+    required this.id,
+    required this.hotelId,
+    required this.userId,
+    required this.checkIn,
+    required this.checkOut,
+    required this.guests,
+    required this.totalPrice,
+    required this.status,
+  });
+
+  factory Booking.fromJson(Map<String, dynamic> json) {
+    return Booking(
+      id: json['_id'],
+      hotelId: json['hotelId'],
+      userId: json['userId'],
+      checkIn: DateTime.parse(json['checkIn']),
+      checkOut: DateTime.parse(json['checkOut']),
+      guests: json['guests'],
+      totalPrice: json['totalPrice'].toDouble(),
+      status: json['status'],
+    );
+  }
+}
+\`\`\`
+
+## Services - API Integration
+
+### Hotel Service
+
+\`\`\`dart
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../models/hotel.dart';
+
+class HotelService {
+  final String baseUrl = 'https://api.triphotel.com';
+
+  Future<List<Hotel>> getHotels() async {
+    try {
+      final response = await http.get(
+        Uri.parse('\$baseUrl/api/hotels'),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        return data.map((json) => Hotel.fromJson(json)).toList();
+      } else {
+        throw Exception('Failed to load hotels');
+      }
+    } catch (e) {
+      throw Exception('Error: \$e');
+    }
+  }
+
+  Future<Hotel> getHotelById(String id) async {
+    try {
+      final response = await http.get(
+        Uri.parse('\$baseUrl/api/hotels/\$id'),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        return Hotel.fromJson(json.decode(response.body));
+      } else {
+        throw Exception('Failed to load hotel');
+      }
+    } catch (e) {
+      throw Exception('Error: \$e');
+    }
+  }
+
+  Future<List<Hotel>> searchHotels(String query) async {
+    try {
+      final response = await http.get(
+        Uri.parse('\$baseUrl/api/hotels/search?q=\$query'),
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        return data.map((json) => Hotel.fromJson(json)).toList();
+      } else {
+        throw Exception('Failed to search hotels');
+      }
+    } catch (e) {
+      throw Exception('Error: \$e');
+    }
+  }
+}
+\`\`\`
+
+### Booking Service
+
+\`\`\`dart
+class BookingService {
+  final String baseUrl = 'https://api.triphotel.com';
+
+  Future<Booking> createBooking({
+    required String hotelId,
+    required DateTime checkIn,
+    required DateTime checkOut,
+    required int guests,
+    required String token,
+  }) async {
+    try {
+      final response = await http.post(
+        Uri.parse('\$baseUrl/api/bookings'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer \$token',
+        },
+        body: json.encode({
+          'hotelId': hotelId,
+          'checkIn': checkIn.toIso8601String(),
+          'checkOut': checkOut.toIso8601String(),
+          'guests': guests,
+        }),
+      );
+
+      if (response.statusCode == 201) {
+        return Booking.fromJson(json.decode(response.body));
+      } else {
+        throw Exception('Failed to create booking');
+      }
+    } catch (e) {
+      throw Exception('Error: \$e');
+    }
+  }
+
+  Future<List<Booking>> getUserBookings(String userId, String token) async {
+    try {
+      final response = await http.get(
+        Uri.parse('\$baseUrl/api/bookings/user/\$userId'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer \$token',
+        },
+      );
+
+      if (response.statusCode == 200) {
+        final List<dynamic> data = json.decode(response.body);
+        return data.map((json) => Booking.fromJson(json)).toList();
+      } else {
+        throw Exception('Failed to load bookings');
+      }
+    } catch (e) {
+      throw Exception('Error: \$e');
+    }
+  }
+}
+\`\`\`
+
+## State Management với Provider
+
+### Hotel Provider
+
+\`\`\`dart
+import 'package:flutter/foundation.dart';
+import '../models/hotel.dart';
+import '../services/hotel_service.dart';
+
+class HotelProvider with ChangeNotifier {
+  final HotelService _hotelService = HotelService();
+  
   List<Hotel> _hotels = [];
-  
+  bool _loading = false;
+  String? _error;
+
   List<Hotel> get hotels => _hotels;
-  
-  Future<void> fetchHotels() async {
-    // Fetch from API
+  bool get loading => _loading;
+  String? get error => _error;
+
+  Future<void> loadHotels() async {
+    _loading = true;
+    _error = null;
     notifyListeners();
+
+    try {
+      _hotels = await _hotelService.getHotels();
+      _error = null;
+    } catch (e) {
+      _error = e.toString();
+    } finally {
+      _loading = false;
+      notifyListeners();
+    }
+  }
+
+  Future<void> searchHotels(String query) async {
+    _loading = true;
+    _error = null;
+    notifyListeners();
+
+    try {
+      _hotels = await _hotelService.searchHotels(query);
+      _error = null;
+    } catch (e) {
+      _error = e.toString();
+    } finally {
+      _loading = false;
+      notifyListeners();
+    }
   }
 }
 \`\`\`
 
-## Tính Năng Chính
+## UI Screens
 
-1. **Đăng nhập/Đăng ký:** Firebase Authentication
-2. **Tìm kiếm khách sạn:** Filter và search
-3. **Đặt phòng:** Booking system với validation
-4. **Quản lý đặt phòng:** View và cancel bookings
-5. **Payment Integration:** Tích hợp thanh toán
+### Home Screen
 
-## Kinh Nghiệm Rút Ra
+\`\`\`dart
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/hotel_provider.dart';
+import '../widgets/hotel_card.dart';
 
-- Flutter cho phép build cross-platform nhanh chóng
-- State management là key cho ứng dụng phức tạp
-- API design quan trọng cho performance
-- UI/UX tốt tạo trải nghiệm người dùng tuyệt vời
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Trip Hotel'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              // Navigate to search
+            },
+          ),
+        ],
+      ),
+      body: Consumer<HotelProvider>(
+        builder: (context, hotelProvider, child) {
+          if (hotelProvider.loading) {
+            return Center(child: CircularProgressIndicator());
+          }
+
+          if (hotelProvider.error != null) {
+            return Center(
+              child: Text('Error: \${hotelProvider.error}'),
+            );
+          }
+
+          return ListView.builder(
+            itemCount: hotelProvider.hotels.length,
+            itemBuilder: (context, index) {
+              final hotel = hotelProvider.hotels[index];
+              return HotelCard(hotel: hotel);
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+\`\`\`
+
+### Hotel Detail Screen
+
+\`\`\`dart
+class HotelDetailScreen extends StatelessWidget {
+  final Hotel hotel;
+
+  HotelDetailScreen({required this.hotel});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(hotel.name),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Hotel Image
+            Image.network(
+              hotel.imageUrl,
+              height: 250,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+            
+            // Hotel Info
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    hotel.name,
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Icon(Icons.location_on, size: 16),
+                      Text(hotel.location),
+                    ],
+                  ),
+                  SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Icon(Icons.star, color: Colors.amber),
+                      Text('\${hotel.rating}'),
+                    ],
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'Giá: \${hotel.price.toStringAsFixed(0)} VNĐ/đêm',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green,
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'Tiện ích:',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Wrap(
+                    spacing: 8,
+                    children: hotel.amenities.map((amenity) {
+                      return Chip(label: Text(amenity));
+                    }).toList(),
+                  ),
+                ],
+              ),
+            ),
+            
+            // Book Button
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Navigate to booking screen
+                  },
+                  child: Text('Đặt Phòng'),
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 16),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+\`\`\`
+
+## Widgets - Reusable Components
+
+### Hotel Card
+
+\`\`\`dart
+class HotelCard extends StatelessWidget {
+  final Hotel hotel;
+
+  HotelCard({required this.hotel});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HotelDetailScreen(hotel: hotel),
+            ),
+          );
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.network(
+              hotel.imageUrl,
+              height: 200,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    hotel.name,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 4),
+                  Row(
+                    children: [
+                      Icon(Icons.location_on, size: 16),
+                      Text(hotel.location),
+                    ],
+                  ),
+                  SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: Colors.amber, size: 16),
+                          Text('\${hotel.rating}'),
+                        ],
+                      ),
+                      Text(
+                        '\${hotel.price.toStringAsFixed(0)} VNĐ/đêm',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+\`\`\`
+
+## Authentication
+
+### Auth Service
+
+\`\`\`dart
+class AuthService {
+  final String baseUrl = 'https://api.triphotel.com';
+
+  Future<String> login(String email, String password) async {
+    try {
+      final response = await http.post(
+        Uri.parse('\$baseUrl/api/auth/login'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({
+          'email': email,
+          'password': password,
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final token = data['token'];
+        
+        // Save token to local storage
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('token', token);
+        
+        return token;
+      } else {
+        throw Exception('Login failed');
+      }
+    } catch (e) {
+      throw Exception('Error: \$e');
+    }
+  }
+
+  Future<void> logout() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove('token');
+  }
+
+  Future<String?> getToken() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('token');
+  }
+}
+\`\`\`
+
+## Những Thách Thức và Giải Pháp
+
+### 1. State Management
+
+**Vấn đề**: Quản lý state phức tạp khi app lớn
+
+**Giải pháp**: Sử dụng Provider pattern, chia nhỏ providers theo feature
+
+### 2. API Integration
+
+**Vấn đề**: Xử lý loading, error states
+
+**Giải pháp**: Tạo base service class, error handling tập trung
+
+### 3. Image Loading
+
+**Vấn đề**: Images load chậm, ảnh hưởng UX
+
+**Giải pháp**: Sử dụng cached_network_image, placeholder images
+
+### 4. Navigation
+
+**Vấn đề**: Navigation phức tạp giữa nhiều screens
+
+**Giải pháp**: Sử dụng named routes, navigation service
+
+## Kết Quả
+
+Sau 3 tháng phát triển, ứng dụng Trip Hotel đã có:
+
+- ✅ 10+ screens hoàn chỉnh
+- ✅ Authentication & Authorization
+- ✅ Search & Filter hotels
+- ✅ Booking system
+- ✅ User profile management
+- ✅ Reviews & Ratings
+
+## Bài Học Rút Ra
+
+1. **Plan trước khi code**: Thiết kế database, API structure trước
+2. **Start small**: Build features cơ bản trước, nâng cao sau
+3. **Test thường xuyên**: Test trên cả iOS và Android
+4. **Code organization**: Chia code thành modules, dễ maintain
+5. **Documentation**: Viết comments, README cho dự án
 
 ## Kết Luận
 
-Dự án này giúp tôi học được nhiều về mobile development, API integration và full-stack architecture. Flutter là một framework mạnh mẽ cho việc phát triển ứng dụng di động.
+Xây dựng Trip Hotel là một hành trình học hỏi tuyệt vời. Từ việc học Flutter/Dart, thiết kế UI/UX, tích hợp API, đến quản lý state và deploy. Mỗi bước đều là một bài học quý giá.
 
-**Nguồn:** Dựa trên dự án thực tế tại https://github.com/CaoDinh-cnd04/trip-hotel-fullstack
+**Tips cho người mới**:
+- Bắt đầu với Flutter basics
+- Build projects nhỏ trước
+- Tham gia cộng đồng Flutter
+- Đọc documentation chính thức
+- Practice, practice, practice!
+
+Happy coding! 🚀
+
+---
+
+**Nguồn**: Dựa trên dự án thực tế: https://github.com/CaoDinh-cnd04/trip-hotel-fullstack
     `,
   },
-  'firebase-authentication-firestore': {
-    title: 'Firebase Authentication & Firestore: Hướng Dẫn Tích Hợp Vào Ứng Dụng',
-    date: '2024-01-23',
-    readTime: '12 phút đọc',
-    tags: ['Firebase', 'Authentication', 'Firestore', 'Backend'],
-    source: 'Tham khảo: Firebase Official Documentation - https://firebase.google.com/docs',
+  '10-cong-cu-developer-nen-biet-2024': {
+    title: '10 Công Cụ Developer Nên Biết Năm 2024: Tăng Năng Suất Làm Việc',
+    date: '2024-01-30',
+    readTime: '14 phút đọc',
+    tags: ['Tools', 'Developer', 'Productivity', '2024', 'Tips'],
+    source: 'Tổng hợp từ các nguồn công nghệ uy tín và kinh nghiệm cộng đồng developer',
     content: `
-# Firebase Authentication & Firestore
+# 10 Công Cụ Developer Nên Biết Năm 2024: Tăng Năng Suất Làm Việc
 
-## Giới Thiệu Firebase
+Là một developer, việc sử dụng đúng công cụ có thể giúp bạn tăng năng suất làm việc lên gấp đôi, thậm chí gấp ba. Trong bài viết này, tôi sẽ giới thiệu 10 công cụ developer hàng đầu năm 2024 mà mọi developer nên biết.
 
-Firebase là một Backend-as-a-Service (BaaS) platform của Google, cung cấp nhiều dịch vụ như Authentication, Firestore, Storage, và nhiều hơn nữa.
+## Tại Sao Công Cụ Quan Trọng?
 
-## Firebase Authentication
+Công cụ tốt không chỉ giúp bạn code nhanh hơn, mà còn:
+- **Giảm lỗi**: Tự động phát hiện bugs
+- **Tiết kiệm thời gian**: Automation các tác vụ lặp lại
+- **Cải thiện chất lượng code**: Code formatting, linting tự động
+- **Tăng hiệu quả làm việc nhóm**: Collaboration tools
 
-### Setup
+## 1. Visual Studio Code (VS Code)
+
+**VS Code** vẫn là code editor phổ biến nhất năm 2024, và có lý do chính đáng.
+
+### Tại Sao Nên Dùng?
+
+- **Miễn phí và mã nguồn mở**
+- **Extensions phong phú**: Hàng nghìn extensions
+- **Integrated Terminal**: Terminal ngay trong editor
+- **Git Integration**: Quản lý Git trực tiếp
+- **IntelliSense**: Auto-complete thông minh
+- **Debugging**: Debug code dễ dàng
+
+### Extensions Quan Trọng
+
+\`\`\`json
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",      // Code formatter
+    "dbaeumer.vscode-eslint",       // JavaScript linter
+    "ms-python.python",             // Python support
+    "bradlc.vscode-tailwindcss",   // Tailwind CSS IntelliSense
+    "github.copilot",               // AI coding assistant
+    "ms-vscode.vscode-typescript-next" // TypeScript support
+  ]
+}
+\`\`\`
+
+### Tips Sử Dụng
+
+- **Keyboard Shortcuts**: Học các shortcuts để code nhanh hơn
+- **Command Palette**: \`Ctrl+Shift+P\` (Windows) hoặc \`Cmd+Shift+P\` (Mac)
+- **Multi-cursor**: \`Alt+Click\` để chọn nhiều dòng cùng lúc
+- **Zen Mode**: \`Ctrl+K Z\` để tập trung code
+
+## 2. GitHub Copilot
+
+**GitHub Copilot** là AI coding assistant được phát triển bởi GitHub và OpenAI.
+
+### Tính Năng
+
+- **Code Suggestions**: Gợi ý code tự động
+- **Auto-complete**: Hoàn thiện code dựa trên context
+- **Code Generation**: Tạo code từ comments
+- **Multi-language Support**: Hỗ trợ nhiều ngôn ngữ
+
+### Ví Dụ Sử Dụng
+
+\`\`\`javascript
+// Chỉ cần viết comment, Copilot sẽ suggest code
+// Function to calculate factorial of a number
+function factorial(n) {
+  // Copilot sẽ tự động suggest implementation
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
+}
+\`\`\`
+
+### Lưu Ý
+
+- **Không phải lúc nào cũng đúng**: Luôn review code được suggest
+- **Privacy**: Code của bạn được gửi đến GitHub servers
+- **Cost**: Có phí cho personal use ($10/tháng), miễn phí cho students
+
+## 3. Postman
+
+**Postman** là công cụ không thể thiếu cho backend developer.
+
+### Tại Sao Cần Postman?
+
+- **API Testing**: Test API endpoints dễ dàng
+- **Collections**: Tổ chức API requests
+- **Environment Variables**: Quản lý variables cho dev/staging/prod
+- **Automation**: Chạy tests tự động
+- **Documentation**: Tự động generate API docs
+
+### Workflow Cơ Bản
+
+1. **Tạo Request**: GET, POST, PUT, DELETE
+2. **Set Headers**: Authorization, Content-Type
+3. **Test Response**: Assertions, status codes
+4. **Save to Collection**: Tổ chức theo project
+5. **Share với Team**: Export/Import collections
+
+### Ví Dụ Collection
+
+\`\`\`json
+{
+  "info": {
+    "name": "User API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users"]
+        }
+      }
+    }
+  ]
+}
+\`\`\`
+
+## 4. Git & GitHub
+
+**Git** và **GitHub** là nền tảng của version control hiện đại.
+
+### Git Commands Quan Trọng
 
 \`\`\`bash
-npm install firebase
+# Basic workflow
+git clone <repository-url>
+git checkout -b feature/new-feature
+git add .
+git commit -m "Add new feature"
+git push origin feature/new-feature
+
+# Advanced
+git rebase -i HEAD~3        # Interactive rebase
+git stash                    # Save changes temporarily
+git cherry-pick <commit-id>  # Apply specific commit
 \`\`\`
 
-\`\`\`javascript
-import { initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
+### GitHub Features
 
-const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-project.firebaseapp.com",
-  projectId: "your-project-id"
-}
+- **Pull Requests**: Code review và collaboration
+- **Actions**: CI/CD automation
+- **Issues**: Bug tracking và project management
+- **Discussions**: Community engagement
+- **GitHub Pages**: Host static websites miễn phí
 
-const app = initializeApp(firebaseConfig)
-export const auth = getAuth(app)
+### Best Practices
+
+- **Commit Messages**: Viết rõ ràng, descriptive
+- **Branch Strategy**: Git Flow hoặc GitHub Flow
+- **Code Review**: Luôn review code trước khi merge
+- **.gitignore**: Ignore files không cần thiết
+
+## 5. Docker
+
+**Docker** giúp containerize applications, đảm bảo consistency giữa các environments.
+
+### Lợi Ích
+
+- **Consistency**: Code chạy giống nhau ở mọi nơi
+- **Isolation**: Mỗi app chạy trong container riêng
+- **Scalability**: Dễ dàng scale up/down
+- **Portability**: Chạy trên bất kỳ platform nào
+
+### Dockerfile Example
+
+\`\`\`dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
 \`\`\`
 
-### Email/Password Authentication
-
-\`\`\`javascript
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
-
-// Đăng ký
-const signUp = async (email, password) => {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password)
-    console.log('User created:', userCredential.user)
-  } catch (error) {
-    console.error('Error:', error.message)
-  }
-}
-\`\`\`
-
-## Firestore Database
-
-### CRUD Operations
-
-\`\`\`javascript
-import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore'
-
-const db = getFirestore(app)
-
-// Create
-const addHotel = async (hotelData) => {
-  const docRef = await addDoc(collection(db, 'hotels'), hotelData)
-  return docRef.id
-}
-
-// Read
-const getHotels = async () => {
-  const querySnapshot = await getDocs(collection(db, 'hotels'))
-  return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-}
-\`\`\`
-
-## Best Practices
-
-1. **Security Rules:** Luôn setup Firestore security rules
-2. **Error Handling:** Xử lý lỗi đầy đủ
-3. **Offline Support:** Firestore hỗ trợ offline mode
-4. **Real-time Updates:** Sử dụng onSnapshot cho real-time data
-
-**Nguồn:** Tham khảo Firebase Official Documentation - https://firebase.google.com/docs
-    `,
-  },
-  'nodejs-express-rest-api': {
-    title: 'Node.js & Express.js: Xây Dựng RESTful API Chuyên Nghiệp',
-    date: '2024-01-20',
-    readTime: '11 phút đọc',
-    tags: ['Node.js', 'Express', 'REST API', 'Backend', 'JWT'],
-    source: 'Tham khảo: Express.js Documentation - https://expressjs.com/',
-    content: `
-# Node.js & Express.js: Xây Dựng RESTful API
-
-## Giới Thiệu
-
-Node.js và Express.js là bộ đôi mạnh mẽ để xây dựng backend API. Trong bài viết này, chúng ta sẽ học cách xây dựng RESTful API chuyên nghiệp.
-
-## Setup Project
+### Docker Commands
 
 \`\`\`bash
-npm init -y
-npm install express
-npm install -D nodemon
+# Build image
+docker build -t my-app .
+
+# Run container
+docker run -p 3000:3000 my-app
+
+# Docker Compose
+docker-compose up -d
 \`\`\`
 
-## Cấu Trúc Cơ Bản
+## 6. Tailwind CSS
 
-\`\`\`javascript
-const express = require('express')
-const app = express()
+**Tailwind CSS** là utility-first CSS framework, giúp style nhanh chóng.
 
-app.use(express.json())
+### Tại Sao Tailwind?
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Hello World' })
-})
+- **Rapid Development**: Style nhanh với utility classes
+- **Consistency**: Design system tự động
+- **Customizable**: Dễ dàng customize
+- **Performance**: Purge unused CSS
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000')
-})
+### Ví Dụ
+
+\`\`\`html
+<!-- Thay vì viết CSS riêng -->
+<div class="flex items-center justify-between p-4 bg-blue-500 rounded-lg shadow-lg hover:bg-blue-600 transition-colors">
+  <h2 class="text-2xl font-bold text-white">Hello World</h2>
+  <button class="px-4 py-2 bg-white text-blue-500 rounded hover:bg-gray-100">
+    Click me
+  </button>
+</div>
 \`\`\`
-
-## RESTful Routes
-
-\`\`\`javascript
-// GET /api/hotels
-app.get('/api/hotels', async (req, res) => {
-  try {
-    const hotels = await Hotel.find()
-    res.json(hotels)
-  } catch (error) {
-    res.status(500).json({ error: error.message })
-  }
-})
-
-// POST /api/hotels
-app.post('/api/hotels', async (req, res) => {
-  try {
-    const hotel = new Hotel(req.body)
-    await hotel.save()
-    res.status(201).json(hotel)
-  } catch (error) {
-    res.status(400).json({ error: error.message })
-  }
-})
-\`\`\`
-
-## Middleware & JWT Authentication
-
-\`\`\`javascript
-const jwt = require('jsonwebtoken')
-
-const authenticateToken = (req, res, next) => {
-  const token = req.headers['authorization']?.split(' ')[1]
-  if (!token) return res.sendStatus(401)
-  
-  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-    if (err) return res.sendStatus(403)
-    req.user = user
-    next()
-  })
-}
-\`\`\`
-
-## Best Practices
-
-1. **Environment Variables:** Sử dụng .env cho config
-2. **Validation:** Validate input với express-validator
-3. **Security:** Helmet.js cho security headers
-4. **Error Handling:** Centralized error handling
-
-**Nguồn:** Tham khảo Express.js Documentation - https://expressjs.com/
-    `,
-  },
-  'hoc-it-nhu-the-nao': {
-    title: 'Học IT Như Thế Nào? Kinh Nghiệm Từ Sinh Viên IT',
-    date: '2024-01-28',
-    readTime: '12 phút đọc',
-    tags: ['Học Tập', 'IT', 'Kinh Nghiệm', 'Sinh Viên'],
-    source: 'Kinh nghiệm cá nhân từ hành trình học IT',
-    content: `
-# Học IT Như Thế Nào? Kinh Nghiệm Từ Sinh Viên IT
-
-## Giới Thiệu
-
-Là một sinh viên IT, tôi đã trải qua nhiều thăng trầm trong quá trình học lập trình. Bài viết này chia sẻ những kinh nghiệm thực tế, những sai lầm thường gặp, và cách học hiệu quả.
-
-## Bắt Đầu Từ Đâu?
-
-### 1. Chọn Ngôn Ngữ Phù Hợp
-
-Khi mới bắt đầu, việc chọn ngôn ngữ lập trình đầu tiên rất quan trọng:
-
-- **JavaScript/HTML/CSS**: Dễ học, có thể thấy kết quả ngay, phù hợp cho web development
-- **Python**: Syntax đơn giản, phù hợp cho người mới
-- **Java/C#**: Cấu trúc rõ ràng, tốt cho việc học OOP
-
-**Lời khuyên:** Bắt đầu với một ngôn ngữ và học sâu, đừng nhảy từ ngôn ngữ này sang ngôn ngữ khác.
-
-### 2. Học Lý Thuyết Kết Hợp Thực Hành
-
-**Sai lầm thường gặp:**
-- Chỉ đọc sách, xem video mà không code
-- Code theo tutorial mà không hiểu tại sao
-
-**Cách học đúng:**
-- Học lý thuyết → Làm bài tập → Xây dựng dự án nhỏ
-- Tự đặt câu hỏi "Tại sao?" khi code
-- Thử nghiệm, thay đổi code để hiểu rõ hơn
-
-## Xây Dựng Dự Án Thực Tế
-
-### Tại Sao Dự Án Quan Trọng?
-
-1. **Áp dụng kiến thức:** Tổng hợp tất cả những gì đã học
-2. **Portfolio:** Có sản phẩm để show cho nhà tuyển dụng
-3. **Học từ sai lầm:** Gặp bug, giải quyết vấn đề thực tế
-
-### Dự Án Đầu Tiên Nên Làm Gì?
-
-- **Todo App:** Học CRUD, state management
-- **Weather App:** Học API integration
-- **Blog cá nhân:** Học full-stack development
-- **Clone một website:** Học từ những gì đã có
-
-## Tài Nguyên Học Tập
-
-### 1. Khóa Học Online
-
-- **Udemy:** Nhiều khóa học chất lượng
-- **FreeCodeCamp:** Miễn phí, có chứng chỉ
-- **Coursera:** Khóa học từ các trường đại học
-
-### 2. Tài Liệu Chính Thức
-
-- **MDN Web Docs:** Tài liệu tốt nhất cho web development
-- **Official Documentation:** Luôn đọc docs chính thức
-- **Stack Overflow:** Giải đáp thắc mắc
-
-### 3. Cộng Đồng
-
-- **GitHub:** Học từ code của người khác
-- **Dev.to, Medium:** Đọc bài viết kỹ thuật
-- **Discord/Slack:** Tham gia cộng đồng developer
-
-## Những Sai Lầm Thường Gặp
-
-### 1. Học Quá Nhiều Công Nghệ Cùng Lúc
-
-**Vấn đề:** Học React, Vue, Angular cùng lúc → Không thành thạo cái nào
-
-**Giải pháp:** Chọn một framework, học sâu, sau đó mới học cái khác
-
-### 2. So Sánh Bản Thân Với Người Khác
-
-**Vấn đề:** Thấy người khác code giỏi → Nản chí
-
-**Giải pháp:** Mỗi người có tốc độ học khác nhau. Tập trung vào bản thân, so sánh với chính mình ngày hôm qua
-
-### 3. Không Code Thường Xuyên
-
-**Vấn đề:** Học dồn vào cuối tuần, giữa tuần không đụng đến code
-
-**Giải pháp:** Code mỗi ngày, dù chỉ 30 phút. Consistency quan trọng hơn intensity
-
-## Lời Khuyên Cuối Cùng
-
-1. **Kiên nhẫn:** Học lập trình cần thời gian, đừng vội vàng
-2. **Thực hành:** Code nhiều hơn đọc
-3. **Xây dựng dự án:** Đừng chỉ làm tutorial
-4. **Tham gia cộng đồng:** Học từ người khác, giúp đỡ người khác
-5. **Đừng sợ sai:** Bug là bạn, không phải kẻ thù
-
-## Kết Luận
-
-Học IT là một hành trình dài, đầy thử thách nhưng cũng rất thú vị. Quan trọng nhất là kiên trì, thực hành thường xuyên, và không ngừng học hỏi. Chúc các bạn thành công trên con đường trở thành developer!
-
-**Nguồn:** Kinh nghiệm cá nhân từ hành trình học IT
-    `,
-  },
-  'kinh-nghiem-thuc-tap-it': {
-    title: 'Kinh Nghiệm Thực Tập IT: Từ Sinh Viên Đến Developer',
-    date: '2024-01-26',
-    readTime: '10 phút đọc',
-    tags: ['Thực Tập', 'Công Việc', 'IT', 'Career'],
-    source: 'Kinh nghiệm thực tế từ quá trình tìm việc và thực tập',
-    content: `
-# Kinh Nghiệm Thực Tập IT: Từ Sinh Viên Đến Developer
-
-## Giới Thiệu
-
-Thực tập là bước quan trọng trong hành trình từ sinh viên đến developer. Bài viết này chia sẻ kinh nghiệm thực tế về cách tìm công ty, chuẩn bị CV, phỏng vấn, và những kỹ năng cần thiết.
-
-## Chuẩn Bị Trước Khi Ứng Tuyển
-
-### 1. Xây Dựng Portfolio
-
-**Portfolio nên có:**
-- 2-3 dự án hoàn chỉnh (không phải tutorial)
-- Code trên GitHub với README rõ ràng
-- Demo live (deploy lên Netlify/Vercel)
-- Mô tả công nghệ sử dụng, vấn đề đã giải quyết
-
-**Tips:**
-- Chất lượng quan trọng hơn số lượng
-- Chọn dự án thể hiện được kỹ năng của bạn
-- Code clean, có comment, có documentation
-
-### 2. Chuẩn Bị CV
-
-**CV nên có:**
-- Thông tin cá nhân rõ ràng
-- Kỹ năng kỹ thuật (programming languages, frameworks, tools)
-- Dự án nổi bật với link GitHub và demo
-- Kinh nghiệm (nếu có)
-- Học vấn
-
-**Lưu ý:**
-- CV ngắn gọn, 1-2 trang
-- Format đẹp, dễ đọc
-- Không nói dối, nhưng highlight điểm mạnh
-- Có thể dùng template từ Canva, Overleaf
-
-### 3. Kỹ Năng Cần Có
-
-**Bắt buộc:**
-- Ít nhất 1 ngôn ngữ lập trình thành thạo
-- Hiểu về Git/GitHub
-- Biết sử dụng một framework (React, Vue, Angular...)
-
-**Nên có:**
-- Kiến thức về database
-- Hiểu về REST API
-- Biết về testing
-- Có kinh nghiệm với một công cụ (Postman, VS Code...)
-
-## Tìm Công Ty Thực Tập
-
-### 1. Nơi Tìm Việc
-
-- **TopDev, ITviec:** Website tuyển dụng IT phổ biến ở Việt Nam
-- **LinkedIn:** Tìm công ty, kết nối với HR
-- **Facebook Groups:** Các group IT, startup
-- **Website công ty:** Nhiều công ty có trang tuyển dụng riêng
-- **Career Fair:** Hội chợ việc làm tại trường
-
-### 2. Chọn Công Ty Phù Hợp
-
-**Cân nhắc:**
-- **Quy mô:** Startup nhỏ hay công ty lớn?
-- **Công nghệ:** Công ty dùng công nghệ bạn muốn học?
-- **Mentor:** Có người hướng dẫn không?
-- **Văn hóa:** Môi trường làm việc như thế nào?
-
-**Lời khuyên:** Với sinh viên, nên chọn công ty có mentor tốt, dù lương không cao
-
-## Phỏng Vấn
-
-### 1. Chuẩn Bị Trước Phỏng Vấn
-
-**Nghiên cứu công ty:**
-- Tìm hiểu về sản phẩm/dịch vụ
-- Xem công nghệ họ đang dùng
-- Đọc về văn hóa công ty
-
-**Chuẩn bị câu hỏi:**
-- Hỏi về dự án sẽ làm
-- Hỏi về quy trình làm việc
-- Hỏi về cơ hội học hỏi
-
-### 2. Câu Hỏi Thường Gặp
-
-**Về kỹ thuật:**
-- "Bạn đã làm dự án gì?"
-- "Bạn giải thích cách hoạt động của [công nghệ]?"
-- "Bạn xử lý bug như thế nào?"
-
-**Về bản thân:**
-- "Tại sao bạn muốn thực tập ở đây?"
-- "Điểm mạnh/yếu của bạn là gì?"
-- "Bạn muốn học gì từ kỳ thực tập này?"
-
-### 3. Coding Challenge
-
-Nhiều công ty sẽ có coding challenge:
-- **LeetCode:** Luyện giải bài toán
-- **HackerRank:** Practice coding
-- **Build a small project:** Xây dựng một tính năng nhỏ
-
-**Tips:**
-- Đọc kỹ yêu cầu
-- Hỏi nếu không hiểu
-- Code clean, có comment
-- Test kỹ trước khi submit
-
-## Khi Đi Thực Tập
-
-### 1. Tuần Đầu Tiên
-
-- **Quan sát:** Xem cách team làm việc
-- **Hỏi nhiều:** Đừng ngại hỏi khi không hiểu
-- **Ghi chép:** Ghi lại những gì học được
-- **Làm quen:** Kết nối với đồng nghiệp
-
-### 2. Kỹ Năng Cần Phát Triển
-
-**Technical:**
-- Code theo best practices
-- Viết code dễ đọc, dễ maintain
-- Học cách debug hiệu quả
-- Hiểu về code review
-
-**Soft skills:**
-- Giao tiếp với team
-- Quản lý thời gian
-- Hỏi đúng câu hỏi
-- Nhận feedback và cải thiện
-
-### 3. Tận Dụng Cơ Hội
-
-- **Học từ mentor:** Hỏi về kinh nghiệm, best practices
-- **Tham gia meetings:** Học cách team làm việc
-- **Làm nhiều dự án:** Càng làm nhiều càng học nhiều
-- **Đọc code của người khác:** Học từ code tốt
-
-## Sau Kỳ Thực Tập
-
-### 1. Tổng Kết
-
-- **Review lại:** Những gì đã học, đã làm
-- **Cập nhật CV:** Thêm kinh nghiệm thực tập
-- **Cập nhật portfolio:** Thêm dự án đã làm ở công ty
-- **Xin feedback:** Hỏi mentor về điểm mạnh/yếu
-
-### 2. Bước Tiếp Theo
-
-- **Xin làm part-time:** Nếu công ty cho phép
-- **Ứng tuyển full-time:** Nếu muốn làm lâu dài
-- **Tìm cơ hội mới:** Nếu muốn thử môi trường khác
-
-## Kết Luận
-
-Thực tập là cơ hội tuyệt vời để học hỏi, tích lũy kinh nghiệm, và chuẩn bị cho sự nghiệp developer. Quan trọng nhất là thái độ học hỏi, sẵn sàng làm việc, và không ngại thử thách. Chúc các bạn tìm được kỳ thực tập phù hợp!
-
-**Nguồn:** Kinh nghiệm thực tế từ quá trình tìm việc và thực tập
-    `,
-  },
-  'cong-nghe-moi-2024': {
-    title: 'Công Nghệ Mới 2024: Xu Hướng Cho Developer',
-    date: '2024-01-24',
-    readTime: '15 phút đọc',
-    tags: ['Công Nghệ', 'Trend', '2024', 'Developer'],
-    source: 'Tổng hợp từ các nguồn công nghệ uy tín và xu hướng thị trường',
-    content: `
-# Công Nghệ Mới 2024: Xu Hướng Cho Developer
-
-## Giới Thiệu
-
-Năm 2024 mang đến nhiều xu hướng công nghệ mới thú vị. Bài viết này tổng hợp các công nghệ đang hot, xu hướng phát triển, và những gì developer nên học.
-
-## AI & Machine Learning
-
-### 1. Large Language Models (LLM)
-
-**Xu hướng:**
-- **ChatGPT, Claude, Gemini:** AI chatbots phổ biến
-- **AI Code Assistants:** GitHub Copilot, Cursor, Codeium
-- **AI trong Development:** Code generation, testing, documentation
-
-**Tác động:**
-- Developer có thể code nhanh hơn với AI assistance
-- Cần học cách prompt engineering
-- AI giúp giải quyết vấn đề phức tạp
-
-**Nên học:**
-- Cách sử dụng AI tools trong development
-- Prompt engineering
-- Tích hợp AI vào ứng dụng
-
-### 2. Machine Learning Frameworks
-
-- **TensorFlow, PyTorch:** Deep learning
-- **Scikit-learn:** Machine learning cơ bản
-- **Hugging Face:** Pre-trained models
-
-## Web Development
-
-### 1. React 19 & Next.js 15
-
-**React 19:**
-- Server Components
-- Improved performance
-- Better developer experience
-
-**Next.js 15:**
-- App Router stable
-- Server Actions
-- Improved SEO
-
-**Xu hướng:**
-- Full-stack React với Next.js
-- Server-side rendering
-- Edge computing
-
-### 2. Vue 3 & Nuxt 3
-
-- Composition API
-- Better TypeScript support
-- Performance improvements
-
-### 3. Svelte & SvelteKit
-
-- Compile-time optimization
-- Smaller bundle size
-- Growing ecosystem
-
-## Backend & API
-
-### 1. Serverless & Edge Computing
-
-**Platforms:**
-- **Vercel Edge Functions**
-- **Cloudflare Workers**
-- **AWS Lambda**
-
-**Lợi ích:**
-- Không cần quản lý server
-- Auto-scaling
-- Pay-as-you-go
-
-### 2. GraphQL
-
-- Type-safe APIs
-- Efficient data fetching
-- Growing adoption
-
-### 3. tRPC
-
-- End-to-end type safety
-- Great DX
-- Popular in TypeScript ecosystem
-
-## Mobile Development
-
-### 1. Flutter 3.x
-
-- Better performance
-- Web & Desktop support
-- Growing ecosystem
-
-### 2. React Native
-
-- Expo improvements
-- Better performance
-- Cross-platform development
-
-### 3. Native Development
-
-- SwiftUI (iOS)
-- Jetpack Compose (Android)
-
-## Database & Storage
-
-### 1. Vector Databases
-
-- **Pinecone, Weaviate:** For AI/ML applications
-- Growing với AI trend
-
-### 2. Edge Databases
-
-- **Turso, PlanetScale:** Edge-first databases
-- Low latency globally
-
-### 3. NoSQL Growth
-
-- **MongoDB:** Popular document database
-- **Redis:** Caching & real-time
-
-## DevOps & Infrastructure
-
-### 1. Docker & Kubernetes
-
-- Containerization standard
-- Microservices architecture
-- Cloud-native development
-
-### 2. CI/CD
-
-- **GitHub Actions:** Popular CI/CD
-- **GitLab CI:** Integrated solution
-- Automation everywhere
-
-### 3. Infrastructure as Code
-
-- **Terraform:** Infrastructure management
-- **Pulumi:** Code-based IaC
-
-## Developer Tools
-
-### 1. AI-Powered Tools
-
-- **GitHub Copilot:** AI pair programmer
-- **Cursor:** AI-powered editor
-- **v0.dev:** AI UI generation
-
-### 2. Better IDEs
-
-- **VS Code:** Most popular editor
-- **JetBrains:** Professional IDEs
-- **Cursor:** AI-first editor
-
-### 3. Testing Tools
-
-- **Playwright:** E2E testing
-- **Vitest:** Fast unit testing
-- **Testing Library:** Component testing
-
-## Web3 & Blockchain
-
-### 1. Smart Contracts
-
-- **Solidity:** Ethereum development
-- **Rust:** Solana development
-
-### 2. Web3 Frameworks
-
-- **Ethers.js, Web3.js:** Ethereum libraries
-- **Hardhat:** Development framework
-
-## Lời Khuyên Cho Developer
-
-### 1. Đừng Chạy Theo Mọi Trend
-
-- Chọn công nghệ phù hợp với dự án
-- Học sâu hơn học rộng
-- Focus vào fundamentals
-
-### 2. Học Công Nghệ Mới Có Chọn Lọc
-
-- **Nên học:** Công nghệ có community lớn, documentation tốt
-- **Cân nhắc:** Công nghệ mới nhưng chưa stable
-- **Tránh:** Công nghệ đang chết dần
-
-### 3. Fundamentals Quan Trọng
-
-- Algorithms & Data Structures
-- System Design
-- Clean Code
-- Best Practices
-
-## Kết Luận
-
-Năm 2024 mang đến nhiều cơ hội cho developer với AI, web development improvements, và các công nghệ mới. Quan trọng là học có chọn lọc, tập trung vào fundamentals, và áp dụng vào dự án thực tế.
-
-**Nguồn:** Tổng hợp từ các nguồn công nghệ uy tín và xu hướng thị trường
-    `,
-  },
-  'tips-sinh-vien-it': {
-    title: '10 Tips Cho Sinh Viên IT: Từ Học Tập Đến Sự Nghiệp',
-    date: '2024-01-22',
-    readTime: '8 phút đọc',
-    tags: ['Tips', 'Sinh Viên', 'Career', 'IT'],
-    source: 'Tổng hợp từ kinh nghiệm cá nhân và cộng đồng developer',
-    content: `
-# 10 Tips Cho Sinh Viên IT: Từ Học Tập Đến Sự Nghiệp
-
-## Giới Thiệu
-
-Là sinh viên IT, có rất nhiều điều cần học và chuẩn bị. Bài viết này tổng hợp 10 tips quan trọng nhất từ học tập đến xây dựng sự nghiệp developer.
-
-## 1. Code Mỗi Ngày
-
-### Tại Sao?
-
-- **Consistency > Intensity:** Code 30 phút mỗi ngày tốt hơn code 5 giờ một lần
-- **Xây dựng thói quen:** Làm quen với code, không bị quên
-- **Tích lũy kinh nghiệm:** Mỗi ngày học một chút, lâu dài sẽ giỏi
-
-### Làm Thế Nào?
-
-- **Set goal nhỏ:** Code 30 phút mỗi ngày
-- **Track progress:** Dùng GitHub contribution graph
-- **Join challenges:** 100 Days of Code, Advent of Code
-
-## 2. Xây Dựng Portfolio
-
-### Portfolio Nên Có Gì?
-
-- **2-3 dự án hoàn chỉnh:** Không phải tutorial, mà là dự án tự làm
-- **Code trên GitHub:** Public repos với README rõ ràng
-- **Live demos:** Deploy lên Netlify, Vercel, hoặc GitHub Pages
-- **Documentation:** Giải thích công nghệ, vấn đề đã giải quyết
 
 ### Tips
 
-- Chất lượng > Số lượng
-- Chọn dự án thể hiện được kỹ năng
-- Update thường xuyên
+- **IntelliSense**: Cài extension cho VS Code
+- **@apply**: Tạo custom components
+- **JIT Mode**: Just-in-time compilation
+- **Dark Mode**: Built-in dark mode support
 
-## 3. Học Từ Nhiều Nguồn
+## 7. Chrome DevTools
 
-### Đa Dạng Nguồn Học
+**Chrome DevTools** là công cụ debugging mạnh mẽ cho web developers.
 
-- **Video tutorials:** YouTube, Udemy
-- **Documentation:** Official docs
-- **Blog posts:** Dev.to, Medium
-- **Books:** Technical books
-- **Practice:** LeetCode, HackerRank
+### Tính Năng Quan Trọng
 
-### Cách Học Hiệu Quả
+- **Elements Tab**: Inspect và edit HTML/CSS
+- **Console**: Debug JavaScript, log messages
+- **Network Tab**: Monitor API calls, performance
+- **Performance Tab**: Analyze performance bottlenecks
+- **Application Tab**: View storage, cookies, cache
 
-- Không chỉ xem, mà phải code theo
-- Tự làm lại không xem tutorial
-- Giải thích lại cho người khác
+### Tips Debugging
 
-## 4. Tham Gia Cộng Đồng
+\`\`\`javascript
+// Console tricks
+console.table(data)           // Display data as table
+console.time('label')         // Measure execution time
+console.group('Group')        // Group logs
+debugger                      // Breakpoint in code
+\`\`\`
 
-### Lợi Ích
+### Shortcuts
 
-- **Học từ người khác:** Code review, best practices
-- **Network:** Kết nối với developer khác
-- **Cơ hội:** Job opportunities, collaboration
-- **Motivation:** Động lực học tập
+- **F12**: Open DevTools
+- **Ctrl+Shift+C**: Inspect element
+- **Ctrl+Shift+J**: Open Console
+- **Ctrl+Shift+I**: Toggle DevTools
 
-### Nơi Tham Gia
+## 8. Figma
 
-- **GitHub:** Contribute to open source
-- **Discord/Slack:** Developer communities
-- **Meetups:** Local tech events
-- **Forums:** Stack Overflow, Reddit
+**Figma** là design tool cho UI/UX, quan trọng cho frontend developers.
 
-## 5. Đọc Code Của Người Khác
+### Tại Sao Cần Figma?
 
-### Tại Sao?
+- **Design Handoff**: Lấy specs, colors, spacing từ designers
+- **Prototyping**: Xem design flow
+- **Collaboration**: Làm việc với designers
+- **Component Library**: Xem design system
 
-- **Học best practices:** Xem cách người giỏi code
-- **Học patterns:** Design patterns, architecture
-- **Mở rộng kiến thức:** Công nghệ mới, cách giải quyết vấn đề
+### Developer Workflow
 
-### Làm Thế Nào?
+1. **Inspect Design**: Lấy exact measurements
+2. **Export Assets**: Download images, icons
+3. **Copy CSS**: Copy styles trực tiếp
+4. **Check Responsive**: Xem breakpoints
 
-- **GitHub Explore:** Tìm repos phổ biến
-- **Open source:** Contribute to projects
-- **Code review:** Review code của người khác
+## 9. Notion / Obsidian
 
-## 6. Viết Blog & Chia Sẻ
+**Notion** hoặc **Obsidian** để quản lý kiến thức và documentation.
 
-### Lợi Ích
+### Notion Features
 
-- **Củng cố kiến thức:** Viết giúp hiểu sâu hơn
-- **Portfolio:** Showcase kiến thức
-- **Network:** Kết nối với cộng đồng
-- **Career:** Cải thiện cơ hội việc làm
+- **Documentation**: Viết docs cho projects
+- **Task Management**: Quản lý tasks
+- **Knowledge Base**: Lưu trữ kiến thức
+- **Templates**: Project templates
 
-### Viết Về Gì?
+### Obsidian Features
 
-- Những gì đã học
-- Dự án đã làm
-- Vấn đề đã giải quyết
-- Tutorial, guides
+- **Markdown**: Pure markdown editor
+- **Graph View**: Visualize connections
+- **Plugins**: Extend functionality
+- **Local First**: Data lưu local
 
-## 7. Học Git & GitHub
+## 10. Vercel / Netlify
 
-### Tại Sao Quan Trọng?
+**Vercel** và **Netlify** là platforms để deploy frontend applications.
 
-- **Industry standard:** Mọi công ty đều dùng
-- **Collaboration:** Làm việc nhóm
-- **Portfolio:** Showcase projects
-- **Version control:** Quản lý code
+### Vercel
 
-### Nên Học Gì?
+- **Zero Config**: Deploy ngay, không cần config
+- **Serverless Functions**: Backend functions
+- **Edge Network**: CDN toàn cầu
+- **Preview Deployments**: Preview cho mỗi PR
 
-- Basic Git commands
-- GitHub workflow
-- Pull requests
-- Branching strategy
-- Git best practices
+### Netlify
 
-## 8. Tập Trung Vào Fundamentals
+- **Continuous Deployment**: Auto deploy từ Git
+- **Forms**: Handle form submissions
+- **Functions**: Serverless functions
+- **Split Testing**: A/B testing
 
-### Đừng Chạy Theo Framework
+### Deploy Workflow
 
-- **Fundamentals trước:** JavaScript, HTML, CSS
-- **Sau đó mới học framework:** React, Vue, Angular
-- **Hiểu cách hoạt động:** Không chỉ biết dùng
+\`\`\`bash
+# Vercel
+npm i -g vercel
+vercel
 
-### Fundamentals Quan Trọng
+# Netlify
+npm i -g netlify-cli
+netlify deploy
+\`\`\`
 
-- **Algorithms & Data Structures**
-- **System Design basics**
-- **Database concepts**
-- **Networking basics**
-- **Security basics**
+## Bonus: Các Công Cụ Khác Đáng Chú Ý
 
-## 9. Làm Dự Án Thực Tế
+### 11. Raycast (Mac) / PowerToys (Windows)
 
-### Tại Sao?
+**Productivity tools** để tăng tốc workflow:
+- **Quick Actions**: Launch apps, search files
+- **Clipboard History**: Lưu clipboard history
+- **Window Management**: Quản lý windows
 
-- **Áp dụng kiến thức:** Tổng hợp những gì đã học
-- **Học từ sai lầm:** Gặp bug, giải quyết vấn đề
-- **Portfolio:** Có sản phẩm để show
+### 12. Warp Terminal
 
-### Dự Án Nên Làm
+**Modern terminal** với nhiều tính năng:
+- **AI Command Suggestions**: Gợi ý commands
+- **Split Panes**: Multiple panes
+- **Workflows**: Automate tasks
 
-- **Clone websites:** Facebook, Twitter, Instagram
-- **Build tools:** Todo app, calculator, weather app
-- **Full-stack apps:** Blog, e-commerce, social media
-- **Open source:** Contribute to existing projects
+### 13. Linear / Jira
 
-## 10. Chuẩn Bị Cho Sự Nghiệp
+**Project Management** tools:
+- **Issue Tracking**: Track bugs, features
+- **Sprints**: Agile development
+- **Roadmaps**: Plan releases
 
-### Sớm Bắt Đầu
+## Cách Chọn Công Cụ Phù Hợp
 
-- **Year 2-3:** Bắt đầu xây dựng portfolio
-- **Year 3-4:** Tìm thực tập
-- **Final year:** Chuẩn bị cho full-time job
+### Tiêu Chí Đánh Giá
 
-### Cần Chuẩn Bị
+1. **Learning Curve**: Dễ học không?
+2. **Cost**: Miễn phí hay có phí?
+3. **Community**: Có cộng đồng lớn không?
+4. **Documentation**: Docs có tốt không?
+5. **Integration**: Tích hợp với tools khác?
 
-- **Portfolio:** Dự án, GitHub profile
-- **CV:** Format đẹp, highlight skills
-- **Interview skills:** Practice coding, system design
-- **Network:** Kết nối với industry
+### Workflow Gợi Ý
 
-## Bonus Tips
-
-### 11. Đừng So Sánh Bản Thân
-
-- Mỗi người có tốc độ học khác nhau
-- So sánh với chính mình ngày hôm qua
-- Focus vào progress của bản thân
-
-### 12. Nghỉ Ngơi Đầy Đủ
-
-- Burnout là vấn đề thật
-- Nghỉ ngơi giúp học tốt hơn
-- Balance giữa học và chơi
-
-### 13. Đừng Sợ Sai
-
-- Bug là bạn, không phải kẻ thù
-- Mỗi lỗi là cơ hội học hỏi
-- Fail fast, learn faster
+1. **Setup**: Cài đặt tools cơ bản (VS Code, Git)
+2. **Learn**: Học từng tool một, đừng học tất cả cùng lúc
+3. **Practice**: Sử dụng trong projects thực tế
+4. **Optimize**: Tùy chỉnh theo nhu cầu
 
 ## Kết Luận
 
-Hành trình từ sinh viên IT đến developer không dễ, nhưng với những tips trên, bạn có thể chuẩn bị tốt hơn. Quan trọng nhất là kiên trì, thực hành thường xuyên, và không ngừng học hỏi. Chúc các bạn thành công!
+Công cụ tốt là người bạn đồng hành của developer. Đừng cố học tất cả cùng lúc, hãy bắt đầu với những công cụ cơ bản nhất:
 
-**Nguồn:** Tổng hợp từ kinh nghiệm cá nhân và cộng đồng developer
+1. **VS Code** - Code editor
+2. **Git & GitHub** - Version control
+3. **Postman** - API testing
+4. **Chrome DevTools** - Debugging
+5. **Docker** - Containerization
+
+Sau đó, dần dần thêm các công cụ khác vào workflow của bạn. Quan trọng nhất là **sử dụng đúng tool cho đúng việc**, không phải tool nào mới nhất cũng tốt nhất.
+
+**Tips cuối cùng**:
+- Đầu tư thời gian học tools, nó sẽ tiết kiệm thời gian sau này
+- Tham gia cộng đồng của mỗi tool để học hỏi
+- Tùy chỉnh tools theo nhu cầu của bạn
+- Đừng ngại thử tools mới, nhưng đừng đổi liên tục
+
+Happy coding! 🚀
+
+---
+
+**Nguồn**: Tổng hợp từ các nguồn công nghệ uy tín và kinh nghiệm cộng đồng developer
     `,
   },
 }

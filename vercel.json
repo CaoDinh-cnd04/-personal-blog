@@ -10,6 +10,16 @@
       "destination": "/index.html"
     }
   ],
+  "routes": [
+    {
+      "src": "/CV_CAONHATDINH_EN.pdf",
+      "dest": "/CV_CAONHATDINH_EN.pdf",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "Cache-Control": "public, max-age=3600"
+      }
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

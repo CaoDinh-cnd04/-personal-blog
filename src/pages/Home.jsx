@@ -196,7 +196,7 @@ const Home = () => {
                   <span className="text-primary-light dark:text-primary-dark">
                     Software Engineer
                   </span>{" "}
-                  & <span className="text-cyan-400">Blogger</span>
+                  & <span className="text-cyan-400">Developer</span>
                 </motion.p>
 
                 <motion.p

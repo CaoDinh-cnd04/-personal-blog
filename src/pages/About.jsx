@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FiGithub, FiMapPin, FiUsers, FiStar, FiX, FiExternalLink } from 'react-icons/fi'
+import { FiGithub, FiMapPin, FiUsers, FiStar, FiX, FiExternalLink, FiDownload } from 'react-icons/fi'
 import { motion, AnimatePresence } from 'framer-motion'
 import SEO from '../components/SEO'
 import AnimatedSection from '../components/AnimatedSection'
@@ -195,17 +195,30 @@ const About = () => {
                       )}
                     </div>
                     
-                    {profile?.html_url && (
-                      <a
-                        href={profile.html_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary inline-flex items-center gap-2"
+                    <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                      {profile?.html_url && (
+                        <a
+                          href={profile.html_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-primary inline-flex items-center gap-2"
+                        >
+                          <FiGithub />
+                          View GitHub Profile
+                        </a>
+                      )}
+                      
+                      <motion.a
+                        href="/CV_CAONHATDINH_EN.pdf"
+                        download="CV_CAONHATDINH_EN.pdf"
+                        className="btn-secondary inline-flex items-center gap-2"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        <FiGithub />
-                        View GitHub Profile
-                      </a>
-                    )}
+                        <FiDownload />
+                        Download CV
+                      </motion.a>
+                    </div>
                   </div>
                 </div>
               </div>
